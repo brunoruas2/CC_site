@@ -6,12 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://brunoruas2.github.io/CC_site/nav/getting-started/</loc>
+         <loc>https://brunoruas2.github.io/CC_site/nav/tech/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://brunoruas2.github.io/CC_site/nav/tech/</loc>
+         <loc>https://brunoruas2.github.io/CC_site/nav/PUC/eixo1/algoritmos_e_abstracao/</loc>
+         <lastmod>2023-02-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://brunoruas2.github.io/CC_site/nav/PUC/eixo1/algoritmos_e_logica/</loc>
          <lastmod>2023-02-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
