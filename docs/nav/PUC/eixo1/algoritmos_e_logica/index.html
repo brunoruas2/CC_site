@@ -188,7 +188,659 @@
         </header>
         <p><p><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark-reasonable.min.css"></p>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script></p>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<h2 id="assuntos">Assuntos</h2>
+<ul>
+<li><strong>Lógica de Programação e Estrutura de Controle, Funções e Procedimentos</strong><ul>
+<li><a href="#conceito-de-algoritmo">Conceito de Algoritmo</a></li>
+<li><a href="#variaveis">Variáveis</a></li>
+<li><a href="#etapas-de-um-algoritmo-e-operador-de-atribuicao">Etapas de um Algoritmo e Operador de Atribuição</a></li>
+<li><a href="#estrutura-sequencial">Estrutura Sequencial</a></li>
+<li><a href="#estrutura-condicional">Estrutura Condicional</a></li>
+<li><a href="#estrutura-de-repeticao">Estrutura de Repetição</a></li>
+</ul>
+</li>
+<li><strong>Manipulação de Dados em Memória Primária e Secundária</strong><ul>
+<li><a href="#criando-e-usando-funcoes-e-procedimentos">Criando e Usando Funções e Procedimentos</a></li>
+<li><a href="#passagem-de-parametros">Passagem de Parâmetros</a></li>
+<li><a href="#manipulacao-de-arquivos-em-c">Manipulação de Arquivos em C#</a></li>
+</ul>
+</li>
+<li><a href="#bibliografia"><strong>Bibliografia</strong></a></li>
+</ul>
+<h2 id="logica-de-programacao-e-estrutura-de-controle-funcoes-e-procedimentos">Lógica de Programação e Estrutura de Controle, Funções e Procedimentos</h2>
+<h3 id="conceito-de-algoritmo">Conceito de Algoritmo</h3>
+<p>Em resumo, um algoritmo é uma sequência de ordens que, se seguidas, deve gerar um resultado previsto e desejado. Não vale muito a pena aprofundar além disso agora.</p>
+<h3 id="variaveis">Variáveis</h3>
+<p>Uma variável é uma posição na memória do computador. Isso mesmo, é algo com endereço definido, nada solto no universo ou obscuro dentro da máquina. Esse dado é gravado para posterior leitura por parte do programa que está sendo executado.</p>
+<p>Podemos ter como origem do dado o próprio programa que está sendo executado ou o usuário por meio da entrada de dados ou, ainda, a leitura de dados previamente armazenados na memória do computador.</p>
+<p>Cada variável possui vários tipos de atributos que podemos elencar na lista abaixo:</p>
+<ul>
+<li>Tem um endereço na memória</li>
+<li>Possui um nome de identificação</li>
+<li>Armazena um valor</li>
+<li>Possui um tipo de dados:<ul>
+<li><strong>Numérico</strong> - Inteiros e Reais (Double ou Ponto Flutuante)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li><strong>Não numérico</strong> - Lógico e Caractere</li>
+<li><strong>Arranjos</strong> - Vetores e Matrizes</li>
+<li><strong>Arquivos</strong></li>
+<li><strong>etc</strong></li>
+</ul>
+</li>
+</ul>
+<p>O endereço da memória é feita pelos endereços que possuem apenas 2 estágios de registro: 0 ou 1. Um bit é exatamente essa medida de registo. 1 byte é composto de 8bits. 1 kilobyte contém 1024bytes (<span class="arithmatex">\(2^{10}\)</span>). 1 megabyte contém 1024KB (<span class="arithmatex">\(2^{20}\)</span>). 1 gigabyte contém 1024MB (<span class="arithmatex">\(2^{30}\)</span>). 1 terabyte possui 1024GB (<span class="arithmatex">\(2^{40}\)</span>).</p>
+<p>Ou seja, se um computador possui 3 gigas de memória RAM, ele tem 3 bilhões de bytes como endereços disponíveis para um registro na memória<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Cada byte possui um endereço único. Na memória RAM costuma-se usar a base Hexadecimal para definir os endereços. Vamos ver isso melhor na matéria de Arquitetura de Computadores.</p>
+<p>Também vimos que as variáveis possuem identificadores. Em c# existem regras para a criação dos identificadores:</p>
+<ul>
+<li>Devem começar com uma letra</li>
+<li>Não podem ter espaços</li>
+<li>Não podem usar uma das palavras reservadas pela linguagem</li>
+<li>É case sensitive, ou seja, o nome "Var" é diferente do nome "var"</li>
+</ul>
+<p>O identificador deve sempre ter algum sentido que permita a rápida interpretação por parte de algum leitor do código fonte da aplicação. Isso é fundamental para manutenção de códigos produzidos por várias pessoas diferentes. Entretanto, devemos evitar nomes de variáveis muito grandes. Na verdade, quanto menor o nome, mantido o sentido na leitura, melhor.</p>
+<p>Outra boa prática é usar o camelCase para variáveis com mais de uma palavra. Esse padrão é bem simples: primeira palavra em minúsculo e a segunda com a primeira letra em maiúscula.</p>
+<h4 id="declaracao-de-variaveis-em-c">Declaração de Variáveis em c#</h4>
+<p>Vamos aprender agora como declarar os 4 tipos mais simples de variáveis:</p>
+<ul>
+<li><code>int</code> para definir inteiros</li>
+<li><code>double</code> ou <code>float</code> para definir números reais</li>
+<li><code>string</code> para cadeia de caracteres</li>
+<li><code>bool</code> para as variáveis booleanas (<code>true</code> ou <code>false</code>)</li>
+</ul>
+<p><strong>Comentário:</strong> c# é uma linguagem fortemente tipada, entretanto, existe um tipo de tipagem implícita que é muito usado na prática onde o próprio compilador "interpreta" o tipo de variável. Ao longo desse microfundamento nós vamos usar apenas os tokens de tipagem explícita. Mas vale muito a pena a leitura da documentação oficial nesse <a href="https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/statements/declarations#implicitly-typed-local-variables">link</a>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idade</span><span class="p">,</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">peso</span><span class="p">,</span><span class="w"> </span><span class="n">salario</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">nomePai</span><span class="p">,</span><span class="w"> </span><span class="n">rua</span><span class="p">,</span><span class="w"> </span><span class="n">dtNasc</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">temCasa</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+Nesse código acima temos a declaração de várias variáveis de cada tipo. Basta colocar o tipo da variável seguido do nome de cada uma delas separadas por vírgula.</p>
+<p><strong>Comentário:</strong> Em c# todas as linhas precisam conter um carácter de encerramento que é o ponto e vírgula <code>;</code>. Sem esse token, o computador vai interpretar a próxima linha como sendo a continuação da anterior.</p>
+<h3 id="etapas-de-um-algoritmo-e-operador-de-atribuicao">Etapas de um Algoritmo e Operador de Atribuição</h3>
+<p>Podemos resumir um algoritmo simples como contendo apenas 3 etapas: 1) A entrada de dados; 2) O processamento e 3) A saída de dados.</p>
+<p>Na etapa de processamento, podemos precisar de grande criatividade e esforço para produzir a saída de dados desejada. Como ferramenta para alcance desse objetivo, temos as <strong>estruturas básicas</strong> que são:</p>
+<ul>
+<li>Estrutura Sequencial - Usada para garantir a ordem correta dos passos</li>
+<li>Estrutura Condicional - Usada para permitir contexto ou cenários </li>
+<li>Estrutura de Repetição - Usada para evitar repetir código sequencial</li>
+</ul>
+<h4 id="operador-de-atribuicao">Operador de Atribuição</h4>
+<p>Uma vez que já sabemos como atribuir uma variável ao seu tipo, precisamos aprender a como atribuir um valor a essas variáveis. Em c# a atribuição de valor é feita do seguinte modo:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span>
+<span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9992233</span><span class="p">;</span>
+</code></pre></div>
+<p>É possível fazer 3 tipos de atribuição de valor para uma variável: Valor fixo; Conteúdo de outra variável e Expressão aritmética ou booliana. Abaixo temos 3 exemplo disso.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor fixo</span>
+<span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor de outra variável</span>
+<span class="n">idadeNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor por expressão</span>
+<span class="n">idadeEqNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor por expressão booliana</span>
+</code></pre></div>
+<p>Nesse ponto vale uma reflexão. Será que sempre precisamos separar as etapas de atribuição do tipo de dados e do valor? Ou podemos, no mesmo momento, definir o tipo de dados e o valor da variável? A resposta, para nossa sorte, é que é possível em c# atribuição de tipo e valor ao mesmo tempo. A sintaxe fica desse modo:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2.3</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;bruno&quot;</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">idadeNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">idadeEqNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="saidas-de-dados">Saídas de Dados</h5>
+<p>Agora que fizemos esse pequeno desvio no assunto, vamos retornar para as estruturas. Por incrível que pareça, é melhor a gente começar pelo final. A etapa de saída de dados.</p>
+<p>Em c# temos duas maneiras de saída de dados:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Imprime a informação e cursor fica na mesma linha</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">string</span><span class="err">&#39;</span><span class="p">);</span>
+
+<span class="c1">// Imprime a info mas o curso vai pra proxima linha</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">string</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="kt">string</span><span class="err">&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>Nesses exemplos a gente pode perceber que podemos concatenar textos e variáveis textuais por meio do operador de soma. Além dessa forma, podemos fazer uso de PlaceHolders ou Interpolação de string como nos exemplos abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bruno&quot;</span><span class="p">;</span>
+
+<span class="c1">// Concatenação</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Meu nome é &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;, obrigado!&quot;</span><span class="p">);</span>
+
+<span class="c1">// PlaceHolder</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Meu nome é {0}, obrigado!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">);</span>
+
+<span class="c1">// Interpolação</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Meu nome é {nome}, obrigado!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Os três exemplos geram o mesmo resultado mas são consideravelmente diferentes no método. Podemos usar o que for mais agradável para uma leitura do código e posterior manutenção do mesmo.</p>
+<h5 id="entrada-de-dados">Entrada de Dados</h5>
+<p>Agora que sabemos como fazer nosso programa imprimir resultados, vamos aprender como inputar dados nele. Em c# podemos inserir dados com o seguinte comando:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</code></pre></div>
+<p>O input captado por esse comando <strong>sempre retorna uma string</strong>. Mas as vezes precisamos nos certificar que o input foi feito da maneira correta. Para isso podemos manipular os dados inseridos do seguinte modo:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Valores Inteiros</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReaLine</span><span class="p">());</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="c1">// Valores Reais</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">float</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="c1">// Valores Booleanos</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">bool</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="c1">// Valores String</span>
+<span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+</code></pre></div>
+<p>Depois que executamos um dessas maneiras de coletar os dados, é de boa prática fornecermos um output logo após a entrada do dado. Isso evita aquela sensação de dúvida se o programa está sendo executado ou não. Ou seja, é bom sempre manter a dupla <code>ReadLine()</code> com o <code>WriteLine()</code>. O nome que damos para essa dupla é "Prompt".</p>
+<p>Outra dica boa é usar o comando <code>Console.ReadKey()</code> no final do programa. Isso faz com que o console aguarde alguma tecla para finalizar. Evita que a aplicação abra e feche sem que o user consiga enxergar o resultado do processo.</p>
+<h3 id="estrutura-sequencial">Estrutura Sequencial</h3>
+<p>Agora que sabemos como receber valores do usuário e como devolver nova informação a partir do processamento, vamos começar a estudar a etapa de processamento através do estudo das estruturas sequenciais.</p>
+<h4 id="operadores-e-funcoes-aritmeticas">Operadores e Funções Aritméticas</h4>
+<p>Em c# nós temos os seguintes tokens para realizar as operações aritméticas:</p>
+<ul>
+<li><code>+</code> Soma</li>
+<li><code>-</code> Subtração</li>
+<li><code>*</code> Multiplicação</li>
+<li><code>/</code> Divisão</li>
+<li><code>%</code> Resto da Divisão inteira</li>
+</ul>
+<p>Além disso, temos a presença do que podemos chamar de <strong>operadores de atribuição combinada</strong>. Que faz a atribuição de valor com alguma operação aritmética:</p>
+<ul>
+<li><code>soma += 100</code> é igual a <code>soma = soma + 100</code></li>
+<li><code>subtracao -= 10</code> é igual a <code>subtracao = subtracao - 10</code> </li>
+<li><code>multiplica *= 2</code> é igual a <code>multiplica = multiplica * 2</code></li>
+<li><code>divide /= 3</code> é igual a divide = divide / 3</li>
+<li><code>resto \%= 2</code> é igual a resto = resto / 2</li>
+</ul>
+<p>Não bastando essa grande variedade, temos os operadores de <strong>incremento e decremento</strong>:</p>
+<ul>
+<li>Pré-incremento (<code>++x</code>) - Usa x + 1 antes do processamento</li>
+<li>Pós-incremento (<code>x++</code>) - Usa x + 1 após o processamento</li>
+<li>Pré-decréscimo (<code>--x</code>) - Usa x - 1 antes do processamento</li>
+<li>Pós-decréscimo (<code>x--</code>) - Usa x -1 após o processamento</li>
+</ul>
+<p>Essa diferença de pre e pós é importante para as estruturas de repetição, porque podemos lidar com índices de tabelas que começam com valores diferentes. Mas, no geral, devemos olhar cada caso para escolher o que usar.</p>
+<p>Existem outras operações que estão contidas em um objeto nativo chamado <code>Math</code>. Para fazermos potenciação usamos o método <code>Math.Pow()</code>. Para fazermos raiz quadrada podemos usar <code>Math.Sqrt()</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
+<h4 id="expressoes-aritmeticas">Expressões Aritméticas</h4>
+<p>Agora podemos juntar tudo que vimos em um programa simples de cálculo da média de 5 valores. O código e o seu resultado podem ser vistos abaixo.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Declaração dos tipos das variáveis</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">n3</span><span class="p">,</span><span class="w"> </span><span class="n">n4</span><span class="p">,</span><span class="w"> </span><span class="n">n5</span><span class="p">,</span><span class="w"> </span><span class="n">soma</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">media</span><span class="p">;</span>
+
+<span class="c1">// Input dos dados</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Programa para cálculo da média de 5 valores.&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Por favor, forneça o primeiro número&quot;</span><span class="p">);</span>
+<span class="n">n1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Por favor, forneça o segundo número&quot;</span><span class="p">);</span>
+<span class="n">n2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Por favor, forneça o terceiro número&quot;</span><span class="p">);</span>
+<span class="n">n3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Por favor, forneça o quarto número&quot;</span><span class="p">);</span>
+<span class="n">n4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Por favor, forneça o quinto número&quot;</span><span class="p">);</span>
+<span class="n">n5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="c1">// Processamento</span>
+<span class="n">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n4</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n5</span><span class="p">;</span>
+<span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+
+<span class="c1">// Output dos dados</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Os números fornecidos foram:&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;N1={0},N2={1},N3={2},N4={3},N5={4}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">n3</span><span class="p">,</span><span class="w"> </span><span class="n">n4</span><span class="p">,</span><span class="w"> </span><span class="n">n5</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Cuja média é igual a {0}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Programa de cálculo da média de 5 valores em c#" src="../../../../assets/imgs/25-algoritmo-logica-media-cs.png" /></p>
+<p>Outro exemplo que podemos usar é o do cálculo das raízes de uma função de segundo grau<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. O programa abaixo recebe 3 valores e calcula as raízes, a imagem logo após nos mostra o resultado no prompt de comando.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Programa para calcular o valor de x em uma equação de segundo grau</span>
+
+<span class="c1">// Declaração das variáveis</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Vamos resolver uma equação do tipo ax^2 + bx + c = 0&quot;</span><span class="p">);</span>
+
+<span class="c1">// Input das variaveis</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Qual o valor de a? &quot;</span><span class="p">);</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Qual o valor de b? &quot;</span><span class="p">);</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Qual o valor de c? &quot;</span><span class="p">);</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
+
+
+<span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">Sqrt</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+
+<span class="c1">// Output dos resultados</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Dados: a = {0}, b = {1} e c = {2}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Equação: (-({b}) +- Raiz(({b})^2 - 4*{a}*{c}))/2*{a} = 0&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Resultado: x1 = {0} e x2 = {1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Programa de resolução de uma equação do segundo grau." src="../../../../assets/imgs/26-algoritmo-equacao-grau2.png" /></p>
+<p>A essa altura já aprendemos como criar programas inteiros com as etapas de software que vimos anteriormente: input, processamento e output. Tudo isso em c#. Entretanto, no estado atual do código, nossos programas não estão muito competentes em se adaptar a diferentes tipos de inputs ou resultados.</p>
+<p>Um exemplo prático é que, nesse segundo programa, podemos ter inputs que retornem um resultado indesejado como podemos ver na imagem abaixo.</p>
+<p><img alt="Programa de resolução de uma equação do segundo grau com erro." src="../../../../assets/imgs/27-erro-eq-grau2.png" /></p>
+<h3 id="estrutura-condicional">Estrutura Condicional</h3>
+<p>A necessidade de lidarmos com diferentes situações ou contextos é o que nos leva a estudarmos as \textbf{} <strong>estruturas condicionais</strong>. Por meio dessas estruturas, podemos construir diferentes outputs de acordo com qualquer lógica que implementarmos e, com isso, evitar vários bugs nos nossos programas.</p>
+<h4 id="operadores-relacionais">Operadores Relacionais</h4>
+<p>Ao lidarmos com estrutura condicionais nós temos alguns operadores que nada mais são do que expressões lógicas que retornam apenas 2 resultados possíveis: true ou false. Esses operadores são como "gatilhos"\ que são usados para controle do fluxo de processamento do código.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Operador</strong></th>
+<th align="center"><strong>Operação</strong></th>
+<th align="center"><strong>Exemplo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>==</code></td>
+<td align="center">Igualdade</td>
+<td align="center">n1 == n2</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center">Menor</td>
+<td align="center">a &lt; 10</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center">Maio</td>
+<td align="center">b &gt; 1</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;=</code></td>
+<td align="center">Menor igual</td>
+<td align="center">c &lt;= 2</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;=</code></td>
+<td align="center">Maior igual</td>
+<td align="center">d &gt;= 22</td>
+</tr>
+<tr>
+<td align="center"><code>!=</code></td>
+<td align="center">Desigualdade</td>
+<td align="center">e != 100</td>
+</tr>
+</tbody>
+</table>
+<p>Na tabela acima, temos os operadores relacionais que são usados ao longo das estruturas condicionais simples e compostas.</p>
+<p>Tome cuidado com o operador de igualdade <code>==</code> e o de atribuição <code>=</code>, afinal, eles usam o sinal de igualdade mas significam coisas diferentes.</p>
+<h4 id="condicao-simples-e-composta">Condição Simples e Composta</h4>
+<p>Em c# o comando usado para criar uma condição simples é o <code>if</code>. Se a condição que colocarmos atrelada ao comando <code>if</code> retornar um true, o bloco de código atribuído a ele será executar, caso contrário, o código do bloco será ignorado.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Parte condicional no calculo da equação de segundo grau</span>
+
+<span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+
+<span class="c1">// Output dos resultados com condição</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Dados: a = {0}, b = {1} e c = {2}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Equação: (-({b}) +- Raiz(({b})^2 - 4*{a}*{c}))/2*{a} = 0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Delta: {delta}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Resultado: x1 = {0} e x2 = {1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Dados: a = {0}, b = {1} e c = {2}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Equação: (-({b}) +- Raiz(({b})^2 - 4*{a}*{c}))/2*{a} = 0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Delta: {delta}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Resultado: X não possui raiz real! &quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Com essa adaptação, nosso código estará preparado para o caso onde o interior da raiz (que chamamos de delta) seja negativo. Mas podemos ver que o nosso código ficou um pouco esquisito. Criamos dois blocos de código que são, claramente, relacionados entre si: Se um bloco for executado, o outro não será. Para facilitar o trabalho com essas situações, as linguagens de programação possuem as estruturas de condição compostas.</p>
+<p>Esses são os casos onde, se o teste lógico retorna true, executamos um bloco, ou o outro bloco será executado caso o resultado lógico seja false. Com isso evitamos ter que criar dois testes com <code>if</code>. O token usado em c# para uma condição com dois blocos de códigos (ou seja, uma condicional composta) é o <code>if-else</code>. Abaixo nós reescrevemos a solução anterior mas agora fazendo uso do condional composto.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Parte condicional no calculo da equação de segundo grau</span>
+
+<span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+
+<span class="c1">// Output dos resultados com condição</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Dados: a = {0}, b = {1} e c = {2}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Equação: (-({b}) +- Raiz(({b})^2 - 4*{a}*{c}))/2*{a} = 0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Delta: {delta}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Resultado: x1 = {0} e x2 = {1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x1</span><span class="p">,</span><span class="w"> </span><span class="n">x2</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Dados: a = {0}, b = {1} e c = {2}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Equação: (-({b}) +- Raiz(({b})^2 - 4*{a}*{c}))/2*{a} = 0&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot;Delta: {delta}&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Resultado: X não possui raiz real! &quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Agora sim nosso código está elegante e adaptado para as duas saídas possíveis de resultado para os inputs do usuário.</p>
+<h4 id="operadores-booleanos-e-comandos-if-aninhados">Operadores Booleanos e Comandos IF Aninhados</h4>
+<p>Nós aprendemos que o bloco de código será executado sempre que a expressão lógica retornar um resultado true. Também vimos que existem os operadores relacionais que nos ajudam a construir essas expressões. Agora, vamos aprender os operadores booleanos que nada mais são do que os operadores lógicos clássicos (<span class="arithmatex">\(\land, \lor, \neg\)</span>).</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Operador</strong></th>
+<th align="center"><strong>Operação</strong></th>
+<th align="center"><strong>Exemplo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>&amp;&amp; (AND)</code></td>
+<td align="center">true se tudo for true</td>
+<td align="center"><code>if (a &gt; 2 &amp;&amp; b == 1)</code></td>
+</tr>
+<tr>
+<td align="center"><code>|| (OR)</code></td>
+<td align="center">true se um for true</td>
+<td align="center"><code>if (a &lt; 2 || b != 0)</code></td>
+</tr>
+<tr>
+<td align="center"><code>! (NOT)</code></td>
+<td align="center">false se true</td>
+<td align="center"><code>if (!(x==y))</code></td>
+</tr>
+</tbody>
+</table>
+<p>Existem problemas que requerem mais de dois resultados no output. Nesse caso, não é suficiente usarmos apenas os tokens de condicional composto <code>if-else</code> da maneira como aprendemos até agora.</p>
+<p>Para resolver esse problema temos a técnica de <code>IF</code> aninhados (nested) e a de <code>IF</code> escada (ladder). As duas formas produzem o mesmo resultado mas mudam significativamente legibilidade do nosso código. Abaixo temos um exemplo de cada.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Leadder IF</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
+<span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao2</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando2</span><span class="p">;</span>
+<span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao3</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando3</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao_n</span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando_n</span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">comando_n</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Nested IF</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao1</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">comando2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao3</span><span class="p">)</span>
+<span class="w">            </span><span class="n">comando3</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span>
+<span class="w">            </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao4</span><span class="p">)</span>
+<span class="w">                </span><span class="n">comando4</span><span class="p">;</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao_n</span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="w">                    </span><span class="n">comando_n</span><span class="o">-</span><span class="m">1</span><span class="p">;</span>
+<span class="w">                </span><span class="k">else</span>
+<span class="w">                    </span><span class="n">comando_n</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="o-comando-switch-e-o-operador-ternario">O Comando Switch e o Operador Ternário</h4>
+<p>Agora que aprendemos a lidar com vários casos condicionais encadeados, podemos construir soluções relativamente complexas com várias saídas diferentes. Entretanto, quando tempos muitas situações possíveis, o nosso código pode ficar um pouco ruim de ser lido por outras pessoas.</p>
+<p>Pensando nessa necessidade, os criadores do c# criaram um operador que simplifica ainda mais nosso trabalho. Sim, é isso mesmo, nós acabamos de aprender IFs aninhados e em escada e já vamos aprender uma maneira melhor de fazer exatamente o que eles fazem. Se acostume com isso. Em tecnologia existem quase sempre várias maneiras de se chegar no mesmo resultado.</p>
+<p>O operador que é mais indicado para lidar com várias situações de saída é o <code>switch-case</code>. Cuja construção é bem mais legível que os IFs anteriores. Abaixo temos um exemplo.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Lidando com varias condições com switch/case</span>
+<span class="k">switch</span><span class="p">(</span><span class="n">opcao</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">op1</span><span class="p">:</span>
+<span class="w">        </span><span class="n">comandos1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">op2</span><span class="p">:</span>
+<span class="w">        </span><span class="n">comandos2</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">op3</span><span class="p">:</span>
+<span class="w">        </span><span class="n">comandos3</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">op_n</span><span class="p">:</span>
+<span class="w">        </span><span class="n">comandos_n</span><span class="p">;</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<span class="w">        </span><span class="c1">// bloco que sera executado se nenhuma </span>
+<span class="w">        </span><span class="c1">// das anteriores for escolhida;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>\textbf{} <strong>Comentário:</strong> Existem várias maneiras de se usar o switch. Eu não vou me aprofundar agora em todas elas. Mas vale muito a pena fazer uso dessa ferramenta para cenários de várias interações possíveis ou múltiplas saídas contextuais.</p>
+<p>Para finalizar o nosso estudo das estruturas condicionais, vamos aprender como trabalhar com o \textbf{} <strong>Operador ternário</strong>. Esse nome é relativo ao número de operandos que esse comando usa (no caso, 3).</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="n">condicao</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">expressao_true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">expressao_false</span>
+</code></pre></div>
+<p>A condição é uma expressão lógica (que usa operadores relacionais e booleanos) que só pode retornar true ou false. A expressão logo após o ponto de interrogação será o retorno do operador em caso de true. A expressão após os dois pontos é o retorno em caso de false.</p>
+<p>Sim, é exatamente um caso de <code>if-else</code> só que em apenas uma linha. Como as soluções podem ficar muito grandes, é sempre bom termos em mente que quanto menos linhas, mais fácil será fazer manutenção nos nossos programas. O operador ternário é muito usado por programadores mais experientes. Abaixo temos um exemplo comparando as duas maneiras.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Comparação entre if-else e operador ternário</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">passou</span><span class="p">;</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
+
+<span class="c1">// if-else</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">60</span><span class="p">)</span>
+<span class="w">    </span><span class="n">passou</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">passou</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="c1">// operador ternario</span>
+<span class="n">passou</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="c1">// maneira 1</span>
+<span class="n">passou</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">nota</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">60</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="c1">// maneira 2</span>
+</code></pre></div>
+<p>Agora podemos ver claramente a vantagem do uso do operador ternário.</p>
+<h3 id="estrutura-de-repeticao">Estrutura de Repetição</h3>
+<p>Como sabemos, ainda temos mais um tipo de estrutura para estudarmos. Até agora, aprendemos como estruturar um código sequencialmente e como criar blocos de código que só serão executados se determinadas condições previamente definidas forem satisfeitas. Agora, vamos aprender como evitar ter que repetir blocos de códigos.</p>
+<p>O c# possui 3 operadores de repetição:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// tipo 01</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condicao</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando</span><span class="p">;</span>
+
+<span class="c1">// tipo 02</span>
+<span class="k">do</span>
+<span class="w">    </span><span class="n">comando</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condicao</span><span class="p">);</span>
+
+<span class="c1">// tipo 03</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">inicial</span><span class="p">;</span><span class="w"> </span><span class="n">expressao</span><span class="w"> </span><span class="n">logica</span><span class="p">;</span><span class="w"> </span><span class="n">atualizacao</span><span class="p">)</span>
+<span class="w">    </span><span class="n">comando</span><span class="p">;</span>
+</code></pre></div>
+<p>Vamos ver um exemplo de como nosso código pode ser reduzir com o uso da estrutura de repetição. Primeiro, vamos ver um exemplo onde o programa recebe uma lista de 3 palavras (nome, nome do meio e sobrenome) e depois faz o print.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Programa que recebe nome completo e</span>
+<span class="c1">// depois devolve uma mensagem de boas vindas</span>
+
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Seja bem vindo(a)!&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Qual seu primeiro nome?&quot;</span><span class="p">);</span>
+<span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Qual seu nome do meio?&quot;</span><span class="p">);</span>
+<span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Qual seu sobrenome?&quot;</span><span class="p">);</span>
+<span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Bem Vindo(a)!&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">mid</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">last</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; E Volte sempre!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Programa simples" src="../../../../assets/imgs/28-programa-nome1.png" /></p>
+<p>Agora vamos refazer esse programa usando os 3 tokens de estrutura de repetição que o c# nos dá. Vamos usar a mesma ordem em que elas foram apresentadas.</p>
+<h4 id="os-comandos-while-do-while-e-for">Os Comandos WHILE, DO WHILE e FOR</h4>
+<h5 id="repeticao-usando-while">Repetição usando WHILE</h5>
+<p>A repetição usando o token <code>while</code> é condicionada ao resultado de uma expressão lógica. Caso a expressão lógica retorne true, o bloco de código será executado até o seu final. Após a execução, é feita uma nova verificação da expressão lógica. O processo de loop só será finalizado caso a expressão lógica retorne o valor false. Abaixo temos a refatoração<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> evitando a repetição de partes de partes do código anterior.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Programa de nomes refatorado com while</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
+
+<span class="c1">// nome default</span>
+<span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Seja bem vindo(a)!&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Por favor, insira o seu nome completo.&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Obs. No máximo 3 palavras&quot;</span><span class="p">);</span>
+<span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="p">{</span><span class="w">   </span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot; Palavra nº {contador} do seu nome?&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">        </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">contador</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Bem Vindo(a)!&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">mid</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">last</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; E Volte sempre!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<p>Agora nós temos um loop usando a expressão "a variável contador é menor igual a 3?" sempre que a resposta for sim, o programa perguntará qual a n-ésima palavra do nome da pessoa. Pode parecer que nesse exemplo o uso do loop mais complicou do que facilitou. Mas o objetivo aqui é exercitar o uso desse operador, então devemos focar em compreender como usar o while.</p>
+<h5 id="repeticao-usando-do-while">Repetição usando DO-WHILE</h5>
+<p>Para a nossa sorte, o operador DO WHILE é muito similar ao WHILE. A única diferença é que primeiro declaramos o bloco de código e, no final, colocamos a condição para sua execução. No exemplo abaixo temos o mesmo resultado que o de cima mas usando essa outra estrutura de operador.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Programa de nomes refatorado com do-while</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
+
+<span class="c1">// nome default</span>
+<span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Seja bem vindo(a)!&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Por favor, insira o seu nome completo.&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Obs. No máximo 3 palavras&quot;</span><span class="p">);</span>
+<span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+
+<span class="k">do</span>
+<span class="p">{</span><span class="w">   </span>
+<span class="w">  </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot; Palavra nº {contador} do seu nome?&quot;</span><span class="p">);</span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">       </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">   </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="w">       </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">   </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">       </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+
+<span class="w">   </span><span class="n">contador</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">3</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Bem Vindo(a)!&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">mid</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">last</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; E Volte sempre!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h5 id="repeticao-usando-for">Repetição usando FOR</h5>
+<p>Quando usamos nosso operador while, foi criada uma variável <code>contador</code> que era incrementada a cada iteração até que o teste lógico "menor igual a 3"\ retorne false. A vantagem do operador de loop <code>for</code> é que podemos fazer isso diretamente no parâmetro da função.</p>
+<p>O operador de loop <code>for</code> recebe 3 parâmetros, na ordem: condição inicial da variável de controle; expressão lógica (que retorna true ou false) e, por fim, um incremento ou decremento.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="c1">// Programa de nomes refatorado com for</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
+
+<span class="c1">// nome default</span>
+<span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+<span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">;</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Seja bem vindo(a)!&quot;</span><span class="p">);</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Por favor, insira o seu nome completo.&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Obs. No máximo 3 palavras&quot;</span><span class="p">);</span>
+<span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="n">contador</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span><span class="w">   </span>
+<span class="w">    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&quot; Qual a palavra nº {contador} do seu nome?&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+<span class="w">        </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">contador</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="w">        </span><span class="n">last</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; Bem Vindo(a)!&quot;</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">mid</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">last</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot; E Volte sempre!&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="contadores-e-acumuladores">Contadores e Acumuladores</h4>
+<p>Agora sabemos reduzir nossos códigos usando 3 tipos de tokens fornecidos pelo c#. Vamos ver um pouquinho mais a respeito do atributo de contador do loop <code>for</code>.</p>
+<p>Um \textbf{} <strong>contador</strong> nada mais é do que uma variável do tipo constante que receberá a atualização do seu valor a cada loop. Se a situação inicial do nosso contador for igual a 1, a cada iteração ele receberá a expressão <code>contador = contador + 1</code>.</p>
+<p>Podemos criar um contador diretamente no código através da atribuição do valor pela soma. Ou, podemos usar os operadores de incremento e decremento que aprendemos anteriormente. A cada iteração em uma estrutura de loop, a variável receberá +1 como incremento ou -1 no caso do decremento.</p>
+<p>Podemos usar o operador de incremento tanto no bloco de código de um loop quanto como parâmetro. Em um <code>for</code>, quando colocamos o terceiro parâmetro igual a <code>contador++</code>, a cada iteração teremos <code>+1</code> atribuído ao contador.</p>
+<p>Um \textbf{} <strong>acumulador</strong> é muito parecido com um contador, a diferença é que a cada iteração nós podemos adicionar qualquer valor ao acumulador. Por exemplo, se queremos calcular a média de uma turma, teremos que somar todas as notas e dividir pelo quantitativo dos alunos da turma. Para isso, podemos criar um acumulador chamado <code>soma_notas</code> que recebe, para cada aluno, a nota através de um comando parecido com o exemplo a baixo.</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">soma_notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">n_aluno</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n_alunos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">qtd</span><span class="p">;</span><span class="w"> </span><span class="n">n_aluno</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">soma_notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma_notas</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nota</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>A cada iteração, somamos o valor da variável <code>nota</code> à variável <code>soma_notas</code>.</p>
+<h2 id="manipulacao-de-dados-em-memoria-primaria-e-secundaria">Manipulação de Dados em Memória Primária e Secundária</h2>
+<h3 id="criando-e-usando-funcoes-e-procedimentos">Criando e Usando Funções e Procedimentos</h3>
+<h3 id="passagem-de-parametros">Passagem de Parâmetros</h3>
+<h3 id="manipulacao-de-arquivos-em-c">Manipulação de Arquivos em C#</h3>
+<h2 id="bibliografia">Bibliografia</h2>
+<ul>
+<li>Ana Fernanda Gomes ASCENCIO; Edilene Aparecida Veneruchi de CAMPOS. <strong>Fundamentos da Programação de Computadores: algoritmos, Pascal, C/C++ e Java - 2ª edição</strong>. São Paulo, SP : Pearson Education do Brasil, 2012</li>
+<li>H. DEITEL et. Al.  <strong>C#: Como Programar</strong>. São Paulo: Makron Books, 2003</li>
+<li>John SHARP. <strong>Microsoft Visual C# 2013</strong>. Grupo A, 2014</li>
+<li>André Luiz Villar FORBELLONE, Henri Frederico EBERSPÄCHER. <strong>Lógica de programação: a construção de algoritmos e estruturas de dados</strong>. São Paulo: Prentice Hall, 2005.</li>
+<li>MANZANO, José Augusto N. G; OLIVEIRA, Jayr Figueiredo de. Al<strong>goritmos: lógica para desenvolvimento de programação de computadores</strong> 28. ed. rev. e atual. São Paulo, SP: Érica, 2016</li>
+<li>Sandra PUGA, Gerson RISSETTI. <strong>Lógica de Programação e Estrutura de Dados: com aplicações em Java - 2ª edição</strong>. São Paulo : Pearson, 2017</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Float possui precisão simples e Double possui dupla precisão.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Isso é muito impressionante!&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Embora a gente saiba que a radiciação é uma potência de fração.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Se você não se lembra como resolver um problema desse, seu professor da sexta série está rindo de você nesse exato minuto.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Refatorar é o processo de mudar o código e obter o mesmo resultado no final. É uma ótima prática a ser feita.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></p>
     </article>
 </section>
 <!-- endblock -->
