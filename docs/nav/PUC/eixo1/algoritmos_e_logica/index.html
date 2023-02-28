@@ -249,7 +249,7 @@
 <li><code>bool</code> para as variáveis booleanas (<code>true</code> ou <code>false</code>)</li>
 </ul>
 <p><strong>Comentário:</strong> c# é uma linguagem fortemente tipada, entretanto, existe um tipo de tipagem implícita que é muito usado na prática onde o próprio compilador "interpreta" o tipo de variável. Ao longo desse microfundamento nós vamos usar apenas os tokens de tipagem explícita. Mas vale muito a pena a leitura da documentação oficial nesse <a href="https://learn.microsoft.com/pt-br/dotnet/csharp/language-reference/statements/declarations#implicitly-typed-local-variables">link</a>.</p>
-<p><div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span>
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">idade</span><span class="p">,</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span>
@@ -270,19 +270,19 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </ul>
 <h4 id="operador-de-atribuicao">Operador de Atribuição</h4>
 <p>Uma vez que já sabemos como atribuir uma variável ao seu tipo, precisamos aprender a como atribuir um valor a essas variáveis. Em c# a atribuição de valor é feita do seguinte modo:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span>
 <span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">9992233</span><span class="p">;</span>
 </code></pre></div>
 <p>É possível fazer 3 tipos de atribuição de valor para uma variável: Valor fixo; Conteúdo de outra variável e Expressão aritmética ou booliana. Abaixo temos 3 exemplo disso.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor fixo</span>
 <span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor de outra variável</span>
 <span class="n">idadeNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor por expressão</span>
 <span class="n">idadeEqNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">numero</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor por expressão booliana</span>
 </code></pre></div>
 <p>Nesse ponto vale uma reflexão. Será que sempre precisamos separar as etapas de atribuição do tipo de dados e do valor? Ou podemos, no mesmo momento, definir o tipo de dados e o valor da variável? A resposta, para nossa sorte, é que é possível em c# atribuição de tipo e valor ao mesmo tempo. A sintaxe fica desse modo:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">idade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">28</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">idade</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2.3</span><span class="p">;</span>
@@ -293,7 +293,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <h5 id="saidas-de-dados">Saídas de Dados</h5>
 <p>Agora que fizemos esse pequeno desvio no assunto, vamos retornar para as estruturas. Por incrível que pareça, é melhor a gente começar pelo final. A etapa de saída de dados.</p>
 <p>Em c# temos duas maneiras de saída de dados:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Imprime a informação e cursor fica na mesma linha</span>
 <span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">string</span><span class="err">&#39;</span><span class="p">);</span>
 
@@ -301,7 +301,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="err">&#39;</span><span class="kt">string</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">var1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="err">&#39;</span><span class="w"> </span><span class="kt">string</span><span class="err">&#39;</span><span class="p">);</span>
 </code></pre></div>
 <p>Nesses exemplos a gente pode perceber que podemos concatenar textos e variáveis textuais por meio do operador de soma. Além dessa forma, podemos fazer uso de PlaceHolders ou Interpolação de string como nos exemplos abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bruno&quot;</span><span class="p">;</span>
 
 <span class="c1">// Concatenação</span>
@@ -316,11 +316,11 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Os três exemplos geram o mesmo resultado mas são consideravelmente diferentes no método. Podemos usar o que for mais agradável para uma leitura do código e posterior manutenção do mesmo.</p>
 <h5 id="entrada-de-dados">Entrada de Dados</h5>
 <p>Agora que sabemos como fazer nosso programa imprimir resultados, vamos aprender como inputar dados nele. Em c# podemos inserir dados com o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
 </code></pre></div>
 <p>O input captado por esse comando <strong>sempre retorna uma string</strong>. Mas as vezes precisamos nos certificar que o input foi feito da maneira correta. Para isso podemos manipular os dados inseridos do seguinte modo:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Valores Inteiros</span>
 <span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReaLine</span><span class="p">());</span>
 <span class="n">variavel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Console</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">());</span>
@@ -368,7 +368,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Existem outras operações que estão contidas em um objeto nativo chamado <code>Math</code>. Para fazermos potenciação usamos o método <code>Math.Pow()</code>. Para fazermos raiz quadrada podemos usar <code>Math.Sqrt()</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>.</p>
 <h4 id="expressoes-aritmeticas">Expressões Aritméticas</h4>
 <p>Agora podemos juntar tudo que vimos em um programa simples de cálculo da média de 5 valores. O código e o seu resultado podem ser vistos abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Declaração dos tipos das variáveis</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">,</span><span class="w"> </span><span class="n">n2</span><span class="p">,</span><span class="w"> </span><span class="n">n3</span><span class="p">,</span><span class="w"> </span><span class="n">n4</span><span class="p">,</span><span class="w"> </span><span class="n">n5</span><span class="p">,</span><span class="w"> </span><span class="n">soma</span><span class="p">;</span>
 <span class="kt">float</span><span class="w"> </span><span class="n">media</span><span class="p">;</span>
@@ -398,7 +398,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </code></pre></div>
 <p><img alt="Programa de cálculo da média de 5 valores em c#" src="../../../../assets/imgs/25-algoritmo-logica-media-cs.png" /></p>
 <p>Outro exemplo que podemos usar é o do cálculo das raízes de uma função de segundo grau<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. O programa abaixo recebe 3 valores e calcula as raízes, a imagem logo após nos mostra o resultado no prompt de comando.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Programa para calcular o valor de x em uma equação de segundo grau</span>
 
 <span class="c1">// Declaração das variáveis</span>
@@ -430,7 +430,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Um exemplo prático é que, nesse segundo programa, podemos ter inputs que retornem um resultado indesejado como podemos ver na imagem abaixo.</p>
 <p><img alt="Programa de resolução de uma equação do segundo grau com erro." src="../../../../assets/imgs/27-erro-eq-grau2.png" /></p>
 <h3 id="estrutura-condicional">Estrutura Condicional</h3>
-<p>A necessidade de lidarmos com diferentes situações ou contextos é o que nos leva a estudarmos as \textbf{} <strong>estruturas condicionais</strong>. Por meio dessas estruturas, podemos construir diferentes outputs de acordo com qualquer lógica que implementarmos e, com isso, evitar vários bugs nos nossos programas.</p>
+<p>A necessidade de lidarmos com diferentes situações ou contextos é o que nos leva a estudarmos as <strong>estruturas condicionais</strong>. Por meio dessas estruturas, podemos construir diferentes outputs de acordo com qualquer lógica que implementarmos e, com isso, evitar vários bugs nos nossos programas.</p>
 <h4 id="operadores-relacionais">Operadores Relacionais</h4>
 <p>Ao lidarmos com estrutura condicionais nós temos alguns operadores que nada mais são do que expressões lógicas que retornam apenas 2 resultados possíveis: true ou false. Esses operadores são como "gatilhos"\ que são usados para controle do fluxo de processamento do código.</p>
 <table>
@@ -478,7 +478,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Tome cuidado com o operador de igualdade <code>==</code> e o de atribuição <code>=</code>, afinal, eles usam o sinal de igualdade mas significam coisas diferentes.</p>
 <h4 id="condicao-simples-e-composta">Condição Simples e Composta</h4>
 <p>Em c# o comando usado para criar uma condição simples é o <code>if</code>. Se a condição que colocarmos atrelada ao comando <code>if</code> retornar um true, o bloco de código atribuído a ele será executar, caso contrário, o código do bloco será ignorado.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Parte condicional no calculo da equação de segundo grau</span>
 
 <span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
@@ -502,7 +502,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </code></pre></div>
 <p>Com essa adaptação, nosso código estará preparado para o caso onde o interior da raiz (que chamamos de delta) seja negativo. Mas podemos ver que o nosso código ficou um pouco esquisito. Criamos dois blocos de código que são, claramente, relacionados entre si: Se um bloco for executado, o outro não será. Para facilitar o trabalho com essas situações, as linguagens de programação possuem as estruturas de condição compostas.</p>
 <p>Esses são os casos onde, se o teste lógico retorna true, executamos um bloco, ou o outro bloco será executado caso o resultado lógico seja false. Com isso evitamos ter que criar dois testes com <code>if</code>. O token usado em c# para uma condição com dois blocos de códigos (ou seja, uma condicional composta) é o <code>if-else</code>. Abaixo nós reescrevemos a solução anterior mas agora fazendo uso do condional composto.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Parte condicional no calculo da equação de segundo grau</span>
 
 <span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Pow</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
@@ -540,9 +540,9 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <td align="center"><code>if (a &gt; 2 &amp;&amp; b == 1)</code></td>
 </tr>
 <tr>
-<td align="center"><code>|| (OR)</code></td>
+<td align="center"><code>|                       |         (OR)</code></td>
 <td align="center">true se um for true</td>
-<td align="center"><code>if (a &lt; 2 || b != 0)</code></td>
+<td align="center"><code>if (a &lt; 2 |  | b != 0)</code></td>
 </tr>
 <tr>
 <td align="center"><code>! (NOT)</code></td>
@@ -553,7 +553,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </table>
 <p>Existem problemas que requerem mais de dois resultados no output. Nesse caso, não é suficiente usarmos apenas os tokens de condicional composto <code>if-else</code> da maneira como aprendemos até agora.</p>
 <p>Para resolver esse problema temos a técnica de <code>IF</code> aninhados (nested) e a de <code>IF</code> escada (ladder). As duas formas produzem o mesmo resultado mas mudam significativamente legibilidade do nosso código. Abaixo temos um exemplo de cada.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Leadder IF</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao1</span><span class="p">)</span>
 <span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
@@ -567,7 +567,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <span class="k">else</span>
 <span class="w">    </span><span class="n">comando_n</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Nested IF</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condicao1</span><span class="p">)</span>
 <span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
@@ -591,7 +591,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Agora que aprendemos a lidar com vários casos condicionais encadeados, podemos construir soluções relativamente complexas com várias saídas diferentes. Entretanto, quando tempos muitas situações possíveis, o nosso código pode ficar um pouco ruim de ser lido por outras pessoas.</p>
 <p>Pensando nessa necessidade, os criadores do c# criaram um operador que simplifica ainda mais nosso trabalho. Sim, é isso mesmo, nós acabamos de aprender IFs aninhados e em escada e já vamos aprender uma maneira melhor de fazer exatamente o que eles fazem. Se acostume com isso. Em tecnologia existem quase sempre várias maneiras de se chegar no mesmo resultado.</p>
 <p>O operador que é mais indicado para lidar com várias situações de saída é o <code>switch-case</code>. Cuja construção é bem mais legível que os IFs anteriores. Abaixo temos um exemplo.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Lidando com varias condições com switch/case</span>
 <span class="k">switch</span><span class="p">(</span><span class="n">opcao</span><span class="p">)</span>
 <span class="p">{</span>
@@ -613,14 +613,14 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <span class="w">        </span><span class="c1">// das anteriores for escolhida;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>\textbf{} <strong>Comentário:</strong> Existem várias maneiras de se usar o switch. Eu não vou me aprofundar agora em todas elas. Mas vale muito a pena fazer uso dessa ferramenta para cenários de várias interações possíveis ou múltiplas saídas contextuais.</p>
-<p>Para finalizar o nosso estudo das estruturas condicionais, vamos aprender como trabalhar com o \textbf{} <strong>Operador ternário</strong>. Esse nome é relativo ao número de operandos que esse comando usa (no caso, 3).</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<p><strong>Comentário:</strong> Existem várias maneiras de se usar o switch. Eu não vou me aprofundar agora em todas elas. Mas vale muito a pena fazer uso dessa ferramenta para cenários de várias interações possíveis ou múltiplas saídas contextuais.</p>
+<p>Para finalizar o nosso estudo das estruturas condicionais, vamos aprender como trabalhar com o <strong>Operador ternário</strong>. Esse nome é relativo ao número de operandos que esse comando usa (no caso, 3).</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="n">condicao</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">expressao_true</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">expressao_false</span>
 </code></pre></div>
 <p>A condição é uma expressão lógica (que usa operadores relacionais e booleanos) que só pode retornar true ou false. A expressão logo após o ponto de interrogação será o retorno do operador em caso de true. A expressão após os dois pontos é o retorno em caso de false.</p>
 <p>Sim, é exatamente um caso de <code>if-else</code> só que em apenas uma linha. Como as soluções podem ficar muito grandes, é sempre bom termos em mente que quanto menos linhas, mais fácil será fazer manutenção nos nossos programas. O operador ternário é muito usado por programadores mais experientes. Abaixo temos um exemplo comparando as duas maneiras.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Comparação entre if-else e operador ternário</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">passou</span><span class="p">;</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">nota</span><span class="p">;</span>
@@ -639,7 +639,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <h3 id="estrutura-de-repeticao">Estrutura de Repetição</h3>
 <p>Como sabemos, ainda temos mais um tipo de estrutura para estudarmos. Até agora, aprendemos como estruturar um código sequencialmente e como criar blocos de código que só serão executados se determinadas condições previamente definidas forem satisfeitas. Agora, vamos aprender como evitar ter que repetir blocos de códigos.</p>
 <p>O c# possui 3 operadores de repetição:</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// tipo 01</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condicao</span><span class="p">)</span>
 <span class="w">    </span><span class="n">comando</span><span class="p">;</span>
@@ -654,7 +654,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <span class="w">    </span><span class="n">comando</span><span class="p">;</span>
 </code></pre></div>
 <p>Vamos ver um exemplo de como nosso código pode ser reduzir com o uso da estrutura de repetição. Primeiro, vamos ver um exemplo onde o programa recebe uma lista de 3 palavras (nome, nome do meio e sobrenome) e depois faz o print.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Programa que recebe nome completo e</span>
 <span class="c1">// depois devolve uma mensagem de boas vindas</span>
 
@@ -684,7 +684,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <h4 id="os-comandos-while-do-while-e-for">Os Comandos WHILE, DO WHILE e FOR</h4>
 <h5 id="repeticao-usando-while">Repetição usando WHILE</h5>
 <p>A repetição usando o token <code>while</code> é condicionada ao resultado de uma expressão lógica. Caso a expressão lógica retorne true, o bloco de código será executado até o seu final. Após a execução, é feita uma nova verificação da expressão lógica. O processo de loop só será finalizado caso a expressão lógica retorne o valor false. Abaixo temos a refatoração<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> evitando a repetição de partes de partes do código anterior.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Programa de nomes refatorado com while</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
@@ -722,7 +722,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <p>Agora nós temos um loop usando a expressão "a variável contador é menor igual a 3?" sempre que a resposta for sim, o programa perguntará qual a n-ésima palavra do nome da pessoa. Pode parecer que nesse exemplo o uso do loop mais complicou do que facilitou. Mas o objetivo aqui é exercitar o uso desse operador, então devemos focar em compreender como usar o while.</p>
 <h5 id="repeticao-usando-do-while">Repetição usando DO-WHILE</h5>
 <p>Para a nossa sorte, o operador DO WHILE é muito similar ao WHILE. A única diferença é que primeiro declaramos o bloco de código e, no final, colocamos a condição para sua execução. No exemplo abaixo temos o mesmo resultado que o de cima mas usando essa outra estrutura de operador.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Programa de nomes refatorado com do-while</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
@@ -760,7 +760,7 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 <h5 id="repeticao-usando-for">Repetição usando FOR</h5>
 <p>Quando usamos nosso operador while, foi criada uma variável <code>contador</code> que era incrementada a cada iteração até que o teste lógico "menor igual a 3"\ retorne false. A vantagem do operador de loop <code>for</code> é que podemos fazer isso diretamente no parâmetro da função.</p>
 <p>O operador de loop <code>for</code> recebe 3 parâmetros, na ordem: condição inicial da variável de controle; expressão lógica (que retorna true ou false) e, por fim, um incremento ou decremento.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="c1">// Programa de nomes refatorado com for</span>
 <span class="kt">string</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">,</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="p">;</span>
@@ -795,11 +795,11 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </code></pre></div>
 <h4 id="contadores-e-acumuladores">Contadores e Acumuladores</h4>
 <p>Agora sabemos reduzir nossos códigos usando 3 tipos de tokens fornecidos pelo c#. Vamos ver um pouquinho mais a respeito do atributo de contador do loop <code>for</code>.</p>
-<p>Um \textbf{} <strong>contador</strong> nada mais é do que uma variável do tipo constante que receberá a atualização do seu valor a cada loop. Se a situação inicial do nosso contador for igual a 1, a cada iteração ele receberá a expressão <code>contador = contador + 1</code>.</p>
+<p>Um <strong>contador</strong> nada mais é do que uma variável do tipo constante que receberá a atualização do seu valor a cada loop. Se a situação inicial do nosso contador for igual a 1, a cada iteração ele receberá a expressão <code>contador = contador + 1</code>.</p>
 <p>Podemos criar um contador diretamente no código através da atribuição do valor pela soma. Ou, podemos usar os operadores de incremento e decremento que aprendemos anteriormente. A cada iteração em uma estrutura de loop, a variável receberá +1 como incremento ou -1 no caso do decremento.</p>
 <p>Podemos usar o operador de incremento tanto no bloco de código de um loop quanto como parâmetro. Em um <code>for</code>, quando colocamos o terceiro parâmetro igual a <code>contador++</code>, a cada iteração teremos <code>+1</code> atribuído ao contador.</p>
-<p>Um \textbf{} <strong>acumulador</strong> é muito parecido com um contador, a diferença é que a cada iteração nós podemos adicionar qualquer valor ao acumulador. Por exemplo, se queremos calcular a média de uma turma, teremos que somar todas as notas e dividir pelo quantitativo dos alunos da turma. Para isso, podemos criar um acumulador chamado <code>soma_notas</code> que recebe, para cada aluno, a nota através de um comando parecido com o exemplo a baixo.</p>
-<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="n">sharp</span>
+<p>Um <strong>acumulador</strong> é muito parecido com um contador, a diferença é que a cada iteração nós podemos adicionar qualquer valor ao acumulador. Por exemplo, se queremos calcular a média de uma turma, teremos que somar todas as notas e dividir pelo quantitativo dos alunos da turma. Para isso, podemos criar um acumulador chamado <code>soma_notas</code> que recebe, para cada aluno, a nota através de um comando parecido com o exemplo a baixo.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="kt">double</span><span class="w"> </span><span class="n">soma_notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">n_aluno</span><span class="o">=</span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">n_alunos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">qtd</span><span class="p">;</span><span class="w"> </span><span class="n">n_aluno</span><span class="o">++</span><span class="p">)</span>
@@ -809,9 +809,151 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </code></pre></div>
 <p>A cada iteração, somamos o valor da variável <code>nota</code> à variável <code>soma_notas</code>.</p>
 <h2 id="manipulacao-de-dados-em-memoria-primaria-e-secundaria">Manipulação de Dados em Memória Primária e Secundária</h2>
+<p>Ao longo do material nós usamos várias vezes frases como "a medida que nosso código cresce" ou "para manter a simplicidade no processo de atualização" e outras frases de mesmo teor. Isso não é em vão. Quando olhamos os códigos dos sistemas operacionais, por exemplo, podemos ver que a quantidade de linhas de código passam da casa do milhão. Manter tudo isso funcionando de modo coeso e atualizável é uma tarefa que demanda muita habilidade e planejamento.</p>
+<p>Para nos ajudar nesse trabalho, vamos aprender sobre métodos de organização de código através do uso de funções e procedimentos.</p>
 <h3 id="criando-e-usando-funcoes-e-procedimentos">Criando e Usando Funções e Procedimentos</h3>
+<p>Normalmente, quando estamos desenvolvendo uma solução de software, primeiro nós criamos um algoritmo que descreve os pormenores o que será feito e como será feito. Essa primeira etapa é focada na solução do problema.</p>
+<p>A partir dela, devemos pensar em encontrar procedimentos que se repetem ao longo do código ou que podem ser usados para outros trabalhos similares. Sempre que identificarmos padrões que podem ser reutilizados, estamos diante de uma melhoria por modularização.</p>
+<p>A modularização (também chamada de sub-rotinas ou sub-programas) é a prática de reduzir o nosso código em partes menores que recebem nomes diferentes dependendo da linguagem. Em linguagens orientadas à objeto como o c# nós chamamos de modularização.</p>
+<p>A ideia é simples: menos linhas, mais fácil será a manutenção. Esse é um valor muito caro no meio do desenvolvimento profissional de software e devemos ter sempre essa postura em mente.</p>
+<p>Existem dois tipos de métodos para modularização: <strong>funções</strong>, que sempre retornam algum valor, e <strong>procedimentos</strong> que não retornam nenhum valor. Abaixo vemos como criar esses dois tipos.   </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// criando uma função que retorna um inteiro</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">nome_metodo</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">par1</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">par2</span><span class="p">,...,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">parn</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor_resultado</span><span class="p">;</span>
+<span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">valor_retorno</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="c1">// criando um procedimento</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">nome_procedimento</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">par1</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">par2</span><span class="p">,...,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">parn</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">comando1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>Podemos ver que um procedimento em c# recebe esse token
+<code>void</code> antes de ser criado (ainda não aprenderemos o que significa esse termo
+<code>static</code>).</p>
+<p>Para usarmos um parâmetro não precisamos fazer nenhuma atribuição, basta chamar-lo com os seus parâmetros preenchidos e atribuídos ao tipo de variável correto. No caso de uma função, como ela retorna um resultado, precisamos atribuir o resultado a alguma variável. Abaixo temos um exemplo de como usar cada um desses métodos.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// chamando um procedimento</span>
+<span class="n">nome_procedimento</span><span class="p">(</span><span class="n">par1</span><span class="p">,</span><span class="n">par2</span><span class="p">);</span>
+<span class="c1">// chamando um método</span>
+<span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nome_metodo</span><span class="p">(</span><span class="n">par1</span><span class="p">,</span><span class="n">par2</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Comentário:</strong> Se não queremos usar nenhum parâmetro, basta definir o procedimento ou o método com os parênteses vazios, por exemplo,
+<code>nome_procedimento()</code>.</p>
+<p>A essa altura você já deve ter percebido que um procedimento nada mais é que um tipo de método. Só que ele possui uma regra diferente na hora da criação e não pode ter seu resultado atribuído a nenhuma variável. Desse modo, a modularização faz uso de dois métodos possíveis.</p>
 <h3 id="passagem-de-parametros">Passagem de Parâmetros</h3>
+<p>Os parâmetros são variáveis que podem ser transferidos (também dizemos que eles são "passados") para que o nosso método seja executado. Esses serão os valores que o nosso método vai receber e processar.   </p>
+<p>Podemos classificar os parâmetros em dois tipos: <strong>Formais</strong>, que são definidos na declaração (ou criação) do método e são trabalhados dentro do bloco de código interno a ele como se fossem variáveis novas; e os <strong>Reais</strong>, que são passados para o método no momento da invocação e serão atribuídos aos parâmetros formal como representantes das variáveis reais.</p>
+<p>Quanto a passagem desses parâmetros, também temos duas nomenclaturas:   <strong>Passagem por valor</strong> que é quando o parâmetro real é compilado para o parâmetro formal sem alteração do seu valor original e a     <strong>Passagem por referência</strong> em que a manipulação feita dentro do bloco de código é espelhada nas variáveis de referência fora do nosso método.</p>
+<p>Quando usamos a passagem por valor, estamos usando os parâmetros do tipo formais. Quando usamos a passagem por referência estamos usando os parâmetros reais.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="p">;</span>
+<span class="c1">// exemplo de passagem por valor</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">passagemValor</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span>
+<span class="p">}</span>
+<span class="n">passagemValor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">$&quot;a = {a} e b = {b}&quot;</span><span class="p">);</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>
+<span class="c1">// exemplo de passagem por referência</span>
+<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">passagemRef</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">passagemRef</span><span class="p">(</span><span class="k">ref</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="n">Console</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="s">$&quot;a = {a} e b = {b}&quot;</span><span class="p">);</span>
+<span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<h5 id="dicas-e-boas-praticas">Dicas e Boas Práticas</h5>
+<p>o método <code>Main()</code> é uma função especial de um programa escrito em c#. Ele é automaticamente executado quando o programa é iniciado e todos os outros métodos estão contidos dentro dele.</p>
+<p><img alt="29-rickmeme.png" src="../../../../assets/imgs/29-rickmeme.png" /></p>
+<p>Um método deve ser <strong>o menor possível</strong>. Se o objetivo é simplificar, devemos evitar ao máximo ter grandes blocos de código dentro de um método. Se está grande demais, não seria melhor quebrar em métodos menores?</p>
+<p>Sempre devemos colocar nomes relevantes e esclarecedores.</p>
+<p>Devemos evitar ter métodos com um número muito elevado de parâmetros. Cabe a mesma lógica sobre o tamanho: não seria melhor quebrar em mais métodos?</p>
+<p>Agora que aprendemos mais sobre o métodos e boas práticas, podemos entender bem melhor a estrutura padrão de uma aplicação em c#.
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+Ainda não sabemos tudo que está nesse template padrão de programa em c# mas, definitivamente, já podemos dizer que entendemos algumas coisas desse código.</p>
 <h3 id="manipulacao-de-arquivos-em-c">Manipulação de Arquivos em C#</h3>
+<p>Aprendemos que um programa pode ser separado em 3 etapas e, até agora, todo o input da informação bem como o output está sendo feito via janela do terminal ou prompt de comando. Mas na vida real, é super raro (se é que acontece) de um usuário leigo ter que ficar usando o terminal para interagir com aplicações.</p>
+<p>Uma outra maneira de coletarmos informação como input para o nosso processamento é por meio da leitura de arquivos e, consequentemente, também podemos ter como output do nosso código a escrita de um arquivo na memória do computador.</p>
+<p>Para facilitar nossa vida, o c# já possui algumas classes (que podemos pensar como se fossem sinônimos de objetos) que foram criadas especialmente para lidar com esse trabalho. Essas classes de manipulação de arquivos estão guardadas em um namespace chamado <code>System.IO</code><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></p>
+<p>As classes que aprenderemos aqui são:</p>
+<ul>
+<li><code>StreamReader</code> - Para criação de um fluxo de leitura do arquivo para o programa</li>
+<li><code>StreamWriter</code> - Para criação de um fluxo de saída ou gravação do programa para o arquivo</li>
+</ul>
+<p>A manipulação feita por um programa em um arquivo é, basicamente uma dessas operações abaixo:</p>
+<ul>
+<li>Abrir para escrita</li>
+<li>Abrir para leitura</li>
+<li>Escrever dados no arquivo</li>
+<li>Ler dados</li>
+<li>Fechar o arquivo</li>
+</ul>
+<p>Agora o termo "fluxo" começa a ficar mais claro. Para um programa trabalhar um arquivo, ele precisa sinalizar para o sistema operacional que aquele arquivo está sendo trabalhado por ele. Por isso existe esse fluxo de abrir o fluxo, ler ou gravar dados e, por fim, fechar o fluxo. Isso libera o arquivo para ser usado por outros programas.</p>
+<h5 id="abrir-um-arquivo-para-leitura">Abrir um arquivo para leitura</h5>
+<p>Um arquivo não pode ser lido usando um instanciamento (que é a criação de uma variável do tipo de um objeto definido previamente) através do objeto <code>StreamReader</code>. Esse objeto é nativo e pode ser invocado sem precisar ser criado anteriormente. E, como todo objeto, possui métodos dentro dele (10 pra ser mais preciso) mas nós só vamos usar o mais básico.</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// abrindo um arquivo para a leitura</span>
+<span class="n">StreamReader</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="s">&quot;path.txt&quot;</span><span class="p">);</span>
+<span class="n">StreamReader</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="s">&quot;c:\temp\path.txt&quot;</span><span class="p">);</span>
+<span class="n">StreamReader</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="s">@&quot;c:   emp\path.txt&quot;</span><span class="p">);</span>
+</code></pre></div>
+Agora que temos nosso objeto criado, para lermos o conteúdo só precisamos usar um dos métodos contidos nesse objeto criado.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// obtendo o texto</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">linha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NOME</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="c1">// ler todas as linhas de um arquivo</span>
+<span class="n">linha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NOME</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">linha</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">    </span><span class="n">linha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NOME</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span>
+<span class="p">};</span>
+</code></pre></div>
+<h5 id="abrir-um-arquivo-para-escrita">Abrir um arquivo para escrita</h5>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// criando o objeto de leitura em diferentes modos</span>
+<span class="n">StreamWriter</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="s">&quot;path.txt&quot;</span><span class="p">);</span>
+<span class="n">StreamWriter</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="s">&quot;c:\temp\path.txt&quot;</span><span class="p">);</span>
+<span class="n">StreamWriter</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="s">@&quot;c:   emp\path.txt&quot;</span><span class="p">);</span>
+</code></pre></div>
+Qualquer arquivo que possa ser lida em um editor de texto (como o notepad) pode ser lida por esse método. Independente da extensão.
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// usando o parâmetro append (true ou false)</span>
+<span class="c1">// conteúdo existente sera apagado</span>
+<span class="n">StreamWriter</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="s">&quot;path.txt&quot;</span><span class="p">,</span><span class="k">false</span><span class="p">);</span>
+<span class="c1">// conteúdo existente sera mantido</span>
+<span class="n">StreamWriter</span><span class="w"> </span><span class="n">NOME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamWriter</span><span class="p">(</span><span class="s">&quot;path.txt&quot;</span><span class="p">,</span><span class="k">true</span><span class="p">);</span>
+</code></pre></div>
+Agora só precisamos saber como gravar os nossos dados no arquivo de texto. Isso é feito de maneira parecida com o comando que mostrava mensagens na tela do terminal de comando.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
+<span class="c1">// gravando uma string no arquivo texto aberto</span>
+<span class="n">arquivo</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="kt">string</span><span class="p">);</span>
+<span class="c1">// ou</span>
+<span class="n">arquivo</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="kt">string</span><span class="p">);</span>
+</code></pre></div>
+<h5 id="fechando-um-arquivo">Fechando um Arquivo</h5>
+<p>Para fechar o stream, seja na leitura ou na gravação, usamos o método <code>Close()</code> para garantir que o arquivo não vai ficar bloqueado por um esquecimento. Sempre devemos fechar os fluxos! </p>
 <h2 id="bibliografia">Bibliografia</h2>
 <ul>
 <li>Ana Fernanda Gomes ASCENCIO; Edilene Aparecida Veneruchi de CAMPOS. <strong>Fundamentos da Programação de Computadores: algoritmos, Pascal, C/C++ e Java - 2ª edição</strong>. São Paulo, SP : Pearson Education do Brasil, 2012</li>
@@ -838,6 +980,9 @@ Nesse código acima temos a declaração de várias variáveis de cada tipo. Bas
 </li>
 <li id="fn:5">
 <p>Refatorar é o processo de mudar o código e obter o mesmo resultado no final. É uma ótima prática a ser feita.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>IO significa Input/Output.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></p>
