@@ -4,6 +4,7 @@
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script>var base_url = '.';</script>
 
             <meta name="description" content="None">
             
@@ -20,6 +21,8 @@
             <link rel="stylesheet" href="assets/stylesheets/styles.css">
                 <link href="css/custom.css" rel="stylesheet">
                 <script src="javascripts/config.js"></script>
+                <script src="javascripts/base.js"></script>
+                <script src="javascripts/jquery-1.10.2.min.js"></script>
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
                 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
                 <script src="search/main.js"></script>
@@ -265,6 +268,24 @@
                             <a class="
                             nav-link text-gray text-decoration-none" href="nav/tech/">[Tech]</a>
                         </li>
+                <!-- block search -->
+                <li class="nav-item nav-link text-gray text-decoration-none">
+                    <!-- block search -->
+    
+
+        <h1 id="search">Search Results</h1>
+    
+        <form action="search.html">
+            <input name="q" id="mkdocs-search-query" type="text" placeholder="Pesquisa">
+        </form>
+
+
+        <div id="mkdocs-search-results"></div>
+
+    
+<!-- endblock -->
+                </li>
+                <!-- endblock -->                
             </ul>
         </li>
 <!-- endblock -->
