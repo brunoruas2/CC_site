@@ -21,8 +21,6 @@
             <link rel="stylesheet" href="../../../../assets/stylesheets/styles.css">
                 <link href="../../../../css/custom.css" rel="stylesheet">
                 <script src="../../../../javascripts/config.js"></script>
-                <script src="../../../../javascripts/base.js"></script>
-                <script src="../../../../javascripts/jquery-1.10.2.min.js"></script>
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
                 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
                 <script src="../../../../search/main.js"></script>
@@ -526,10 +524,176 @@
 <h2 id="gerenciamento-prescritivo-e-agil-de-projetos-e-uso-de-ferramentas">Gerenciamento Prescritivo e Ágil de Projetos e Uso de Ferramentas</h2>
 <h3 id="gerenciamento-tradicional">Gerenciamento Tradicional</h3>
 <h4 id="cronograma-de-projeto-pertcpm">Cronograma de Projeto - PERT/CPM</h4>
+<p>Aprendemos anteriormente sobre a importância da gestão do tempo em um projeto. Para tanto, a necessidade de se construir um bom cronograma é fundamental.</p>
+<p>Várias são as técnicas que podem ser usadas para essa construção. Dentre elas, vamos aprender aqui a chamada <strong>Program Evaluation Review Technique (PERT)</strong>.</p>
+<p>A maneira de construir um cronograma PERT é analisando cada tarefa envolvida na conclusão dos projetos para, no final, termos um gráfico de redes (grafos).</p>
+<p><img alt="Gráfico PERT" src="../../../../assets/imgs/72-pert-grafo.gif" /></p>
+<p>Normalmente, o PERT é aplicado em grandes projetos porque permite:</p>
+<ul>
+<li>A definição de prazos</li>
+<li>Visão detalhada da sequência de tarefas a serem executadas</li>
+<li>Facilita a gestão do tempo alocado em cada tarefa</li>
+</ul>
+<p>Também é muito comum vermos o PERT associado a outra sigla chamada <strong>Critical Path Method (CPM)</strong> que possui uma abordagem muito parecida e foi desenvolvido praticamente ao mesmo tempo<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p><img alt="caminho critico" src="../../../../assets/imgs/73-caminho-critico.png" /> </p>
+<p>A principal característica do CPM é que ele mostra as tarefas que possuem um prazo projetado maior de cumprimento. Essas tarefas serão o foco da gestão porque, caso seja possível reduzir os tempos previstos para a conclusão das mesmas, o projeto terá grandes avanços nas entregas.</p>
+<p>A criação do método PERT/CPM teve sua motivação no projeto Polaris de construção de um submarino nuclear em 1957.</p>
 <h4 id="construcao-dos-diagramas-pertcpm">Construção dos Diagramas - PERT/CPM</h4>
+<p>Agora vamos aprender como construir um diagrama PERT/CPM.</p>
+<p>Para tal, precisamos nos certificar que temos os seguintes dados a respeito do nosso projeto:</p>
+<ul>
+<li>Lista das tarefas a serem executadas até a conclusão do projeto</li>
+<li>Definição das relações de precedência e subsequência entre essas tarefas</li>
+<li>As estimativas dos tempos para cada tarefa<ul>
+<li>O PERT usa 3 estimativas de tempo:<ul>
+<li>Mais Provável</li>
+<li>Otimista</li>
+<li>Pessimista</li>
+</ul>
+</li>
+<li>Em cima dessas estimativas, calcula-se a média ponderada para ter o valor usado</li>
+</ul>
+</li>
+</ul>
+<p>Podemos usar o diagrama de grafos do PERT para descrever as tarefas do seguinte modo:</p>
+<p><img alt="diagrama" src="../../../../assets/imgs/74-diagrama.png" /></p>
+<p>Existem também alguns conceitos que podemos nos deparar na construção de um cronograma que vão ajudar muito na nossa comunicação com outros profissionais da área:</p>
+<ul>
+<li>Primeira Data de Início (PDI)</li>
+<li>Primeira Data de Término (PDT)</li>
+<li>Folga Livre (FL)</li>
+<li>Última Data de Início (UDI)</li>
+<li>Última Data de Término (UDT)</li>
+<li>Folga Total (FT)</li>
+</ul>
+<p>As primeiras datas são os cenários otimistas onde, caso a atividade seja feita no tempo previsto, o projeto será beneficiado pelo adiantamento de uma atividade. Ao contrário, as últimas datas são os casos em que as atividades iniciarem na última data possível para que o projeto não tenha um atraso.</p>
+<p>A FT é a soma de todas as FL.</p>
+<p>Todos esses conceitos podem ser vistos naquele gráfico do CPM logo acima.</p>
+<p>De posse desses conceitos podemos ver que o <strong>caminho crítico</strong> é precisamente o caminho que <strong>não</strong> apresenta nenhuma FL, ou seja, que levará o maior número de tempo necessário para o somatório das suas tarefas.</p>
+<h5 id="project-libre">Project Libre</h5>
+<p>A partir daqui, o microfundamento é baseado na parte prática do gerenciamento. Portanto, ele pressupõe que nós estamos usando algum software de gestão. Como eu disse lá em cima, existe uma tonelada de programas hoje em dia.</p>
+<p>O programa usado no curso foi do Project Libre. Vou colocar a primeira aula de um <a href="https://www.youtube.com/watch?v=EWc3jD6siyY&amp;list=PLBCBlFwBCYWrFqO29pjgoXLtVvBTOqHt2">curso inteiro</a> que está disponível no youtube aqui sobre como usar esse programa para aqueles interessados nele.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EWc3jD6siyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h4 id="monitoramento-e-controle">Monitoramento e Controle</h4>
+<p>A atividade de monitoramento é filha do planejamento. Pode ser focada em processos ou em resultados. O foco no processo é o processo tradicional que tende a ser mais burocrático e lento enquanto o foco em entregas é o principal objetivo das metodologias ágeis de desenvolvimento.</p>
+<p>Não tem certo e errado, cada projeto deve ser avaliado e, a depender de onde se quer chegar, opta-se pela metodologia mais adequada.</p>
+<p>A atividade e monitoramento tem como objetivo:</p>
+<ul>
+<li>Minimizar os danos que a complexidade do projeto pode trazer para as entregas</li>
+<li>Reduzir incertezas e riscos</li>
+<li>Administrar conflitos</li>
+<li>Acompanhar o andamento do planejamento</li>
+</ul>
+<p>Abaixo temos uma lista de técnicas usadas nessa área:</p>
+<ul>
+<li>Reuniões</li>
+<li>Cronogramas</li>
+<li>Gráfico de Gantt</li>
+<li>Rede PERT\CPM</li>
+<li>Planos 5W2H</li>
+<li>Análise SWOT</li>
+<li>Monitoramento de Partes Interessadas (Poder x Interesse)</li>
+<li>KanBan</li>
+<li>Burndown Chart</li>
+</ul>
+<h4 id="encerramento-de-projeto">Encerramento de Projeto</h4>
+<p>Uma vez monitorado, a última fase que nos resta é o término.</p>
+<p>Nessa fase temos que levantar as entregas finais e compilar os aprendizados gerados ao longo de todas as etapas de monitoramento.</p>
 <h4 id="perfil-do-gerente-de-projetos">Perfil do Gerente de Projetos</h4>
+<p>Um bom gerente de projetos deve ter algumas características desejáveis:</p>
+<ul>
+<li>Conhecimento das normas</li>
+<li>Entendimento do ambiente</li>
+<li>Conhecimento de gerenciamento geral</li>
+<li>Habilidades interpessoais</li>
+</ul>
+<p>E deve estar preparado para alguns conflitos clássicos dessa área:</p>
+<ul>
+<li>Conflito autoridade x responsabilidade</li>
+<li>Estimativas erradas</li>
+<li>Disputas de poder nas equipes</li>
+<li>Procura por salvador\culpado</li>
+<li>Pressões de grupos de interesse</li>
+<li>Falta da maturidade da equipe</li>
+<li>Falta de engajamento</li>
+</ul>
 <h3 id="gerenciamento-agil">Gerenciamento Ágil</h3>
+<p>Já aprendemos um pouco sobre esse tema lá no <a href="/CC_site/nav/PUC/periodo1/fundamentos_eng_soft/#processos-ageis">primeiro período</a>. Então vou ser bem sucinto aqui.</p>
+<h4 id="breve-historico">Breve histórico</h4>
+<p>Para a gente que está começando a vida de desenvolvedor agora, isso tudo parece muito simples, mas o passado era completamente diferente no mercado de tecnologia.</p>
+<p>Entre as décadas de 60 e 90, não existiam métodos amplamente divulgados e padronizados de desenvolvimento. Era tudo mato mesmo.</p>
+<p>A primeira vitória significativa na tentativa de padronização ocorreu em 1990 com a criação do <strong>Rational Unified Process (RUP)</strong> que também vimos na matéria de <a href="/CC_site/nav/PUC/periodo1/fundamentos_eng_soft/#processos-prescritivos">introdução a engenharia de software</a>.</p>
+<h4 id="o-manifesto-agil">O Manifesto Ágil</h4>
+<p>Com o passar do tempo, o foco na entrega se tornou cada vez mais evidente até que  o <a href="https://agilemanifesto.org/"><strong>Manifesto Ágil</strong></a> criou o marco para a mudança do método de gestão de projetos no começo do século XXI. Dele podemos derivar os seguintes princípios:</p>
+<ul>
+<li>Foco na entrega de software o mais rápido e com máxima frequência possível</li>
+<li>Aceitação às mudanças de requisitos a qualquer tempo</li>
+<li>Maior aproximação com o cliente</li>
+<li>Fomentar um clima de sinergia e colaboração</li>
+</ul>
+<p>Só pra gente ter uma ideia, eu pedi pro ChatGPT dar um resumo de quem foram os caras que assinaram esse manifesto.</p>
+<ol>
+<li>
+<p><strong>Kent Beck:</strong> um desenvolvedor de software americano, conhecido por ter criado o Extreme Programming (XP) e por ter trabalhado em projetos como o Smalltalk e o C++.</p>
+</li>
+<li>
+<p><strong>Mike Beedle</strong>: um consultor de gerenciamento de projetos e desenvolvedor de software americano, que também ajudou a desenvolver o Enterprise Scrum.</p>
+</li>
+<li>
+<p><strong>Arie van Bennekum</strong>: um consultor holandês de gerenciamento de projetos, que trabalhou em vários projetos de desenvolvimento de software usando metodologias ágeis.</p>
+</li>
+<li>
+<p><strong>Alistair Cockburn</strong>: um consultor de gerenciamento de projetos e desenvolvedor de software britânico, conhecido por ter criado o método Crystal para desenvolvimento de software.</p>
+</li>
+<li>
+<p><strong>Ward Cunningham</strong>: um desenvolvedor de software americano, conhecido por ter criado a primeira wiki e por ter trabalhado em projetos como o Framework para Desenvolvimento de Aplicações (FDP) em Smalltalk.</p>
+</li>
+<li>
+<p><strong>Martin Fowler</strong>: um consultor de desenvolvimento de software britânico, que escreveu vários livros sobre design de software e desenvolvimento ágil, e que ajudou a popularizar o Refactoring.</p>
+</li>
+<li>
+<p><strong>James Grenning</strong>: um desenvolvedor de software americano, que trabalha com XP e ajuda a promover práticas ágeis em todo o mundo.</p>
+</li>
+<li>
+<p><strong>Jim Highsmith</strong>: um consultor americano de gerenciamento de projetos, que ajudou a popularizar o Agile Project Management e o Adaptive Software Development.</p>
+</li>
+<li>
+<p><strong>Andrew Hunt</strong>: um desenvolvedor de software americano, conhecido por ter escrito o livro "The Pragmatic Programmer" e por ter trabalhado em vários projetos de software usando metodologias ágeis.</p>
+</li>
+<li>
+<p><strong>Ron Jeffries</strong>: um desenvolvedor de software americano, conhecido por ter criado o XP com Kent Beck e por ter trabalhado em vários projetos de desenvolvimento de software usando metodologias ágeis.</p>
+</li>
+<li>
+<p><strong>Jon Kern</strong>: um consultor americano de gerenciamento de projetos, que trabalhou em vários projetos de desenvolvimento de software usando metodologias ágeis.</p>
+</li>
+<li>
+<p><strong>Brian Marick</strong>: um consultor americano de gerenciamento de projetos, que trabalha com XP e ajuda a promover práticas ágeis em todo o mundo.</p>
+</li>
+<li>
+<p><strong>Robert C. Martin</strong>: um consultor americano de desenvolvimento de software, que escreveu vários livros sobre design de software e metodologias ágeis, e que ajudou a popularizar o TDD (Desenvolvimento Guiado por Testes).</p>
+</li>
+<li>
+<p><strong>Steve Mellor</strong>: um engenheiro de software britânico, conhecido por ter criado a linguagem de modelagem de sistemas OO (OOM) e por ter trabalhado em projetos de software usando metodologias ágeis.</p>
+</li>
+<li>
+<p><strong>Ken Schwaber</strong>: um consultor americano de gerenciamento de projetos, que ajudou a desenvolver o Scrum e a promover práticas ágeis em todo o mundo.</p>
+</li>
+<li>
+<p><strong>Jeff Sutherland</strong>: um consultor americano de gerenciamento de projetos, que ajudou a desenvolver o Scrum e a promover práticas ágeis em todo o mundo. Tem uma ampla experiência em liderança, gerenciamento e desenvolvimento de software.</p>
+</li>
+<li>
+<p><strong>Dave Thomas</strong>: um desenvolvedor de software canadense, conhecido por ter criado a linguagem de programação Elixir, por ter trabalhado em projetos como o desenvolvimento da linguagem Ruby e por ter escrito vários livros sobre programação e desenvolvimento de software, incluindo "Programming Elixir" e "The Pragmatic Programmer". Dave é um forte defensor de metodologias ágeis e da programação funcional.</p>
+</li>
+</ol>
+<p>Junto com o manifesto surgiram os <strong>14 princípios ágeis</strong>. Quando as coisas vão ficando muito grandes pra decorar eu acho que não vale a pena. Pra quem achar importante, pode pesquisar pra ler a respeito.</p>
+<p>Para encerrar esse apanhado podemos destacar os principais métodos ágeis hoje no mercado:</p>
+<ul>
+<li>XP</li>
+<li>Scrum</li>
+<li>Lean</li>
+<li>TDD</li>
+</ul>
 <h4 id="gerencia-agil-de-projetos">Gerência Ágil de Projetos</h4>
 <h4 id="o-metodo-agil-scrum">O Método Ágil Scrum</h4>
 <h4 id="atividades-e-papeis-no-scrum">Atividades e Papéis no Scrum</h4>
@@ -550,6 +714,9 @@
 <ol>
 <li id="fn:1">
 <p>E olha que eu sou formado em Economia.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>PERT é de 1957 e o CPM é de 1958.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></p>
