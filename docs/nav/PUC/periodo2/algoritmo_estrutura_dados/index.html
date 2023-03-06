@@ -984,7 +984,7 @@ A vantagem dessa abordagem é que podemos criar elementos em cadeia. No exemplo 
 <p>O <code>LinkedList&lt;T&gt;</code> é a implementação em c# desse conceito.</p>
 <p>Existem duas maneiras de se criar uma lista flexível. A primeira, contém um primeiro elemento cujo valor <code>elemento</code> é null (chamamos esse elemento de "cabeça"). A segunda maneira, é colocarmos o valor do primeiro elemento diretamente no primeiro nó da cadeia de elementos.</p>
 <p>A vantagem da primeira abordagem (com cabeça) é que tratamos o método de inserir em uma lista vazia exatamente do mesmo modo de inserir em uma lista de elementos. A razão disso é que só precisaremos mudar o atributo <code>prox</code> da cabeça. No caso da abordagem sem cabeça, teríamos que primeiro verificar se existem elementos para, em caso negativo, alterarmos o atributo <code>prox</code> para null desse primeiro elemento.</p>
-<p>Abaixo temos a implementação de uma lista flexível que usa a classe autorrefencial da seção anterior.</p>
+<p>Abaixo temos a implementação de uma lista flexível que usa a classe autorreferencial da seção anterior.</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">ListaFlex</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// instanciação das posições obrigatórias</span>
@@ -1110,6 +1110,28 @@ A vantagem dessa abordagem é que podemos criar elementos em cadeia. No exemplo 
 O código dessa classe está disponível nesse <a href="https://gist.github.com/brunoruas2/9846e0c842209d25c8b32bd4d0808488">github gist</a>.</p>
 <h3 id="arvore-binaria-e-tabela-hash">Árvore Binária e Tabela Hash</h3>
 <h4 id="arvore-binaria">Árvore Binária</h4>
+<p>Nas listas, o custo das atividades de inserção, remoção e pesquisa costuma ser de <span class="arithmatex">\(\mathcal{O}(n)\)</span> enquanto, nas árvores, o custo tende a ser de <span class="arithmatex">\(\mathcal{O}(log(n))\)</span>. O motivo disso nós veremos mais a frente.</p>
+<p>Para entendermos melhor sobre essa estrutura de dados, é muito útil ter uma representação visual dessa estrutura.</p>
+<p><img alt="arvore binaria" src="../../../../assets/imgs/75-arvore-binaria.png" /></p>
+<p>Podemos ver que usamos dois elementos para representar essa estrutura. As bolas são chamados de nós (ou vértices) e as linhas (ou setas) são chamadas de arestas.</p>
+<p><strong>Comentário:</strong> Se você ficou com algum feeling que a relação entre esses pontos lembrou um pouco a <code>LinkedList&lt;T&gt;</code>, você tá no caminho certo.</p>
+<p>Agora nós vamos aprender alguns conceitos importantes sobre essa estrutura que são termos usados para comunicar ideias a respeito desse objeto:</p>
+<ul>
+<li>Cada bola numerada é chamada de <strong>nó</strong></li>
+<li>O nó mais alto é chamado de <strong>raiz</strong></li>
+<li>Cada camada da árvore é chamada de <strong>nível</strong><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></li>
+<li>Os nós que vêm após outro nó são chamados de <strong>filhos</strong></li>
+<li>Todo nó que tem filho é chamado de <strong>nó interno</strong></li>
+<li>Os nós sem filhos são chamados de <strong>folhas</strong> ou <strong>nós externos</strong></li>
+<li>Podemos subdividir uma árvore em <strong>sub-árvores</strong> onde a raiz é um nó filho da árvore original</li>
+<li>Chamamos de <strong>distância</strong> a contagem dos níveis entre 2 nós</li>
+<li>Chamamos de <strong>altura</strong> da árvore a contagem dos níveis entre a raiz e a folha mais alta</li>
+</ul>
+<p>Todos esses conceitos acima são relacionados a qualquer estrutura de árvore. Entretanto, uma <strong>Árvore Binária</strong> é uma árvore em que cada nó possui, no máximo, 2 filhos.</p>
+<p>Um tipo especial de árvore binária é a <strong>Árvore Binária de Pesquisa (ABP)</strong> ou <strong>Árvore Binária de Busca (ABb)</strong>. Ela é uma árvore binária com uma condição adicional: Os valores dos nós filhos à esquerda são sempre <strong>menores</strong> que o valor do nó pai e, ao contrário, os valores dos filhos à direta são sempre <strong>maiores</strong>. Compare a árvore que mostramos logo no começo com essa aqui abaixo.</p>
+<p><img alt="Árvore Binária de Busca" src="../../../../assets/imgs/76-arvore-binaria-busca.png" /></p>
+<p>Uma árvore é classificada como <strong>Árvore Balanceada</strong> se, para <strong>todos</strong> os nós, a diferença entre os níveis à esquerda e à direita seja <span class="arithmatex">\(\leq 1\)</span>. Outra maneira de afirmar a mesma coisa é dizer que a altura da sub-árvore esquerda menos a altura da sub-árvore direita é pertence ao conjunto <span class="arithmatex">\(\{ -1, 0, 1 \}\)</span></p>
+<p>Agora que definimos a nossa estrutura de dados, temos que criar alguns métodos que serão usados para a manipulação das informações gravadas nela. Para efeitos didáticos, a partir de agora vamos considerar que todas as árvores binárias serão de pesquisa.</p>
 <h4 id="tabela-hash">Tabela Hash</h4>
 <h2 id="bibliografia">Bibliografia</h2>
 <ul>
@@ -1138,6 +1160,9 @@ O código dessa classe está disponível nesse <a href="https://gist.github.com/
 </li>
 <li id="fn:5">
 <p>Pelo princípio do acesso aleatório, o fato de termos alocações ``espalhadas'' não deve ser um problema na hora de recuperar os valores da lista.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>A raiz está <strong>sempre</strong> no nível 0.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></p>
