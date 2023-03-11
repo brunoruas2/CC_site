@@ -1314,6 +1314,205 @@ O código dessa classe está disponível nesse <a href="https://gist.github.com/
 </tbody>
 </table>
 <h4 id="tabela-hash">Tabela Hash</h4>
+<p>Para finalizarmos nossa disciplina de Algoritmos e Estrutura de Dados, vamos ver as <code>tabelas hash</code>. Sim, o termo que vimos lá na primeira parte chamado <code>hashtable</code> é a aplicação em c# dessa estrutura.</p>
+<p>A principal vantagem da tabela hash é que, como ela ordena o arquivo no momento da sua inserção usando a sua função de hash, o custo do acesso a essa informação é constante, ou seja <span class="arithmatex">\(\mathcal{O}(1)\)</span>.</p>
+<p>A desvantagem é que temos um custo elevado se quisermos recuperar os registros em ordem. Podendo chegar a <span class="arithmatex">\(\mathcal{O}(n)\)</span></p>
+<p>Quando queremos inserir elementos iguais na mesma tabela. Como a função de hash faz um mapeamento para algum subconjunto, se tentarmos inserir um elemento repetido (ou mesmo um outro elemento que gere um mesmo valor no mapeamento), teríamos uma <strong>colisão primária</strong>. Evitar esses problemas é o cerne de uma boa implementação dessa estrutura de dados.</p>
+<p>Normalmente, temos 3 abordagens para evitar essas colisões:</p>
+<ol>
+<li>Hash direto com área de reserva (overflow): <br> Aqui, teremos uma área reservada em um array para tratar as colisões.</li>
+<li>Hash direto com rehash: <br> Nessa abordagem temos duas funções de hash. Caso a primeira aponte para uma colisão, usaremos a segunda.</li>
+<li>Hash indireto com lista flexível simples: <br> Assumimos que cada posição é uma lista flexível que pode apontar para outros elementos. Nesse caso, uma colisão entra como uma nova ligação na lista flexível.</li>
+</ol>
+<p>As classes <code>Hashtable</code> e <code>Dictionary&lt;TKey,TValue&gt;</code> implementam a tabela hash em c#. Contudo, fica aqui um aviso. A teoria clássica assume que a as chaves são <strong>obrigatoriamente</strong> números inteiros<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>.</p>
+<p>Eu pedi ao chatGPT que mostrasse um exemplo da implementação dessa estrutura em c#. Ele optou por usar a Collection de hashtable (o que tá valendo).</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Criando uma nova tabela hash</span>
+<span class="w">        </span><span class="n">Hashtable</span><span class="w"> </span><span class="n">hashtable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Hashtable</span><span class="p">();</span>
+
+<span class="w">        </span><span class="c1">// Adicionando elementos à tabela hash</span>
+<span class="w">        </span><span class="n">hashtable</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;chave1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;valor1&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">hashtable</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;chave2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;valor2&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">hashtable</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;chave3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;valor3&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Acessando um elemento da tabela hash</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">valorChave2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">hashtable</span><span class="p">[</span><span class="s">&quot;chave2&quot;</span><span class="p">];</span>
+<span class="w">        </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;O valor da chave2 é: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valorChave2</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Alterando um elemento da tabela hash</span>
+<span class="w">        </span><span class="n">hashtable</span><span class="p">[</span><span class="s">&quot;chave1&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;novoValor1&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Removendo um elemento da tabela hash</span>
+<span class="w">        </span><span class="n">hashtable</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="s">&quot;chave3&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Iterando sobre os elementos da tabela hash</span>
+<span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">DictionaryEntry</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">hashtable</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;A chave é: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">Key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; e o valor é: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Verificando se a tabela hash contém uma chave específica</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hashtable</span><span class="p">.</span><span class="n">ContainsKey</span><span class="p">(</span><span class="s">&quot;chave1&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;A tabela hash contém a chave1.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Verificando se a tabela hash contém um valor específico</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hashtable</span><span class="p">.</span><span class="n">ContainsValue</span><span class="p">(</span><span class="s">&quot;valor2&quot;</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;A tabela hash contém o valor2.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Mas aqui tá uma coisa interessante. Como será que essa collection lida com colisão primária? Bom, nenhum lugar é melhor que o próprio código da classe.</p>
+<p>Podemos "navegar" pelo código de tudo que importamos no nosso programa simplesmente apertando ctrl e clicando no método. Por exemplo, podemos clicar no método <code>Add</code> do objeto hashtable para irmos exatamente no código que constrói esse método na classe <code>Hashtable</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Adds an entry with the given key and value to this hashtable. An</span>
+<span class="c1">// ArgumentException is thrown if the key is null or if the key is already</span>
+<span class="c1">// present in the hashtable.</span>
+<span class="c1">//</span>
+<span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Add</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Insert</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="p">,</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Podemos ver que estamos usando a função <code>Insert</code> dentro desse método. Pois bem, vamos ver o que essa função faz?</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Inserts an entry into this hashtable. This method is called from the Set</span>
+<span class="c1">// and Add methods. If the add parameter is true and the given key already</span>
+<span class="c1">// exists in the hashtable, an exception is thrown.</span>
+<span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="kt">object?</span><span class="w"> </span><span class="n">nvalue</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="k">add</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentNullException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">key</span><span class="p">),</span><span class="w"> </span><span class="n">SR</span><span class="p">.</span><span class="n">ArgumentNull_Key</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_count</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">_loadsize</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">expand</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">(</span><span class="n">_occupancy</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">_loadsize</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">_count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">100</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">rehash</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Assume we only have one thread writing concurrently.  Modify</span>
+<span class="w">    </span><span class="c1">// buckets to contain new data, as long as we insert in the right order.</span>
+<span class="w">    </span><span class="kt">uint</span><span class="w"> </span><span class="n">hashcode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">InitHash</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">_buckets</span><span class="p">.</span><span class="n">Length</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">seed</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="n">incr</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ntry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// We use the empty slot number to cache the first empty slot. We chose to reuse slots</span>
+<span class="w">    </span><span class="c1">// create by remove that have the collision bit set over using up new slots.</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">bucketNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">seed</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="n">_buckets</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="w">    </span><span class="k">do</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Set emptySlot number to current bucket if it is the first available bucket that we have seen</span>
+<span class="w">        </span><span class="c1">// that once contained an entry and also has had a collision.</span>
+<span class="w">        </span><span class="c1">// We need to search this entire collision chain because we have to ensure that there are no</span>
+<span class="w">        </span><span class="c1">// duplicate entries in the table.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">_buckets</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">))</span><span class="c1">// (((buckets[bucketNumber].hash_coll &amp; unchecked(0x80000000))!=0)))</span>
+<span class="w">            </span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bucketNumber</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Insert the key/value pair into this bucket if this bucket is empty and has never contained an entry</span>
+<span class="w">        </span><span class="c1">// OR</span>
+<span class="w">        </span><span class="c1">// This bucket once contained an entry but there has never been a collision</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="o">||</span>
+<span class="w">            </span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">_buckets</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="k">unchecked</span><span class="p">(</span><span class="m">0</span><span class="n">x80000000</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">)))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// If we have found an available bucket that has never had a collision, but we&#39;ve seen an available</span>
+<span class="w">            </span><span class="c1">// bucket in the past that has the collision bit set, use the previous bucket instead</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="c1">// Reuse slot</span>
+<span class="w">                </span><span class="n">bucketNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">emptySlotNumber</span><span class="p">;</span>
+
+<span class="w">            </span><span class="c1">// We pretty much have to insert in this order.  Don&#39;t set hash</span>
+<span class="w">            </span><span class="c1">// code until the value &amp; key are set appropriately.</span>
+<span class="w">            </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvalue</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">hashcode</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="n">UpdateVersion</span><span class="p">();</span>
+<span class="w">            </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// The current bucket is in use</span>
+<span class="w">        </span><span class="c1">// OR</span>
+<span class="w">        </span><span class="c1">// it is available, but has had the collision bit set and we have already found an available bucket</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(((</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="m">0</span><span class="n">x7FFFFFFF</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">hashcode</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">            </span><span class="n">KeyEquals</span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">add</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentException</span><span class="p">(</span><span class="n">SR</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="n">SR</span><span class="p">.</span><span class="n">Argument_AddingDuplicate__</span><span class="p">,</span><span class="w"> </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvalue</span><span class="p">;</span>
+<span class="w">            </span><span class="n">UpdateVersion</span><span class="p">();</span>
+<span class="w">            </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// The current bucket is full, and we have therefore collided.  We need to set the collision bit</span>
+<span class="w">        </span><span class="c1">// unless we have remembered an available slot previously.</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span><span class="c1">// We don&#39;t need to set the collision bit here since we already have an empty slot</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="k">unchecked</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="m">0</span><span class="n">x80000000</span><span class="p">);</span>
+<span class="w">                </span><span class="n">_occupancy</span><span class="o">++</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="n">bucketNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(((</span><span class="kt">long</span><span class="p">)</span><span class="n">bucketNumber</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">incr</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="kt">uint</span><span class="p">)</span><span class="n">_buckets</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">++</span><span class="n">ntry</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">_buckets</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// This code is here if and only if there were no buckets without a collision bit set in the entire table</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// We pretty much have to insert in this order.  Don&#39;t set hash</span>
+<span class="w">        </span><span class="c1">// code until the value &amp; key are set appropriately.</span>
+<span class="w">        </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_buckets</span><span class="p">[</span><span class="n">emptySlotNumber</span><span class="p">].</span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nvalue</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_buckets</span><span class="p">[</span><span class="n">emptySlotNumber</span><span class="p">].</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_buckets</span><span class="p">[</span><span class="n">emptySlotNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">hashcode</span><span class="p">;</span>
+<span class="w">        </span><span class="n">_count</span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">UpdateVersion</span><span class="p">();</span>
+<span class="w">        </span><span class="n">_isWriterInProgress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// If you see this assert, make sure load factor &amp; count are reasonable.</span>
+<span class="w">    </span><span class="c1">// Then verify that our double hash function (h2, described at top of file)</span>
+<span class="w">    </span><span class="c1">// meets the requirements described above. You should never see this assert.</span>
+<span class="w">    </span><span class="n">Debug</span><span class="p">.</span><span class="n">Fail</span><span class="p">(</span><span class="s">&quot;hash table insert failed!  Load factor too high, or our double hashing function is incorrect.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="n">SR</span><span class="p">.</span><span class="n">InvalidOperation_HashInsertFailed</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Pois é. O negócio ficou sério. Isso ai é coisa de Senior. Entretanto, podemos focar em uma parte especial.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// The current bucket is full, and we have therefore collided.  We need to set the collision bit</span>
+<span class="c1">// unless we have remembered an available slot previously.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">emptySlotNumber</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="o">-</span><span class="m">1</span><span class="p">)</span>
+<span class="p">{</span><span class="c1">// We don&#39;t need to set the collision bit here since we already have an empty slot</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_buckets</span><span class="p">[</span><span class="n">bucketNumber</span><span class="p">].</span><span class="n">hash_coll</span><span class="w"> </span><span class="o">|=</span><span class="w"> </span><span class="k">unchecked</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="m">0</span><span class="n">x80000000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">_occupancy</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Eu sei, ainda tá punk. Mas olha só. Nós conhecemos um condicional. E aqui em cima temos um dentro do outro.</p>
+<p>Ignorando o primeiro, vamos prestar atenção no de dentro. Ele parece fazer um teste se o hash do nosso elemento que foi inserido possui alguma colisão <code>.hash_coll &gt;= 0</code>. Se isso é verdade, ele está usando o token composto <code>|=</code> do operador de atribuição <code>=</code> com o lógico <code>||</code>. A gente viu algo parecido <a href="/CC_site/nav/PUC/periodo1/algoritmos_e_logica/#operadores-e-funcoes-aritmeticas">aqui</a> e <a href="/CC_site/nav/PUC/periodo1/algoritmos_e_logica/#operadores-booleanos-e-comandos-if-aninhados">aqui</a>.</p>
+<p><strong>Comentário:</strong> <code>a |= b</code> é a mesma coisa que <code>a = a | b</code>. Ou seja, temos uma operação lógica entre <code>_buckets[bucketNumber].hash_coll | unchecked((int)0x80000000)</code>. Sendo que esse treco <code>0x80000000</code> é o número hexadecimal para o número negativo mais baixo em um inteiro de 32 bits. Eu <strong>acho</strong> que ele usa esse fundo como indicativo de uso do slot no array de index.</p>
+<p>Tudo bem se você não entender tudo que vimos até aqui. Principalmente nessa última parte. Com o tempo esse código vai ficar menos enigmático. O segredo é continuar estudando.</p>
 <h2 id="bibliografia">Bibliografia</h2>
 <ul>
 <li>DEITEL, Harvey M.     <strong>C#: como programar</strong>. Editora Pearson.</li>
@@ -1344,6 +1543,9 @@ O código dessa classe está disponível nesse <a href="https://gist.github.com/
 </li>
 <li id="fn:6">
 <p>A raiz está <strong>sempre</strong> no nível 0.&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>Já essas implementações aceitam qualquer tipo como index.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></p>
