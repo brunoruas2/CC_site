@@ -8,12 +8,12 @@
 
             
             
-            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/PUC/periodo3/gerencia_requisitos/">
+            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/PUC/periodo3/dev_mobile/">
 
             
                 <link  rel="icon" type="image/x-icon" href="../../../../assets/logo.png">
             
-            <title>Gerência de Requisitos de Software - Ciência da Computação</title>
+            <title>Desenvolvimento de Aplicações Móveis - Ciência da Computação</title>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="../../../../assets/css/bootstrap.min.css">
@@ -175,7 +175,7 @@
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../dev_mobile/" class="dropdown-item text-decoration-none ">Desenvolvimento de Aplicações Móveis</a>
+        <a href="./" class="dropdown-item text-decoration-none  active ">Desenvolvimento de Aplicações Móveis</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
@@ -195,7 +195,7 @@
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Gerência de Requisitos de Software</a>
+        <a href="../gerencia_requisitos/" class="dropdown-item text-decoration-none ">Gerência de Requisitos de Software</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -345,7 +345,7 @@
     <article>
         <header>
             
-                <h1 class="bold title" id="component-title">Gerência de Requisitos de Software</h1>
+                <h1 class="bold title" id="component-title">Desenvolvimento de Aplicações Móveis</h1>
             
         </header>
         <p><p><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark-reasonable.min.css"></p>
@@ -354,91 +354,131 @@
 
 <h2 id="assuntos">Assuntos</h2>
 <ul>
-<li><a href="#aviso">Aviso</a></li>
-<li><a href="#administracao-e-rastreabilidade-de-requisitos"><strong>Administração e Rastreabilidade de Requisitos</strong></a><ul>
-<li><a href="#introducao-a-gerencia-de-requisitos">Introdução à Gerencia de Requisitos</a></li>
-<li><a href="#administracao-de-requisitos">Administração de Requisitos</a></li>
-<li><a href="#rastreabilidade-de-requisitos">Rastreabilidade de Requisitos</a></li>
+<li><a href="#fundamentos-de-computação-móvel"><strong>Fundamentos de Computação Móvel</strong></a><ul>
+<li><a href="#fundamentos">Fundamentos</a></li>
+<li><a href="#ambiente-de-desenvolvimento">Ambiente de Desenvolvimento</a></li>
 </ul>
 </li>
-<li><a href="#priorizacao-e-gerencia-de-mudancas-de-requisitos"><strong>Priorização e Gerência de Mudanças de Requisitos</strong></a><ul>
-<li><a href="#priorizacao-de-requisitos">Priorização de Requisitos</a></li>
-<li><a href="#gerencia-de-mudanças-de-requisitos">Gerência de Mudanças de Requisitos</a></li>
+<li><a href="#desenvolvimento-de-aplicações-móveis"><strong>Desenvolvimento de Aplicações Móveis</strong></a><ul>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#persistência-de-dados">Persistência de Dados</a></li>
+<li><a href="#recursos-nativos">Recursos Nativos</a></li>
 </ul>
 </li>
 <li><a href="#bibliografia"><strong>Bibliografia</strong></a></li>
 </ul>
-<h2 id="aviso">Aviso</h2>
-<p>Para tirarmos o máximo proveito dessa matéria, é <strong>muito</strong> indicado que os conteúdos vistos na parte de requisitos da disciplina de <a href="http://127.0.0.1:8000/CC_site/nav/PUC/periodo1/fundamentos_eng_soft/#requisitos">introdução à engenharia de software</a> lá no primeiro período e, também, todo o microfundamento de <a href="http://127.0.0.1:8000/CC_site/nav/PUC/periodo2/engenharia_requisitos/">engenharia de requisitos</a>.</p>
-<h2 id="administracao-e-rastreabilidade-de-requisitos">Administração e Rastreabilidade de Requisitos</h2>
-<h3 id="introducao-a-gerencia-de-requisitos">Introdução à Gerencia de Requisitos</h3>
-<h4 id="requisitos-de-software">Requisitos de Software</h4>
-<p>Como disse <a href="https://en.wikipedia.org/wiki/Fred_Brooks">Frederick Brooks</a>: "A parte mais difícil de construir um sistema de software é decidir exatamente o que construir".</p>
-<p>É exatamente nesse contexto que as técnicas de elicitação de requisitos e definição de escopo que a engenharia de software desenvolveu atuam. Uma vez definido o que se deseja, nascem o <strong>Requisitos de Software</strong></p>
-<p>Podemos entender os requisitos como características e limitações que nossa solução terá. Além disso, esse conceito está relacionado à documentação a respeito dessas duas naturezas.</p>
-<p>Existem diferentes tipos de requisitos de software. Podemos agrupa-los em:</p>
+<h2 id="fundamentos-de-computacao-movel">Fundamentos de Computação Móvel</h2>
+<h3 id="fundamentos">Fundamentos</h3>
+<h4 id="caracteristicas-de-aplicacoes-moveis">Características de Aplicações Móveis</h4>
+<p>Antes de aprendermos <strong>como</strong> desenvolver uma aplicação móvel na prática, pensemos um pouco sobre o que é uma aplicação móvel? Quais são as características dessas aplicações?</p>
+<p>Podemos definir como <strong>aplicação móvel</strong>, qualquer solução de software desenvolvida para ser executada em dispositivos portáteis, normalmente, dotados de capacidade de comunicação com internet.</p>
+<p>Existem algumas <strong>características</strong> que precisamos atender para o desenvolvimento de uma aplicação móvel efetiva:</p>
 <ul>
-<li><strong>Requisitos Funcionais</strong> - "O que o software deve fazer?"</li>
-<li><strong>Requisitos Não Funcionais</strong> - "Como o software deve operar?"</li>
+<li>Portabilidade: <br> Nesse quesito, precisamos nos atentar ao tamanho e peso do dispositivo bem como dos seus acessórios. Isso é especialmente relevante no desenvolvimento de jogos em consoles portáteis como <a href="https://developer.nintendo.com/">nintendo switch</a>.</li>
+<li>Usabilidade: <br> Existem vários tipos de pessoas que podem usar nossas aplicações. Pensando nessas realidade, precisamos nos ater às características relacionadas aos <strong>usuários</strong> que são nosso público alvo, as características do <strong>ambiente</strong> em que nossos usuários utilizarão e, por fim, as características do <strong>dispositivo</strong> que será usado para acesso ao nosso software.</li>
+<li>Funcionalidade: <br> Normalmente, somos capazes de agrupar os aplicativos em dois grupos. O primeiro são aplicativos que operam de forma autônoma (sem necessidade de contato com servidores externos). O segundo grupo, se refere aos apps que consomem requisições para servidores.</li>
+<li>Conectividade: <br> Não é estranho supor que a principal característica das aplicações móveis da atualidade é a sua conectividade a serviços externos. Essa comunicação pode ser feita de forma constante ou intermitente. Além disso, existem as aplicações inteiramente baseadas em dados locais no dispositivo do usuário.</li>
 </ul>
-<p>Além dessa classificação quanto a tipo de requisito, podemos agrupa-los segundo o seu nível de abstração:</p>
+<h4 id="arquitetura-de-aplicacoes-moveis">Arquitetura de Aplicações Móveis</h4>
+<p>Parecido com o que vimos na matéria de <a href="/CC_site/nav/PUC/periodo2/dev_web_backend/">desenvolvimento web backend</a>. Vamos aprender um pouco mais sobre a arquitetura das soluções web móveis.</p>
+<p>A primeira parte que a gente aprendeu sobre arquitetura pode ser encontrada na matéria de desenvolvimento é back end. Dessa maneira vamos nos ater apenas à arquitetura de aplicações móveis.</p>
+<p>O modelo mais usado de arquitetura de aplicações móveis é o modelo cliente e servidor. Nesse modelo, Temos a figura do banco de dados E da aplicação que se comunicam por meio da internet.</p>
+<p><strong>Comentário:</strong> Isso mesmo lembra bastante a maneira como um site funciona. A principal diferença é que ao invés do navegador aqui temos o aplicativo.</p>
+<h5 id="tipos-de-cliente">Tipos de cliente</h5>
+<p>Podemos separar os tipos de clientes em 2 grupos:</p>
 <ul>
-<li><strong>Requisitos de Produto</strong> - Características sobre o produto em si</li>
-<li><strong>Requisitos de Projeto</strong> - Características do processo de desenvolvimento</li>
-<li><strong>Requisitos de Sistema</strong> - Características sobre a arquitetura da solução</li>
+<li>Thin Clients <br> Esse tipo de cliente depende muito pouco do hardware que o aplicativo rodará. Normalmente, usamos um navegador para acesso à aplicação. Esse tipo de cliente torna A manutenção das aplicações muito mais fáceis. O único ponto fraco desse tipo de cliente é que a aplicação só funcionará com acesso constante à internet.</li>
+<li>Fat Clients <br> Ao contrário dos clientes magros, os clientes gordos podem aceitar períodos de interrupção da comunicação entre a aplicação e o servidor. O problema é que o hardware que o roda a aplicação é muito relevante. Tornando o desenvolvimento e a manutenção do software específicos para cada aparelho em que a aplicação é instalada.</li>
 </ul>
-<p>Quando estamos redigindo o artefato que contém os requisitos temos que nos atentar para captar os <strong>atributos</strong> dos requisitos para que todos os envolvidos possam usar essa fonte de informação de maneira efetiva.</p>
-<p>Dentre os atributos, podemos destacar alguns muitos importantes:</p>
+<h5 id="tipos-de-servidores">Tipos de Servidores</h5>
+<p>Da mesma maneira que podemos separar os clientes em 2 categorias, podemos separar os servidores em 3 categorias baseada em camadas:</p>
 <ul>
-<li>Identificador</li>
-<li>Nome</li>
-<li>Descrição</li>
-<li>Versão</li>
-<li>Autor</li>
-<li>Fonte</li>
-<li>Risco</li>
-<li>Prioridade</li>
-<li>Responsável</li>
-<li>Tipo</li>
-<li>Status do Conteúdo</li>
-<li>Status da Validação</li>
-<li>Status do Acordo</li>
-<li>Esforço\Dificuldade</li>
-<li>Versão\Release</li>
-<li>Obrigações Legais</li>
-<li>Referência Cruzada com outros requisitos</li>
-<li>Observações</li>
+<li>Arquitetura de uma camada</li>
+<li>Arquitetura de duas camadas</li>
+<li>Arquitetura de três camadas</li>
 </ul>
-<p><strong>Comentário:</strong> Pois é, quem achava que gerir requisito era só anotar em post it tá muito enganado. Tudo isso deve ser, idealmente, coletado para que o processo de desenvolvimento seja feito de maneira produtiva e que o produto final atenda as expectativas do clientes.</p>
-<h4 id="stakeholders">Stakeholders</h4>
-<h4 id="atividades-de-gerenciamento-de-requisitos">Atividades de Gerenciamento de Requisitos</h4>
-<h3 id="administracao-de-requisitos">Administração de Requisitos</h3>
-<h4 id="controle-de-versao">Controle de Versão</h4>
-<h4 id="acompanhamento-do-status">Acompanhamento do Status</h4>
-<h3 id="rastreabilidade-de-requisitos">Rastreabilidade de Requisitos</h3>
-<h4 id="tipos-de-rastreabilidade">Tipos de Rastreabilidade</h4>
-<h4 id="matriz-de-rastreabilidade">Matriz de Rastreabilidade</h4>
-<h4 id="pratica-de-matriz-de-rastreabilidade">Prática de Matriz de Rastreabilidade</h4>
-<h2 id="priorizacao-e-gerencia-de-mudancas-de-requisitos">Priorização e Gerência de Mudanças de Requisitos</h2>
-<h3 id="priorizacao-de-requisitos">Priorização de Requisitos</h3>
-<h4 id="identificando-prioridades">Identificando Prioridades</h4>
-<h4 id="tecnica-da-escala-de-3-niveis">Técnica da Escala de 3 Níveis</h4>
-<h4 id="tecnica-moscow">Técnica MoSCow</h4>
-<h3 id="gerencia-de-mudancas-de-requisitos">Gerência de Mudanças de Requisitos</h3>
-<h4 id="processo-de-controle-de-mudancas">Processo de Controle de Mudanças</h4>
-<h4 id="comite-de-controle-de-mudancas">Comitê de Controle de Mudanças</h4>
-<h4 id="analise-de-impacto-de-mudancas">Análise de Impacto de Mudanças</h4>
+<p>Nos 3 casos nós temos a existência de 3 áreas de atuação do servidor. Temos a camada de <strong>banco de dados</strong>, a de <strong>apresentação</strong> e a <strong>aplicação</strong>. No servidor de uma camada nós temos essas 3 interfaces funcionando no mesmo servidor. Por sua vez, no servidor de 2 camadas temos a separação entre o banco de dados e a aplicação com a apresentação do outro lado. Por fim, no servidor de 3 camadas temos a especialização em 3 máquinas diferentes para cada uma dessas atividades.</p>
+<p>Como sempre não existe gabarito. Quanto mais camadas, mais controle sobre aplicação teremos, entretanto, O desenvolvimento será mais difícil e mais caro. Inversamente,o servidor de uma camada é muito mais fácil de desenvolver e manter sendo a customização do seu ponto fraco. </p>
+<h3 id="ambiente-de-desenvolvimento">Ambiente de Desenvolvimento</h3>
+<p>Basicamente, existem 2 maneiras de se desenvolver uma aplicação mobile.</p>
+<p>A primeira maneira é o desenvolvimento nativo que, no caso do Android é feito utilizando a linguagem Java/Kotlin, e, no ambiente a IOS, é feito com Swift ou Objective-C.</p>
+<p>A segunda maneira é o desenvolvimento híbrido. Nesse caso, desenvolvemos uma aplicação usando uma linguagem e, em uma fase posterior, convertemos essa aplicação para o ambiente IOS ou Android.</p>
+<p>Nessa matéria, usaremos a abordagem do desenvolvimento híbrido utilizando a tecnologia <a href="https://reactnative.dev/">React Native</a> que é inteiramente baseada em JavaScript.</p>
+<p><strong>Comentário:</strong> Se você precisar de um reforço de JavaScript, nós temos uma parte da disciplina de <a href="/CC_site/nav/PUC/periodo1/desenvolvimento_web/#a-linguagem-javascript">desenvolvimento web front end</a> que ensina o básico sobre ela.</p>
+<h4 id="react-native">React Native</h4>
+<p>O nome React Native não é atoa. Podemos separar esse conceito em 2. O primeiro, <a href="https://reactjs.org/"><strong>React</strong></a>, se refere a um framework em JavaScript para construção de interfaces de usuário. O segundo, <strong>native</strong>, é uma alusão ao fato que, uma vez que a aplicação é construída, ela pode ser traduzida para código nativo de cada plataforma.</p>
+<p><strong>Comentário:</strong> Não podemos achar que o React possibilita desenvolvimento fullstack de aplicações em JavaScript. Ela é uma biblioteca para criação de interfaces de usuário. Nada mais do que isso.</p>
+<h5 id="crash-course-em-react">Crash Course em React</h5>
+<p>Não tem jeito, para entender bem React Native precisamos entender pelo menos o básico do React.</p>
+<p>Aqui em baixo temos, literalmente, o tutorial da documentação oficial do React com os principais componentes que precisam ser apreendidos.</p>
+<p>Se preferir, pode ler o mesmo material nesse <a href="https://reactjs.org/docs/hello-world.html">link</a>.</p>
+<iframe src="https://reactjs.org/docs/hello-world.html" frameborder="0" width="100%" height="800"></iframe>
+
+<p>O ideal é ter lido, pelo menos, toda essa parte de main concepts.</p>
+<h5 id="crash-course-em-react-native">Crash Course em React Native</h5>
+<p>Da mesma maneira que fizemos com o material do react, vamos colocar aqui em baixo o tutorial do React Native.</p>
+<p>Se preferir, o mesmo material está disponível neste <a href="https://reactnative.dev/docs/getting-started">link</a>.</p>
+<iframe src="https://reactnative.dev/docs/getting-started" frameborder="0" width="100%" height="800"></iframe>
+
+<h4 id="ferramentas-de-desenvolvimento">Ferramentas de Desenvolvimento</h4>
+<p>Agora que aprendemos um pouco sobre o que é o react e o react native, vamos aprender como desenvolver aplicações utilizando essas ferramentas.</p>
+<p>No decorrer dessa disciplina, nós vamos utilizar um ambiente de desenvolvimento virtual <a href="https://expo.dev/signup">Expo</a>. A vantagem desse ambiente está no fato de podermos desenvolver as aplicações inteiramente no ambiente web e testar, em tempo real, o resultado das nossas alterações do código.</p>
+<p>Uma vez com a conta criada, podemos usar a sessão de <strong>snacks</strong> para criar aplicações que rodam na própria interface do Expo.</p>
+<h5 id="estrutura-padrao-de-um-projeto-react-native">Estrutura Padrão de um Projeto React Native</h5>
+<p>Ao criar um snack no Expo a gente consegue perceber a estrutura básica de um projeto construído em React Native. No diretório do projeto, podemos ver 2 pastas (uma <code>assets</code> e uma <code>components</code>), um arquivo JS (que será o principal, normalmente chamado de <code>App.js</code>), um arquivo JSON (com as dependências do projeto) e um arquivo de README em markdown.</p>
+<div class="highlight"><pre><span></span><code>- assets/
+- components/
+    | - AssetExample.js
+- App.js
+- package.json
+- README.md
+</code></pre></div>
+<p>Aqui embaixo temos o projeto padrão de um Snack no Expo. Eu mudei apenas a parte que tá na tag de texto.</p>
+<div data-snack-id="@bruno.ruas2/default-expo-app" data-snack-platform="web" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.dev/embed.js"></script>
+
+<p>Dessa feita, vamos poder observar aqui no site mesmo a evolução da aplicação que vamos desenvolver.</p>
+<p><strong>Comentário:</strong> Podemos rodar a aplicação que estamos desenvolvendo também no nosso próprio smartphone baixando o aplicativo do Expo no nosso celular. O app que temos que baixar é o <a href="https://expo.dev/client">Expo Go</a>.</p>
+<p>Mesmo Expo criando automaticamente um padrão de pastas, nós vamos utilizar o mesmo padrão que o professor usou na construção do projeto da disciplina.</p>
+<div class="highlight"><pre><span></span><code>- src/
+    | - components/
+    | - pages/
+        | - HomePage.js
+- App.js
+- package.json
+- README.md
+</code></pre></div>
+<p>Com essa nova estrutura, temos uma aplicação simples. Essa vai ser a aplicação que a gente vai evoluir ao longo de todo o microfundamento.</p>
+<div data-snack-id="@bruno.ruas2/pucminas-ads---bruno-ruas" data-snack-platform="web" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.dev/embed.js"></script>
+
+<h5 id="react-native-paper">React Native Paper</h5>
+<p>Da mesma maneira que o bootstrap facilita muito a construção de interfaces web com os componentes de visualização previamente construídos, podemos usar o <a href="https://callstack.github.io/react-native-paper/">react native paper</a> para os componentes da nossa aplicação mobile.</p>
+<p>Essa ferramenta é construída em cima dos componentes padronizados do Google Material Design.</p>
+<iframe src="https://callstack.github.io/react-native-paper/docs/guides/getting-started/" frameborder="0" width="100%" height="800"></iframe>
+
+<h5 id="react-native-local">React Native Local</h5>
+<p>Para aqueles que preferem o desenvolvimento localmente é possível configurar Um ambiente de desenvolvimento rodando o React Native localmente.</p>
+<p>Abaixo temos um tutorial do <a href="https://react-native.rocketseat.dev/">Rocketseat</a> explicando o passo a passo.</p>
+<iframe src="https://react-native.rocketseat.dev/" frameborder="0" width="100%" height="800"></iframe>
+
+<h2 id="desenvolvimento-de-aplicacoes-moveis">Desenvolvimento de Aplicações Móveis</h2>
+<h3 id="interfaces">Interfaces</h3>
+<h4 id="componentes">Componentes</h4>
+<h4 id="navegacao">Navegação</h4>
+<h3 id="persistencia-de-dados">Persistência de Dados</h3>
+<h4 id="sqlite">SQLite</h4>
+<h4 id="web-api">Web API</h4>
+<h3 id="recursos-nativos">Recursos Nativos</h3>
+<h4 id="camera">Câmera</h4>
+<h4 id="mapa">Mapa</h4>
 <h2 id="bibliografia">Bibliografia</h2>
 <ul>
-<li>REINEHR, Sheila. <strong>Engenharia de requisitos</strong>. Porto Alegre SAGAH 2020 1 recurso online - (Engenharia de software). ISBN 9786556900674. Capítulos 2, 3 e 14.</li>
-<li>CARLOS EDUARDO VAZQUEZ; GUILHERME SIQUEIRA SIMÕES. <strong>Engenharia de Requisitos: - software orientado ao negócio</strong>. Editora Brasport 0 ISBN 9788574527963.</li>
-<li>WIEGERS, Karl; JOY, Beatty. <strong>Software Requirements (Developer Best Practices)</strong>. - Microsoft Press. ISBN 0735679665. Capítulos 1, 2, 3 e 27.</li>
-<li>VALENTE, Marco Tulio. <strong>Engenharia de Software Moderna: Princípios e Práticas para Desenvolvimento de Software com Produtividade</strong>, 2020.</li>
-<li>PRESSMAN, Roger S.; MAXIM, Bruce R. <strong>Engenharia de software: uma abordagem profissional</strong>. 8. ed. Porto Alegre: AMGH, 2016. E-book ISBN 9788580555349.</li>
-<li>SOMMERVILLE, Ian. <strong>Engenharia de software</strong>, 10ª ed. Pearson 768 ISBN 9788543024974.</li>
-<li>PAULA FILHO, Wilson de Pádua. <strong>Engenharia de software</strong>, v. 2 projetos e processos. 4. - Rio de Janeiro LTC 2019 1 recurso online ISBN 9788521636748.</li>
-<li>VETORAZZO, Adriana de Souza. <strong>Engenharia de software</strong>. Porto Alegre SAGAH 2018 1 - recurso online ISBN 9788595026780.</li>
-<li>WAZLAWICK, Raul Sidnei. <strong>Engenharia de software conceitos e práticas</strong>. Rio de Janeiro GEN LTC 2013 1 recurso online ISBN 9788595156173.</li>
+<li>Bass, Len; Clements, Paul; Kazman, Rick. <strong>Software Architecture in Practice,</strong> Third Edition. Addison-Wesley Professional, 2012.</li>
+<li>Boduch, Adam; Derks, Roy. <strong>React and React Native</strong> - Third Edition. Packt Publishing. 2020.</li>
+<li>Ingeno, Joseph. <strong>Software Architect's Handbook</strong>. Packt Publishing, 2018.</li>
+<li>Richards, Mark; Ford, Neal. <strong>Fundamentals of Software Architecture</strong>. O'Reilly Media, Inc., 2020.</li>
+<li>Valentino Lee, Heather Schneider, Robbie Schell. <strong>Mobile Applications: Architecture, Design, and Development</strong>. Pearson. 2004.</li>
 </ul></p>
     </article>
 </section>
@@ -449,13 +489,13 @@
                     <!-- block preview -->
         <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
             <div class="col themed-grid-col">
-                <a rel="prev" href="../gerencia_projetos/" class="nav-link">
+                <a rel="prev" href="../../periodo2/dev_web_backend/" class="nav-link">
                     <i class="fa fa-arrow-left"></i> Previous
                 </a>
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../../../tech/" class="nav-link">
+                <a rel="next" href="../gerencia_projetos/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
