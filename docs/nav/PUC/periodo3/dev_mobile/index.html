@@ -449,7 +449,7 @@
 - README.md
 </code></pre></div>
 <p>Com essa nova estrutura, temos uma aplicação simples. Essa vai ser a aplicação que a gente vai evoluir ao longo de todo o microfundamento.</p>
-<div data-snack-id="@bruno.ruas2/pucminas-ads---bruno-ruas" data-snack-platform="web" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
+<div data-snack-id="@bruno.ruas2/app-react-native-parte-01" data-snack-platform="web" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
 <script async src="https://snack.expo.dev/embed.js"></script>
 
 <h5 id="react-native-paper">React Native Paper</h5>
@@ -458,13 +458,345 @@
 <iframe src="https://callstack.github.io/react-native-paper/docs/guides/getting-started/" frameborder="0" width="100%" height="800"></iframe>
 
 <h5 id="react-native-local">React Native Local</h5>
-<p>Para aqueles que preferem o desenvolvimento localmente é possível configurar Um ambiente de desenvolvimento rodando o React Native localmente.</p>
+<p>Para aqueles que (assim como eu) preferem o desenvolvimento localmente é possível configurar Um ambiente de desenvolvimento rodando o React Native localmente.</p>
 <p>Abaixo temos um tutorial do <a href="https://react-native.rocketseat.dev/">Rocketseat</a> explicando o passo a passo.</p>
 <iframe src="https://react-native.rocketseat.dev/" frameborder="0" width="100%" height="800"></iframe>
 
 <h2 id="desenvolvimento-de-aplicacoes-moveis">Desenvolvimento de Aplicações Móveis</h2>
+<p>Agora que sabemos o básico da teoria, vamos colocar em prática no desenvolvimento de uma aplicação. Nosso objetivo é desenvolver uma aplicação focada na gestão de combustível utilizando react native e o react native paper.</p>
+<p><strong>Comentário:</strong> Como a construção de um tutorial com passo a passo do desenvolvimento da aplicação tornaria essa aula muito maçante, eu criei um repositório no github para hospedar o código que vamos elaborar. Para acompanhar as fases do desenvolvimento, vocês podem usar o histórico de commits na branch do projeto.</p>
+<p>Para acessar a página do branch do projeto no github, <a href="https://github.com/brunoruas2/repositorio_codigos/tree/appReactNative/appReactNative">clique aqui</a>.</p>
+<p><strong>Comentário:</strong> Vamos focar bastante no código a partir de agora. Os que quiserem ver o impacto das mudanças no visual, podem rodar os códigos do arquivo <code>App.js</code> no Expo ou no ambiente local.</p>
 <h3 id="interfaces">Interfaces</h3>
 <h4 id="componentes">Componentes</h4>
+<h5 id="appbar">Appbar</h5>
+<p>O primeiro componente que é vamos aprender é a barra de título. A documentação oficial desse componente pode ser encontrado nesse <a href="https://callstack.github.io/react-native-paper/docs/components/Appbar/AppbarHeader/">link</a>.</p>
+<p>Basicamente a única coisa que a gente precisa fazer é importar o componente <code>Appbar</code> na nossa aplicação.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">HomePage</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Header</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Calculadora&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Appbar.Header&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Comentário:</strong> Perceba que na parte de retorno da função nós colocamos um par de tags de abertura e fechamento sem nenhum conteúdo (<code>&lt; &gt;</code> e <code>&lt; / &gt;</code>) isso é importante porque o aplicativo precisa estar encapsulado em uma hierarquia como essa. É como se fosse apenas uma <code>&lt;div&gt;&lt;/div&gt;</code> em um html.</p>
+<h4 id="textinput">TextInput</h4>
+<p>Agora que a nossa aplicação tem uma barra de título, podemos colocar os Campos de inserção dos valores de gasolina e etanol. O componente que recebe input do usuário é o <code>TextInput</code> cuja documentação pode ser encontrada neste <a href="https://callstack.github.io/react-native-paper/docs/components/TextInput/TextInputIcon/">link</a>.</p>
+<p>Agora, vamos acrescentar o código anterior colocando dois campos de inserção de texto e um botão que por enquanto só vai Imprimir no console uma mensagem.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="p">,</span><span class="w"> </span><span class="nx">TextInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">HomePage</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gas</span><span class="p">,</span><span class="w"> </span><span class="nx">setGas</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">eta</span><span class="p">,</span><span class="w"> </span><span class="nx">setEta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Header</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Calculadora&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Appbar.Header&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Gasolina&quot;</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setGas</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Etanol&quot;</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">eta</span><span class="p">}</span>
+<span class="w">        </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setEta</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;alarm-panel&#39;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s1">&#39;contained&#39;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Apertado!&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="nx">Calcular</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<strong>Comentário:</strong> Uma fonte bacana para sabermos quais ícones podemos usar na nossa aplicação pode ser encontrada nesse link do <a href="https://pictogrammers.com/library/mdi/">material-icons</a>.</p>
+<h5 id="estilo">Estilo</h5>
+<p>Podemos elaborar um pouco mais o estilo da nossa aplicação através do componente do react native chamado <code>StyleSheet</code>. O funcionamento desse componente é muito similar ao CSS que aprendemos na disciplina de desenvolvimento web front end.</p>
+<p>Outro componente que usaremos do react native é a <code>View</code>. o funcionamento deste componente é muito parecido com a <code>div</code> o html.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="p">,</span><span class="w"> </span><span class="nx">TextInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">HomePage</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gas</span><span class="p">,</span><span class="w"> </span><span class="nx">setGas</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">eta</span><span class="p">,</span><span class="w"> </span><span class="nx">setEta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Header</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Calculadora&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Appbar.Header&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">body</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span>
+<span class="w">          </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Gasolina&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setGas</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Etanol&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">eta</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setEta</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;alarm-panel&#39;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s1">&#39;contained&#39;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Apertado!&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="nx">Calcular</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Componente de Estilo da Aplicação</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">container</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">flex</span><span class="o">:</span><span class="mf">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">input</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFF&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">marginBottom</span><span class="o">:</span><span class="mf">9</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="text">Text</h5>
+<p>Ainda precisamos de um componente que vai receber a resposta do nosso cálculo. Esse componente será do tipo <code>Text</code> e, por enquanto, receberá exatamente o conteúdo do input do preço da gasolina. Mas na frente, colocaremos o resultado de um cálculo nele.</p>
+<p>A documentação desse componente pode ser encontrada nesse <a href="https://callstack.github.io/react-native-paper/docs/components/Typography/Text/">link</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="p">,</span><span class="w"> </span><span class="nx">TextInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Button</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">HomePage</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gas</span><span class="p">,</span><span class="w"> </span><span class="nx">setGas</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">eta</span><span class="p">,</span><span class="w"> </span><span class="nx">setEta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">setRes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Header</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Calculadora&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Appbar.Header&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">body</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span>
+<span class="w">          </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Gasolina&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setGas</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Etanol&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">eta</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setEta</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;alarm-panel&#39;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s1">&#39;contained&#39;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Apertado!&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="nx">Calcular</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Text</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">container</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">flex</span><span class="o">:</span><span class="mf">1</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">input</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFF&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">marginBottom</span><span class="o">:</span><span class="mf">9</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">text</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">textAlign</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">margin</span><span class="o">:</span><span class="mf">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="refatoracao">Refatoração</h5>
+<p>Até aqui, temos uma aplicação minimamente funcional, entretanto, precisamos reorganizar o nosso código para aumentar a produtividade e a manutenibilidade ao longo prazo.</p>
+<p>Usaremos a pasta <code>components</code> do nosso projeto para guardar esses itens da nossa refatoração. Nesta pasta, vamos criar um primeiro arquivo chamado <code>Container.js</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">container</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">flex</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFF&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Container</span><span class="p">;</span>
+</code></pre></div>
+<p>Exatamente a mesma lógica vai ser aplicada nos componentes do cabeçalho, do corpo e dos inputs de texto.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">title</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Header</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Appbar</span><span class="p">.</span><span class="nx">Content</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Appbar.Header&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Header</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="nx">children</span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">View</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">body</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/View&gt;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Body</span><span class="p">;</span>
+</code></pre></div>
+<p>No caso do input de texto, vamos aproveitar e já colocar o padrão de teclado numérico no nosso dispositivo mobile. Além disso, passaremos Todas as propriedades do <code>TextInput</code> para o nosso novo componente de texto.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TextInput</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">TextInput</span>
+<span class="w">            </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">input</span><span class="p">}</span>
+<span class="w">            </span><span class="nx">keyboardType</span><span class="o">=</span><span class="s1">&#39;decimal-pad&#39;</span>
+<span class="w">            </span><span class="c1">// Isso aqui indica que a gente quer</span>
+<span class="w">            </span><span class="c1">// receber todas as propriedades padrão</span>
+<span class="w">            </span><span class="c1">// do componente TextInput no nosso novo</span>
+<span class="w">            </span><span class="c1">// componente</span>
+<span class="w">            </span><span class="p">{...</span><span class="nx">props</span><span class="p">}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">input</span><span class="o">:</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#FFF&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">marginBottom</span><span class="o">:</span><span class="mf">9</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Input</span><span class="p">;</span>
+</code></pre></div>
+<p>Agora que conseguimos criar os nossos próprios componentes, podemos atualizar o nosso arquivo <code>App.js</code> fazendo uso dessas novas nomenclaturas.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="p">,</span><span class="w"> </span><span class="nx">TextInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Button</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Container</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/components/Container&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/components/Header&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Body</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/components/Body&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Input</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/components/Input&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">HomePage</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gas</span><span class="p">,</span><span class="w"> </span><span class="nx">setGas</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">eta</span><span class="p">,</span><span class="w"> </span><span class="nx">setEta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">setRes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Calculadora&quot;</span><span class="p">}</span><span class="o">/&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Body</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Input</span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Gasolina&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setGas</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Input</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Preço Etanol&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">eta</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setEta</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;alarm-panel&#39;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s1">&#39;contained&#39;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Apertado!&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="nx">Calcular</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Text</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Body&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">text</span><span class="o">:</span><span class="p">{</span>
+<span class="w">    </span><span class="nx">textAlign</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">margin</span><span class="o">:</span><span class="mf">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+Essa refatoração nos dá duas vantagens. A primeira, é que o texto se torna muito mais legível (lembrando até a estrutura de uma aplicação web). A segunda, é que qualquer mudança que fizermos nos nossos componentes vai ser aplicada a toda a nossa aplicação uniformemente.</p>
+<p>O resultado pode ser visto abaixo.</p>
+<div data-snack-id="@bruno.ruas2/app-react-native-parte-02" data-snack-platform="web" data-snack-preview="true" data-snack-theme="dark" style="overflow:hidden;background:#212121;border:1px solid var(--color-border);border-radius:4px;height:505px;width:100%"></div>
+<script async src="https://snack.expo.dev/embed.js"></script>
+
 <h4 id="navegacao">Navegação</h4>
 <h3 id="persistencia-de-dados">Persistência de Dados</h3>
 <h4 id="sqlite">SQLite</h4>
