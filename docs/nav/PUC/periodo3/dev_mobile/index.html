@@ -798,6 +798,344 @@ Essa refatoração nos dá duas vantagens. A primeira, é que o texto se torna m
 <script async src="https://snack.expo.dev/embed.js"></script>
 
 <h4 id="navegacao">Navegação</h4>
+<p>Nossa aplicação ainda tem um problema que precisamos resolver: ela tem apenas uma página. Para podermos trabalhar com mais de uma tela, vamos precisar de um mecanismo de navegação entre páginas.</p>
+<p>Ao contrário do que temos em páginas web, em aplicações móveis não temos a utilização de url entre as páginas. Dessa feita, essa limitação precisa ser levada em consideração no desenho de uma boa aplicação móvel.</p>
+<p>Ecossistema do react tem um pacote que nos ajuda grandemente nessa tarefa. A documentação oficial pode ser encontrada neste <a href="https://reactnavigation.org/">link</a>.</p>
+<h5 id="bottom-navigation">Bottom Navigation</h5>
+<p>Sem dúvida nenhuma, o principal método de navegação nas aplicações móveis hoje é uma barra com ícones indicando as diferentes páginas do nosso aplicativo. O nome desse tipo de componente do react native é o <strong>Bottom Navigation</strong>.</p>
+<p>A documentação desse componente pode ser encontrada nesse <a href="https://callstack.github.io/react-native-paper/docs/components/BottomNavigation/">link</a>.</p>
+<p>A primeira coisa que vamos fazer para a criação dessa capacidade é alimentar a nossa pasta de <code>pages</code> com 2 páginas novas. A primeira nós chamaremos de <code>calculadora</code> e a segunda de <code>custos</code>. Dessa forma, nossa pasta do projeto ficará do seguinte modo:</p>
+<div class="highlight"><pre><span></span><code>- src/
+    | - components/
+    |   | - Body.js
+    |   | - Container.js
+    |   | - Header.js
+    |   | - Input.js
+    | - pages/
+        | - HomePage.js
+        | - Calculadora.js
+        | - Custos.js
+- App.js
+- package.json
+- README.md
+</code></pre></div>
+<p>Além dessa mudança, vamos migrar todo o conteúdo do arquivo <code>App.js</code> pra página <code>Homepage.js</code>. Desse modo, o <code>App.js</code> vai renderizar apenas um componente que chamaremos de <code>Home</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// App.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">Home</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
+<p>O código da página inicial está agora contido no arquivo <code>HomePage.js</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// HomePage.js</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">BottomNavigation</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Calculadora</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Calculadora&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./Custos&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Index usado para a navegação</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">setIndex</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// Componente de rotas entre as páginas</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">routes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">([</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;calculadora&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Calculadora&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;calculator&#39;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;custos&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custos&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cash&#39;</span><span class="p">}</span>
+<span class="w">  </span><span class="p">]);</span>
+
+<span class="w">  </span><span class="c1">// Componente da barra</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">renderScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BottomNavigation</span><span class="p">.</span><span class="nx">SceneMap</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">calculadora</span><span class="o">:</span><span class="w"> </span><span class="nx">Calculadora</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">custos</span><span class="o">:</span><span class="w"> </span><span class="nx">Custos</span><span class="p">,</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">BottomNavigation</span>
+<span class="w">      </span><span class="nx">navigationState</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">index</span><span class="p">,</span><span class="w"> </span><span class="nx">routes</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">      </span><span class="nx">onIndexChange</span><span class="o">=</span><span class="p">{</span><span class="nx">setIndex</span><span class="p">}</span>
+<span class="w">      </span><span class="nx">renderScene</span><span class="o">=</span><span class="p">{</span><span class="nx">renderScene</span><span class="p">}</span>
+<span class="w">    </span><span class="o">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Home</span><span class="p">;</span>
+</code></pre></div>
+<p>Para finalizar, temos que criar 2 outras páginas que serão navegadas por meio da nossa barra de navegação. A primeira será nossa página que estava no <code>App.js</code> com a calculadora (que ainda está incompleta). A outra, será uma página que por enquanto chamaremos de gerenciador e não terá nada no body.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Custos.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Header&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Container</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Container&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Body</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Body&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Gerenciador&#39;</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Body</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="err">/Body&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Custos</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Calculadora.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">,</span><span class="w"> </span><span class="nx">View</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Appbar</span><span class="p">,</span><span class="w"> </span><span class="nx">TextInput</span><span class="p">,</span><span class="w"> </span><span class="nx">Button</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Container</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./../components/Container&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./../components/Header&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Body</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./../components/Body&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Input</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./../components/Input&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Calculadora</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gas</span><span class="p">,</span><span class="w"> </span><span class="nx">setGas</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">eta</span><span class="p">,</span><span class="w"> </span><span class="nx">setEta</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">setRes</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">React</span><span class="p">.</span><span class="nx">useState</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Calculadora&quot;</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Body</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Input</span>
+<span class="w">          </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Preço Gasolina&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setGas</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Input</span>
+<span class="w">          </span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Preço Etanol&quot;</span>
+<span class="w">          </span><span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">eta</span><span class="p">}</span>
+<span class="w">          </span><span class="nx">onChangeText</span><span class="o">=</span><span class="p">{</span><span class="nx">text</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setEta</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;alarm-panel&#39;</span><span class="w"> </span><span class="nx">mode</span><span class="o">=</span><span class="s1">&#39;contained&#39;</span><span class="w"> </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Apertado!&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+<span class="w">          </span><span class="nx">Calcular</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Button&gt;</span>
+
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Text</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">gas</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Body&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">textAlign</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Calculadora</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="flatlist-e-list">FlatList e List</h5>
+<p>Agora vamos acrescentar alguma informação na nossa página de custos. O objetivo dessa página é armazenar o histórico de consumo do usuário. Para podermos efetuar esse trabalho vamos precisar de 2 componentes que mostram elementos em listas.</p>
+<p>O primeiro é o <code>FlatList</code> do react native. O segundo é o <code>List</code> do react native paper.</p>
+<p>Antes de colocar informação em uma lista nos precisamos de dados. No nosso caso, vamos criar um array simples com 3 entradas de consumo.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">DATA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;13/01/2023&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">3.44</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">km</span><span class="o">:</span><span class="mf">2000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;15/01/2023&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">3.34</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">122</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">km</span><span class="o">:</span><span class="mf">3000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">id</span><span class="o">:</span><span class="mf">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;17/01/2023&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">2.44</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">520</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">km</span><span class="o">:</span><span class="mf">4000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Custos</span><span class="p">;</span>
+</code></pre></div>
+<p>Uma vez que temos dados, podemos arranjar esses elementos em uma lista com a utilização do componente <code>List</code>. Entretanto, antes de criarmos a nossa lista propriamente dita, precisamos renderizar os componentes.</p>
+<p><strong>Comentário:</strong> O código pode parecer um pouco complexo mas na verdade não é. Não se assuste e veja os comentários a respeito de cada item do componente.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">renderItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Item</span>
+<span class="w">            </span><span class="c1">// Uma string do tipo R$ 12.00 (R$ 2.00 x 3.00 L), ou seja, foi gasto 2 reais por 3 litros.</span>
+<span class="w">            </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;R$ &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">valor</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; ( R$ &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">preco</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; x &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">valor</span><span class="o">/</span><span class="nx">item</span><span class="p">.</span><span class="nx">preco</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="s1">&#39; L)&#39;</span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// Apenas a kilometragem do carro com km no final</span>
+<span class="w">            </span><span class="nx">description</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">km</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;km&#39;</span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// No lado esquerdo da informação temos a passagem das propriedades da lista para o itens em uma função lambda</span>
+<span class="w">            </span><span class="c1">// Esses itens serão do tipo List.Icon herdando a passagem dos parâmetros para cada da lista.</span>
+<span class="w">            </span><span class="c1">// Em cada um desses itens, são definidas apenas 2 propriedades: a cor e o ícone.</span>
+<span class="w">            </span><span class="c1">// A cor tem um truque na definição porque tem um condicional ternário. Se o id for 0, então a cor é verde, se não, azul.</span>
+<span class="w">            </span><span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Icon</span><span class="w"> </span><span class="p">{...</span><span class="nx">props</span><span class="p">}</span><span class="w"> </span><span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">tipo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">}</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;gas-station&#39;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+<span class="w">            </span><span class="c1">// No lado direito, temos algo parecido mas passando as props para um elemento de texto</span>
+<span class="w">            </span><span class="c1">// esse elemento tem um style para tamanho da fonte e o seu alinhamento.</span>
+<span class="w">            </span><span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Text</span><span class="w"> </span><span class="p">{...</span><span class="nx">props</span><span class="p">}</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">alignSelf</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="mf">10</span><span class="p">}}</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/Text&gt;}</span>
+<span class="w">        </span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(...)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Agora que conseguimos tratar a informação em itens renderizados, podemos passar esses elementos para a construção da lista no retorno do nosso componente <code>Custos</code>. Mais especificamente, no body dele por meio de uma <code>FlatList</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Custos.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">FlatList</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">List</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Header</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Header&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Container</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Container&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Body</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;../components/Body&#39;</span><span class="p">;</span>
+
+<span class="c1">// Dados que estamos usando como teste de desenvolvimento (depois vamos usar API)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">DATA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;13/01/2023&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">3.44</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">km</span><span class="o">:</span><span class="mf">2000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="mf">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;15/01/2023&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">3.34</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">122</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">km</span><span class="o">:</span><span class="mf">3000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="mf">3</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;17/01/2023&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">preco</span><span class="o">:</span><span class="w"> </span><span class="mf">2.44</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="mf">520</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">km</span><span class="o">:</span><span class="mf">4000</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="p">];</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Renderização dos elementos que comporão a nossa lista</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">renderItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Item</span>
+<span class="w">            </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;R$ &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">valor</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; ( R$ &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">preco</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; x &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">valor</span><span class="o">/</span><span class="nx">item</span><span class="p">.</span><span class="nx">preco</span><span class="p">).</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="s1">&#39; L)&#39;</span><span class="p">}</span>
+<span class="w">            </span><span class="nx">description</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">km</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;km&#39;</span><span class="p">}</span>
+<span class="w">            </span><span class="nx">left</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Icon</span><span class="w"> </span><span class="p">{...</span><span class="nx">props</span><span class="p">}</span><span class="w"> </span><span class="nx">color</span><span class="o">=</span><span class="p">{</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">tipo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;green&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blue&#39;</span><span class="p">}</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;gas-station&#39;</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">}</span>
+<span class="w">            </span><span class="nx">right</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Text</span><span class="w"> </span><span class="p">{...</span><span class="nx">props</span><span class="p">}</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">alignSelf</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">fontSize</span><span class="o">:</span><span class="mf">10</span><span class="p">}}</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">date</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/Text&gt;}</span>
+<span class="w">        </span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Gerenciador&#39;</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Body</span><span class="o">&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">FlatList</span>
+<span class="w">                    </span><span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">DATA</span><span class="p">}</span>
+<span class="w">                    </span><span class="nx">renderItem</span><span class="o">=</span><span class="p">{</span><span class="nx">renderItem</span><span class="p">}</span>
+<span class="w">                    </span><span class="nx">keyExtractor</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span>
+<span class="w">                </span><span class="o">/&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="err">/Body&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Custos</span><span class="p">;</span>
+</code></pre></div>
+<h4 id="fab-o-botao-flutuante">FAB (O botão flutuante)</h4>
+<p>Agora que conseguimos tratar os nossos dados em uma lista na nossa página do gerenciador, temos que viabilizar a inserção de novos dados na aplicação. Para isso vamos criar um botão flutuante que facilitará essa inserção. Na verdade, vamos fazer um pequeno truque. Ao clicar no botão de adicionar a pessoa vai ser direcionada para uma nova tela.</p>
+<p>A documentação desse componente pode ser encontrada neste <a href="https://callstack.github.io/react-native-paper/docs/components/FAB/">link</a>.</p>
+<p>Como o nosso código da página de custo já está muito grande, vamos colocar embaixo apenas os pedaços do código que se referem a esse componente.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Custos.js</span>
+
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">List</span><span class="p">,</span><span class="w"> </span><span class="nx">Text</span><span class="p">,</span><span class="w"> </span><span class="nx">FAB</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-paper&#39;</span><span class="p">;</span>
+
+<span class="p">...</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">Custos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="p">...</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Gerenciador&#39;</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Body</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/Body&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">FAB</span>
+<span class="w">          </span><span class="nx">small</span>
+<span class="w">          </span><span class="nx">icon</span><span class="o">=</span><span class="s1">&#39;plus&#39;</span>
+<span class="w">          </span><span class="nx">onPress</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Quero adicionar!&#39;</span><span class="p">)}</span>
+<span class="w">          </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;absolute&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="mf">16</span><span class="p">,</span><span class="w"> </span><span class="nx">right</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">bottom</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">        </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/Container&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">Custos</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="navegando-entre-paginas">Navegando entre páginas</h5>
+<p>Como afirmamos agora há pouco, ao clicar no botão de adicionar a pessoa será encaminhada para uma nova página com um formulário de inserção dos dados de consumo. Para isso teremos que usar uma outra técnica de navegação diferente da que usamos no nosso menu de navegação.</p>
+<p>A documentação dessa técnica pode ser encontrada neste <a href="https://reactnavigation.org/docs/hello-react-navigation">link</a>.</p>
+<p>Da mesma maneira que fizemos antes, temos que criar uma nova página que chamaremos de <code>Abastecimento.js</code>. Portanto, nossa pasta do projeto ficará com a seguinte configuração:</p>
+<div class="highlight"><pre><span></span><code>- src/
+    | - components/
+    |   | - Body.js
+    |   | - Container.js
+    |   | - Header.js
+    |   | - Input.js
+    | - pages/
+        | - HomePage.js
+        | - Calculadora.js
+        | - Custos.js
+        | - Abastecimento.js
+- App.js
+- package.json
+- README.md
+</code></pre></div>
+<p>Para que essa técnica funcione, teremos que atualizar o nosso <code>App.js</code> com a inclusão de um contêiner de navegação.</p>
+<p><strong>Comentário:</strong> Agora precisamos revisar alguns conceitos importantes. Aprendemos lá em algoritmos e estrutura de dados o que é uma pilha. Esse conceito vai ser usado no nosso controle do fluxo de utilização que é parecido com histórico de navegador. Quando o usuário sai de uma página para outra, a nossa aplicação vai registrar isso em uma estrutura de pilha onde, caso ele queira retornar para a página anterior, ela vai seguindo a mesma ordem dos procedimentos que foram inseridos só que de trás pra frente.</p>
+<p>Além de habilitarmos a parte de interligação de páginas nós também estamos, de fato, aplicando o conceito de histórico de navegação ao nosso aplicativo. O que torna a aplicação ainda mais complexa do que ela já está sendo feita.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// App.js</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">NavigationContainer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@react-navigation/native&#39;</span><span class="p">;</span>
+
+<span class="k">import</span><span class="w"> </span><span class="nx">Home</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./src/pages/HomePage&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">NavigationContainer</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Home</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/NavigationContainer&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</code></pre></div>
 <h3 id="persistencia-de-dados">Persistência de Dados</h3>
 <h4 id="sqlite">SQLite</h4>
 <h4 id="web-api">Web API</h4>
