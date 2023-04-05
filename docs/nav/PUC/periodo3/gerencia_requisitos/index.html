@@ -358,7 +358,6 @@
 
 <h2 id="assuntos">Assuntos</h2>
 <ul>
-<li><a href="#aviso">Aviso</a></li>
 <li><a href="#administracao-e-rastreabilidade-de-requisitos"><strong>Administração e Rastreabilidade de Requisitos</strong></a><ul>
 <li><a href="#introducao-a-gerencia-de-requisitos">Introdução à Gerencia de Requisitos</a></li>
 <li><a href="#administracao-de-requisitos">Administração de Requisitos</a></li>
@@ -367,7 +366,7 @@
 </li>
 <li><a href="#priorizacao-e-gerencia-de-mudancas-de-requisitos"><strong>Priorização e Gerência de Mudanças de Requisitos</strong></a><ul>
 <li><a href="#priorizacao-de-requisitos">Priorização de Requisitos</a></li>
-<li><a href="#gerencia-de-mudanças-de-requisitos">Gerência de Mudanças de Requisitos</a></li>
+<li><a href="#gerencia-de-mudancas-de-requisitos">Gerência de Mudanças de Requisitos</a></li>
 </ul>
 </li>
 <li><a href="#bibliografia"><strong>Bibliografia</strong></a></li>
@@ -378,7 +377,7 @@
 <h3 id="introducao-a-gerencia-de-requisitos">Introdução à Gerencia de Requisitos</h3>
 <h4 id="requisitos-de-software">Requisitos de Software</h4>
 <p>Como disse <a href="https://en.wikipedia.org/wiki/Fred_Brooks">Frederick Brooks</a>: "A parte mais difícil de construir um sistema de software é decidir exatamente o que construir".</p>
-<p>É exatamente nesse contexto que as técnicas de elicitação de requisitos e definição de escopo que a engenharia de software desenvolveu atuam. Uma vez definido o que se deseja, nascem o <strong>Requisitos de Software</strong></p>
+<p>É exatamente nesse contexto que as técnicas de elicitação de requisitos e definição de escopo que a engenharia de software desenvolveu atuam. Uma vez definido o que se deseja, nascem os <strong>Requisitos de Software</strong>.</p>
 <p>Podemos entender os requisitos como características e limitações que nossa solução terá. Além disso, esse conceito está relacionado à documentação a respeito dessas duas naturezas.</p>
 <p>Existem diferentes tipos de requisitos de software. Podemos agrupa-los em:</p>
 <ul>
@@ -413,12 +412,70 @@
 <li>Referência Cruzada com outros requisitos</li>
 <li>Observações</li>
 </ul>
-<p><strong>Comentário:</strong> Pois é, quem achava que gerir requisito era só anotar em post it tá muito enganado. Tudo isso deve ser, idealmente, coletado para que o processo de desenvolvimento seja feito de maneira produtiva e que o produto final atenda as expectativas do clientes.</p>
+<p><strong>Comentário:</strong> Pois é, quem achava que gerir requisito era só anotar em post-it tá muito enganado. Tudo isso deve ser, idealmente, coletado para que o processo de desenvolvimento seja feito de maneira produtiva e que o produto final atenda as expectativas do clientes.</p>
 <h4 id="stakeholders">Stakeholders</h4>
+<p>Até aqui, temos um bom entendimento de que precisamos entender profundamente o que nossa solução fara e como será feito. Entretanto, ainda temos uma pergunta muito importante a ser respondida: <strong>Para quem?</strong>.</p>
+<p>É justamente para responder essa pergunta que temos mais uma palavra em inglês para aprendermos (e parecer inteligentes naquele churrasco de domingo). A palavra é <strong>Stakeholder</strong>.</p>
+<p>Esse termo é usado para definir as partes interessadas (podem ser indivíduos específicos ou grupos de pessoas) no programa que vamos construir. Essas partes podem ser de dentro ou fora da organização. A única regra para a definição é ser impactado com o nosso produto de software.</p>
+<p>Basicamente, podemos dividir os stakeholders em três grandes grupos:</p>
+<ul>
+<li>Externos</li>
+<li>Internos</li>
+<li>Time de desenvolvimento</li>
+</ul>
+<p>Desse modo, os requisitos sempre são relacionados a, pelo menos, um stakeholder. Normalmente, um projeto possui um número bem grande deles.</p>
+<p>Um grupo de stakeholders particularmente muito importante são os <strong>Clientes</strong> e, dentro desse grupo, os <strong>Usuários</strong>. São eles (principalmente o segundo) quem realmente trazem as demandas concretas que terão grande relevância no desenvolvimento do nosso sistema.</p>
+<p>Aqui tem um vídeo com um resumo animado desse assunto que vimos.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8uZiGB8DeJg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h4 id="atividades-de-gerenciamento-de-requisitos">Atividades de Gerenciamento de Requisitos</h4>
+<p>A essa altura, já percebemos que qualquer software, que não seja um aplicativo pessoal que criamos para resolver problemas apenas nossos, possui uma grande lista de requisitos. Diante disso, precisamos de técnicas para agrupar, priorizar, validar e acompanhar esses vários requisitos.</p>
+<p>É justamente nesse contexto que a <strong>Engenharia de Requisitos</strong> surge. Inicialmente, podemos dividi-la em dois grupos de atividades:</p>
+<ul>
+<li>Desenvolvimento</li>
+<li>Gerenciamento</li>
+</ul>
+<p>Na primeira fase, estamos conhecendo melhor as necessidades e levantando a real necessidade<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Essa fase é dividida em quatro subareas:</p>
+<ul>
+<li>Elicitação - levantamento dos requisitos</li>
+<li>Análise - verificação da harmonia dos requisitos</li>
+<li>Especificação - produção da documentação</li>
+<li>Validação - aprovação do baseline pelo cliente</li>
+</ul>
+<p>Cabe a gerência de requisitos o acompanhamento da fase de desenvolvimento para que as mudanças (que sempre irão ocorrer) sejam adequadamente inseridas e documentadas para o atingimento da meta. Similar a fase de desenvolvimento, temos quatro subareas dessa atividade:</p>
+<ul>
+<li>Controle de Versão</li>
+<li>Controle de Mudanças</li>
+<li>Acompanhamento do Status</li>
+<li>Rastreabilidade</li>
+</ul>
 <h3 id="administracao-de-requisitos">Administração de Requisitos</h3>
 <h4 id="controle-de-versao">Controle de Versão</h4>
+<p>Não podemos nos enganar. Nossa cabeça ao ler algo como "controle de versão" pensa logo em versionamento de código com git e github mas não é nada disso que vamos lidar agora.</p>
+<p>O controle de versão como subárea da engenharia de requisitos é a atividade relacionada ao controle da documentação de baseline que é a guia para as fases de desenvolvimento de artefatos do projeto.</p>
+<p>Sempre que o cliente muda de ideia, é responsabilidade dessa área em atualizar a documentação e comunicar a todos os setores impactados com essa mudança afim de evitar que algum esforço seja desperdiçado em atividades que não estão mais contempladas na baseline vigente do projeto.</p>
+<p>Para manter o controle da documentação, usamos comumente o <strong>versionamento semântico</strong> para indicar as mudanças. Normalmente, podemos dividir as versões em 3 componentes:</p>
+<div style="text-align : center">
+    Major Version + Minor Version + Patch
+</div>
+
+<p>Como exemplo, nesse momento eu estou escrevendo esse trecho do material no Visual Studio Code versão 1.77.0. Ou seja, Major Version = 1, Minor Version = 77 e patch = 0.</p>
 <h4 id="acompanhamento-do-status">Acompanhamento do Status</h4>
+<p>Não adianta nada levantar todas as necessidades sem que haja um trabalho de atualização do status em cada um deles.</p>
+<p>O trabalho de acompanhamento é crucial para responder preguntas como "Quantos porcento do projeto já foi implementado?" ou "Ainda faltam quantas funcionalidades para ser implementadas?".</p>
+<p>Cada requisito deve receber um status que foi previamente acordado de acordo com a prática de desenvolvimento de cada local. Normalmente, temos os seguintes status nos projetos:</p>
+<ol>
+<li>Proposto</li>
+<li>Em progresso</li>
+<li>Rascunhado</li>
+<li>Aprovado</li>
+<li>Implementado</li>
+<li>Verificado</li>
+<li>Deferido</li>
+<li>Deletado</li>
+<li>Rejeitado</li>
+</ol>
+<p>Isso mesmo, vale muito a pena manter memória inclusive das ideias que foram descartadas porque, em várias situações, elas podem ser fontes de insights úteis.</p>
 <h3 id="rastreabilidade-de-requisitos">Rastreabilidade de Requisitos</h3>
 <h4 id="tipos-de-rastreabilidade">Tipos de Rastreabilidade</h4>
 <h4 id="matriz-de-rastreabilidade">Matriz de Rastreabilidade</h4>
@@ -443,7 +500,15 @@
 <li>PAULA FILHO, Wilson de Pádua. <strong>Engenharia de software</strong>, v. 2 projetos e processos. 4. - Rio de Janeiro LTC 2019 1 recurso online ISBN 9788521636748.</li>
 <li>VETORAZZO, Adriana de Souza. <strong>Engenharia de software</strong>. Porto Alegre SAGAH 2018 1 - recurso online ISBN 9788595026780.</li>
 <li>WAZLAWICK, Raul Sidnei. <strong>Engenharia de software conceitos e práticas</strong>. Rio de Janeiro GEN LTC 2013 1 recurso online ISBN 9788595156173.</li>
-</ul></p>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Acredite, não é nada raro o próprio cliente não ter uma noção estrutura da real necessidade dele. Cabe ao gerente de requisitos fazer essa extração das necessidades e amadurecer a ideia na cabeça do cliente.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></p>
     </article>
 </section>
 <!-- endblock -->
