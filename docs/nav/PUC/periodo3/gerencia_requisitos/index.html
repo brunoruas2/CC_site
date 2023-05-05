@@ -478,17 +478,63 @@
 <p>Isso mesmo, vale muito a pena manter memória inclusive das ideias que foram descartadas porque, em várias situações, elas podem ser fontes de insights úteis.</p>
 <h3 id="rastreabilidade-de-requisitos">Rastreabilidade de Requisitos</h3>
 <h4 id="tipos-de-rastreabilidade">Tipos de Rastreabilidade</h4>
+<p>Se temos uma certeza é a de que o projeto sofrerá mudanças ao longo do tempo. A medida que as necessidades do nosso cliente mudam, os requisitos também serão modificados. Para isso, temos que ser capazes de rastrear o impacto que essas mudanças trarão ao nosso pojeto.</p>
+<p>Para isso, <strong>temos</strong> que ser capazes de realizar as ligações entre os requisitos e os elementos do sistema (outros requisitos, artefatos, código e etc).</p>
+<p>A ligação entre requisitos é chamada de <strong>rastreabilidade horizontal</strong>. Já a relação entre os requisitos e os artefatos gerados por causa dele(s) é chamada de <strong>rastreabilidade vertical</strong>.</p>
+<p>O nome dessa habilidade é o que chamamos de <strong>rastreabilidade de requisitos</strong>. É ela que nos permite interligar para saber quais impactos as mudanças terão no nosso projeto.</p>
 <h4 id="matriz-de-rastreabilidade">Matriz de Rastreabilidade</h4>
-<h4 id="pratica-de-matriz-de-rastreabilidade">Prática de Matriz de Rastreabilidade</h4>
+<p>Agora que sabemos a importância da rastreabilidade. Temos que saber como fazer esse trabalho. De longe, a principal ferramenta usada para essa tarefa complexa é a <strong>matriz de rastreabilidade</strong>.</p>
+<p>Para a construção, colocamos todos os requisitos, stakeholders e artefatos nas linhas e nas colunas colocamos requisitos e artefatos. Usamos uma marcação (como um x) para indicar que linha e coluna são relacionados.</p>
+<p><img alt="matriz" src="../../../../assets/imgs/79-matriz-rastreabiliade.png" /></p>
 <h2 id="priorizacao-e-gerencia-de-mudancas-de-requisitos">Priorização e Gerência de Mudanças de Requisitos</h2>
 <h3 id="priorizacao-de-requisitos">Priorização de Requisitos</h3>
 <h4 id="identificando-prioridades">Identificando Prioridades</h4>
-<h4 id="tecnica-da-escala-de-3-niveis">Técnica da Escala de 3 Níveis</h4>
-<h4 id="tecnica-moscow">Técnica MoSCow</h4>
+<p>Todo projeto possui <strong>sempre</strong> duas restrições: tempo e dinheiro. Diante disso, ser capaz de indicar as prioridades é fundamental.</p>
+<p>É claro que, uma vez que tenhamos nossa matriz de rastreabilidade preenchida. Não será muito complexo saber quais são os requisitos mais centrais ao nosso projeto, uma vez que, é comum que requisitos mais importantes sejam mais relacionados que os menos relevantes.</p>
+<p>Além disso, temos algumas técnicas para elicitar os requisitos junto ao cliente. Podemos destacar 4 técnicas principais usadas nesse processo.</p>
+<h4 id="in-or-out">In or Out</h4>
+<p>Essa técnica envolve classificar os requisitos em duas categorias: "dentro" ou "fora" do escopo do projeto. Os stakeholders são solicitados a revisar e categorizar cada requisito como relevante e necessário ("dentro") ou irrelevante ou fora do escopo ("fora"). Isso ajuda a identificar os requisitos que são essenciais para o sucesso do projeto.</p>
+<h4 id="pairwise-comparison-and-rank-ordering">Pairwise Comparison and Rank Ordering</h4>
+<p>Essa técnica envolve comparar e classificar os requisitos em pares. Os requisitos são apresentados aos stakeholders em pares, e eles devem indicar qual requisito é mais importante ou prioritário em cada par. Com base nas respostas, é possível construir uma lista classificada dos requisitos por ordem de importância.</p>
+<h4 id="three-level-scale">Three-Level Scale</h4>
+<p>Nessa técnica, os requisitos são classificados em três níveis: alta prioridade, média prioridade e baixa prioridade. Os stakeholders avaliam cada requisito e atribuem um dos três níveis de prioridade, com base na importância percebida do requisito para o sucesso do projeto. Essa técnica é simples e eficiente para classificar os requisitos em categorias de prioridade.</p>
+<p>Uma vez que tenhamos essa avaliação, vamos classificar os requisitos com base em 2 critérios:</p>
+<ul>
+<li>Urgente x Não tão urgente</li>
+<li>Importante x Não tão importante</li>
+</ul>
+<p>Com base nessa classificação saberemos em que etapas focar primeiro no processo de desenvolvimento.</p>
+<h4 id="moscow-must-have-should-have-could-have-e-wont-have">MoSCoW (Must-have, Should-have, Could-have e Won't-have)</h4>
+<p>Nessa técnica, os requisitos são agrupados em quatro categorias:</p>
+<ul>
+<li>Must-have: São requisitos essenciais, sem os quais o projeto não pode ser considerado bem-sucedido.</li>
+<li>Should-have: São requisitos importantes, mas não essenciais. Sua inclusão é altamente desejável, mas o projeto pode progredir sem eles.</li>
+<li>Could-have: São requisitos considerados como opcionais ou desejáveis. Sua inclusão pode trazer benefícios adicionais ao projeto, mas não são críticos.</li>
+<li>Won't-have: São requisitos que não serão incluídos no projeto atual, mas podem ser considerados para projetos futuros.</li>
+</ul>
+<h4 id="100-hundred-dollar">$100 (hundred dollar)</h4>
+<p>Os stakeholders recebem uma quantia fictícia de "100 dólares" e devem distribuir esse dinheiro entre os diferentes requisitos, de acordo com a importância percebida de cada um. Eles podem gastar mais dinheiro nos requisitos mais importantes e menos dinheiro nos requisitos menos prioritários.</p>
 <h3 id="gerencia-de-mudancas-de-requisitos">Gerência de Mudanças de Requisitos</h3>
 <h4 id="processo-de-controle-de-mudancas">Processo de Controle de Mudanças</h4>
+<p>Agora que sabemos levantar, relacionar e priorizar os requisitos. Precisamos de uma última habilidade relacionada a gestão que é a <strong>gestão de mudanças</strong>.</p>
+<p>O foco dessa atividade é reduzir o risco e padronizar o processo de mutação das necessidades do cliente para que a coerência do projeto não seja comprometida bem como esclarecer como essas mudanças trarão impactos ao projeto.</p>
+<p>Para isso temos um artefato de solicitação de mudança. Com status parecidos ao dos requisitos:</p>
+<ul>
+<li>Submetida</li>
+<li>Avaliado</li>
+<li>Aprovado</li>
+<li>Realizada</li>
+<li>Verificada</li>
+<li>Encerrada</li>
+<li>Rejeitada</li>
+<li>Cancelada</li>
+</ul>
 <h4 id="comite-de-controle-de-mudancas">Comitê de Controle de Mudanças</h4>
+<p>Como uma mudança dos requisitos é algo que pode ter impacto profundo no projeto em andamento, é muito comum a construção de um grupo de trabalho chamado de <strong>Comitê de Controle de Mudanças\Change Control Board</strong> para que uma avaliação interdisciplinar seja realizada nessas mudanças potenciais afim de termos uma avaliação melhor do impacto da mesma no todo do projeto.</p>
+<p>Quem vai compor esse comitê é uma lista ampla de profissionais que vão desde o time de desenvolvimento até o staff gerencial.</p>
 <h4 id="analise-de-impacto-de-mudancas">Análise de Impacto de Mudanças</h4>
+<p>Podemos dizer que a maior responsabilidade do Comitê de Controle de Mudanças seja a avaliação do impacto de uma mudança proposta. Isso é feito com base nos instrumentos que já vimos anteriormente nesse microfundamento e a experiência do board para sabermos se vale a pena.</p>
+<p>A análise sempre deve se basear no trade-off entre custo e benefícios da proposta.</p>
 <h2 id="bibliografia">Bibliografia</h2>
 <ul>
 <li>REINEHR, Sheila. <strong>Engenharia de requisitos</strong>. Porto Alegre SAGAH 2020 1 recurso online - (Engenharia de software). ISBN 9786556900674. Capítulos 2, 3 e 14.</li>
