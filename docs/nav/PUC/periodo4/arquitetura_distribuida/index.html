@@ -368,14 +368,67 @@
 <li><a href="#modelos-de-comunicacao-de-sistemas-distribuidos">Modelos de Comunicação de Sistemas Distribuídos</a></li>
 </ul>
 </li>
+<li><a href="#implementacao-de-software-distribuido"><strong>Implementação de Software Distribuído</strong></a><ul>
+<li><a href="#middlewares-para-desenvolvimento-de-sistemas-distribuidos">Middlewares para Desenvolvimento de Sistemas Distribuídos</a></li>
+</ul>
+</li>
 <li><a href="#bibliografia"><strong>Bibliografia</strong></a></li>
 </ul>
 <h1 id="fundamentos-de-sistemas-distribuidos">Fundamentos de Sistemas Distribuídos</h1>
 <h2 id="definicoes-de-sistemas-distribuidos">Definições de Sistemas Distribuídos</h2>
 <h3 id="redes-e-sistemas-distribuidos">Redes e Sistemas Distribuídos</h3>
+<p>Até agora, todas as aplicações que construímos usaram uma separação lógica entre camadas (como o modelo MVC) mas, no fim do dia, tudo isso rodava sempre num mesmo servidor (que na maioria das vezes é o nosso computador de casa que usamos para estudar). Entretanto, quando pensamos em aplicações reais de alta performance (como sites de bancos, corretoras de valores, o Ifood, o Uber e etc) podemos ter certeza que esses serviços não são executados por um único servidor monolítico que é capaz de fazer todas as camadas de processamento desses serviços.</p>
+<p>No mundo real, as aplicações funcionam de maneira <strong>distribuída</strong> em diferentes servidores.</p>
+<p>Diante disso, temos que entender bem como os conceitos de <strong>Redes de Computadores</strong> e <strong>Sistemas Distribuídos</strong> se relacionam.</p>
+<h4 id="redes-de-computadores">Redes de Computadores</h4>
+<p>Nós já aprendemos sobre esse assunto na microfundamento de Fundamentos de Redes do segundo período.</p>
+<p>Podemos definir uma rede como sendo a soma das seguintes partes:</p>
+<div class="arithmatex">\[ Rede = (Dispositivos \ Eletrônicos) + (Sistemas \ de \ Comunicação) + (Protocolos \ de \ Rede) \]</div>
+<p>Ou seja, uma rede é o conjunto de componentes físicos e lógicos que permitem a <strong>troca de dados</strong> entre os dispositivos.</p>
+<h4 id="sistemas-distribuidos">Sistemas Distribuídos</h4>
+<p>Por outro lado, um sistemas distribuído pode ser definido (Coulouris et al, 2013) como sendo um sistema cujas partes (hardware ou software) se comunicam por meio de uma rede e coordenam suas ações apenas enviando mensagens entre si.</p>
+<p>Ou seja, um sistema distribuído precisa de uma rede de computadores para existir. Entretanto, não são a mesma coisa (na verdade são conceitos bem diferentes).</p>
+<p>Um sistema distribuído é composto por um conjunto de vários softwares (que chamaremos de serviços ou microsserviços) que atuam em conjunto como se fosse um programa apenas.</p>
+<p>Nesse microfundamento vamos aprender alguns padrões arquiteturais de construção de sistemas distribuídos<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <h3 id="exemplos-de-software-distribuido">Exemplos de Software Distribuído</h3>
+<p>Podemos elencar uma série de sistemas distribuídos que utilizamos corriqueiramente:</p>
+<ul>
+<li>Sistemas de Banco de Dados<ul>
+<li>Permitem acesso unificado a uma infraestrutura de dados</li>
+<li>São acessados por diferentes origens de frontend</li>
+</ul>
+</li>
+<li>Aplicações Web<ul>
+<li>Sistemas complexos que utilizam fortemente as redes de computadores</li>
+<li>Separação em várias camadas lógicas: frontend, backend, banco de dados, servidor de arquivos e etc</li>
+<li>Utilizam arquitetura cliente-servidor</li>
+</ul>
+</li>
+<li>Sistemas P2P<ul>
+<li>Sistemas construídos de maneira não centralizada</li>
+<li>Cada nó implementa a lógica de aplicação e acesso parcial as dados</li>
+<li>Maior custo de localização de dados quando comparado aos sistemas centralizados</li>
+</ul>
+</li>
+<li>Aplicações de Internet das Coisas<ul>
+<li>Vários microcontroladores com sensores cada vez mais conectados à internet</li>
+</ul>
+</li>
+<li>Redes Sociais</li>
+</ul>
 <h2 id="caracteristicas-de-sistemas-distribuidos">Características de Sistemas Distribuídos</h2>
 <h3 id="compartilhamento-de-recursos">Compartilhamento de Recursos</h3>
+<p>Uma característica que une todos os sistemas atuais é o compartilhamento de informações. Nas aplicações modernas, é muito estranho pensarmos no usuário apenas como um consumidor de dados sem que ele mesmo seja um ator ativo no processo. No passado, a coisa era bem diferente, a chamada web 1.0 era estática e unidirecional.</p>
+<p>Diante dessa nova realidade, temos que pensar em soluções que permitam o compartilhamento de informações em diferentes meios (web, mobile, API e etc) e entre múltiplos usuários (como uma planilha no google sheets que pode acessada por vários usuários simultaneamente).</p>
+<h4 id="servicos-e-servidores">Serviços e Servidores</h4>
+<p>Podemos definir como <strong>serviço</strong> qualquer parte de um sistema que gerencia um <strong>conjunto de recursos</strong> por meio de uma <strong>interface</strong>. Em sistemas distribuídos, os recursos são acessados remotamente por mecanismos de comunicação.</p>
+<p>Um <strong>servidor</strong> é um programa (isso mesmo, um programa) que é executado em um hardware (que também costumamos chamar de servidor) e que atende às solicitações feitas por programas em outros computadores.</p>
+<p>Aqui tem um vídeo bacana sobre o que é um servidor.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VXmvM2QtuMU?si=R5UQAHydpPe3ZcuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<p>A arquitetura mais famosa e simples é a cliente-servidor que a essa altura do campeonato já estamos bem familiares.</p>
+<p>Chamamos de <strong>requisição remota</strong> o processo completo da comunicação entre cliente e servidor que vai desde a requisição inicial até o recebimento da resposta esperada.</p>
+<p><strong>Atenção: </strong> Mesmo que possa parecer, a arquitetura client-server não é a única possível. Falamos agora a pouco que existem sistemas P2P que subvertem essa lógica e transformam todos os nós em clientes-servidores ao mesmo tempo.</p>
 <h3 id="desafios-de-arquiteturas-distribuidas">Desafios de Arquiteturas Distribuídas</h3>
 <h1 id="arquiteturas-de-software-distribuido">Arquiteturas de Software Distribuído</h1>
 <h2 id="modelos-arquiteturais-para-sistemas-distribuidos">Modelos Arquiteturais para Sistemas Distribuídos</h2>
@@ -386,6 +439,10 @@
 <h3 id="comunicacao-entre-processos">Comunicação entre Processos</h3>
 <h3 id="invocacao-remota">Invocação Remota</h3>
 <h3 id="comunicacao-indireta">Comunicação Indireta</h3>
+<h1 id="implementacao-de-software-distribuido">Implementação de Software Distribuído</h1>
+<h2 id="middlewares-para-desenvolvimento-de-sistemas-distribuidos">Middlewares para Desenvolvimento de Sistemas Distribuídos</h2>
+<h3 id="objetos-distribuidos">Objetos Distribuídos</h3>
+<h3 id="servicos-web">Serviços Web</h3>
 <h1 id="bibliografia">Bibliografia</h1>
 <h2 id="obrigatoria">Obrigatória</h2>
 <ul>
@@ -402,7 +459,15 @@
 <li>KATZER, Jason. Learning Serverless. O'Reilly Media, 2019. ISBN 9781492057017.</li>
 <li>LEE, Valentino; Schneider, Heather; Schell, Robbie. Aplicações Móveis: arquitetura, projetos e desenvolvimento. Pearson 350 ISBN 9788534615402.</li>
 <li>TANENBAUM, Andrew S.; STEEN, Maarten van. Sistemas Distribuídos: princípios e paradigmas. 2. Ed. Pearson, 2015. ISBN 9788576051428.</li>
-</ul></p>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Vai por mim. Aprende bem essa aula porque praticamente todas as empresas grandes usam essas arquiteturas.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></p>
     </article>
 </section>
 <!-- endblock -->
