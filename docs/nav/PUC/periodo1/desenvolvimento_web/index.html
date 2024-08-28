@@ -556,7 +556,7 @@ O W3C mantém a gestão de vários padrões usados todos os dias:</p>
 </ul>
 <h3 id="dinamica-de-aplicacoes-web">Dinâmica de Aplicações Web</h3>
 <p>Quando você acessa um site, o arquivo que coordena o modo de exposição da informação e os conteúdos da mesma é um arquivo <code>.html</code>. Observe o exemplo abaixo de uma página simples.</p>
-<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- &gt; Html &lt;--&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Html --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -616,7 +616,7 @@ As tags que contém as partes <code>style.css</code>, <code>app.js</code> e <cod
 <p>Atente para o fato que alguns elementos aceitam outros elementos internamente. Por exemplo, dentro do elemento <code>&lt;body&gt;&lt;/body&gt;</code> nós colocamos todos os outros elementos que comporão a nossa página web, como por exemplo, formulários, parágrafos, vídeos e etc. Então se acostume de termos elementos dentro de outros elementos.</p>
 <p>Dentro de alguns elementos podem ser inseridas informações e configurações por meio de parâmetros que chamamos de <strong>atributos</strong> do elemento. Por exemplo, no elemento logo acima, temos os atributos <code>name</code> e <code>value</code>.</p>
 <p>Agora que sabemos o que são elementos e como eles são construídos, podemos seguir para a    <strong>organização de um documento HTML</strong>. Existe um padrão em todo arquivo HTML onde existem alguns elementos obrigatórios para o processamento da página pelo browser do client.
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span> -------------------------------&gt; Elemento da versão do HTML
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span> ------------------------------&gt; Abertura do documento HTML
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> ------------------------------------&gt; Abertura do cabeçalho
@@ -722,7 +722,7 @@ As tags que contém as partes <code>style.css</code>, <code>app.js</code> e <cod
 <h5 id="listas">Listas</h5>
 <p>Existem 3 tipos de listas em HTML.</p>
 <p>Listas ordenadas:
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Primeiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; 1. Primeiro item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Segundo item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt; 2. Segundo item
@@ -730,7 +730,7 @@ As tags que contém as partes <code>style.css</code>, <code>app.js</code> e <cod
 <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
 </code></pre></div>
 Lista não ordenada:
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Primeiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; o Primeiro item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Segundo item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt; o Segundo item
@@ -738,7 +738,7 @@ Lista não ordenada:
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </code></pre></div>
 Lista de definições:
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span> Termo 01 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> -------------&gt; Termo 01
         <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> Definição 01 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt;      Definição 01
@@ -747,11 +747,11 @@ Lista de definições:
 <span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <h5 id="imagens">Imagens</h5>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;180&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Peixe&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <h5 id="links">Links</h5>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> ------&gt; Nova tab
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_self&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> -------&gt; Mesma tab
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_parent&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> -----&gt; Frame pai
@@ -760,7 +760,7 @@ Lista de definições:
 </code></pre></div>
 <h4 id="elementos-estruturais">Elementos Estruturais</h4>
 <p>A partir da versão 4.0 o principal elemento usado para segmentar as partes de uma página html passou a ser o <code>&lt;div&gt;</code> que é um um elemento de divisão genérico para agrupar qualquer conjunto de elementos necessários. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Titulo <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Parágrafo pequeno <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -839,7 +839,7 @@ Lista de definições:
 <p>Não é difícil perceber que o uso de elementos semânticos é fortemente indicado para o desenvolvimento de aplicações web modernas.</p>
 <h4 id="elementos-de-tabelas">Elementos de Tabelas</h4>
 <p>Não é nada incomum ter que demonstrar dados usando uma tabela. Pensando nisso, a linguagem HTML também possui um elemento especificamente criado para criação de tabelas. Uma tabela pode ser criada com o uso das seguintes tags:
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span> --------------&gt; Cria a Tabela
     <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span> Título <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span> -&gt; Coloca um Título
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span> ------------------------&gt; Table Row (tr)
@@ -899,7 +899,7 @@ Existem vários elementos que podem ser usados dentro de uma tabela. São os pri
 <h4 id="elementos-de-formularios">Elementos de Formulários</h4>
 <p>Uma das interações mais básicas que precisamos de um usuário é a inserção de dados na aplicação. Dentre as várias maneiras de conseguirmos um dado inserido pelo usuário, o formulário é a mais simples.</p>
 <p>O HTML fornece vários atributos dentro do elemento <code>&lt;form&gt;&lt;/form&gt;</code> que nos permite a criar campos de texto, botões clicáveis, campos de senha e etc. A sintaxe mais básica de um formulário é dada por:</p>
-<p><div class="highlight"><pre><span></span><code>// html
+<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;form_name&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;login.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
     Usuário: <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;user&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
@@ -938,7 +938,7 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <p>Esse é tranquilo de entender. Sempre que precisarmos de um input de texto maior do que uma linha, podemos usar o elemento <code>&lt;textarea name="" rows="10"</code> <code>cols="50"&gt;&lt;/textarea&gt;</code> para isso. É possível alterar a quantidade de linhas e a número de colunas para apresentação da nossa caixa de texto apenas mudando os parâmetros dos atributos.</p>
 <h5 id="elemento-select">Elemento <code>&lt;select&gt;</code></h5>
 <p>Podemos permitir que o usuário selecione uma lista pré-selecionada de opções através de uma     <strong>lista em caixa</strong> (também chamada de   <strong>dropdown menu</strong>). Um exemplo de código contendo esse elemento por ser visto abaixo.</p>
-<p><div class="highlight"><pre><span></span><code>// html
+<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;lista&quot;</span><span class="p">&gt;</span> Dropdown Menu <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lista&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Selecione uma opção<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
@@ -962,7 +962,7 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <li>Atributo inline - Pior forma. Aqui, as regras de estilo são definidas diretamente no elemento html. Qualquer mínima alteração terá de ser feita diretamente no elemento e em todas as páginas.</li>
 </ul>
 <p>Aqui podemos ver um exemplo de cada aplicação do estilo visual que elencamos acima:</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -995,20 +995,20 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <h5 id="sintaxe-da-linguagem-css">Sintaxe da linguagem CSS</h5>
 <p>A leitura de um arquivo CSS é bem simples. A primeira coisa que precisamos saber é quais elementos estão presentes no html que será trabalhado e quais desses elementos possuem atribuição de id específico. </p>
 <p>Por exemplo, se tivermos no nosso html dois elementos <code>&lt;p&gt;</code>, só que um deles possui o atributo id <code>&lt;p id="teste"&gt;</code>. Para criarmos uma regra de estilo no nosso CSS basta escrevermos a tag do elemento (sem os símbolos <code>&lt;&gt;</code>) do seguinte modo.</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Essa regra diz que todos os textos contidos nos elementos <code>&lt;p&gt;</code> terão a cor vermelha. Contudo, se quisermos adotar uma regra específica para apenas um elemento em questão, podemos definir a regra no css diretamente para o elemento com o seu id.</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="p">#</span><span class="nn">teste</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 Isso nos dará uma página onde todos os textos dos parágrafos serão vermelhos à exceção do parágrafo identificado pelo <code>id="teste"</code>.</p>
 <p>Podemos resumir a sintaxe do CSS como sendo:</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">seletor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">propriedade_1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">valor_da_propriedade_1</span><span class="p">;</span>
 <span class="w">    </span><span class="n">propriedade_2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">valor_da_propriedade_2</span><span class="p">;</span>
@@ -1148,7 +1148,7 @@ Ou seja, para aprender bem CSS, vamos precisar aprender as várias maneiras de s
 <p>Mais ou menos como nessa imagem abaixo</p>
 <p><img alt="12-display.png" src="../../../../assets/imgs/12-display.png" /></p>
 <p>Podemos modificar o comportamento padrão de um elemento através do parâmetro <code>display:</code> no CSS. Por exemplo, para transformar os <code>&lt;input&gt;</code> em um elemento sozinho na página, podemos colocar no CSS a seguinte linha</p>
-<p><div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">input</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
@@ -1188,14 +1188,14 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p>Aqui tem um material bem completo fornecido pelo <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration">Mozilla</a></p>
 <h5 id="fontes-de-texto-na-web">Fontes de Texto na Web</h5>
 <p>O CSS nos dá as seguintes opções de letras: serif, sans-serif,monospace, cursive e fantasy. Contudo, nós nunca teremos certeza se o navegados do user terá a capacidade de carregar a fonte que desejamos. Para evitar esse problema, podemos definir opções de fontes do seguinte modo:</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trebuchet MS&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Verdana</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>O navegador do user vai tenter renderizar a página usando a primeira opção, caso ele não consiga, ele vai para as outras opções.</p>
 <p>Além das opções padrão CSS, podemos usar fontes proprietárias de outras fontes (Google Fonts, DaFont, Adobe e etc). A maneira de fazer isso é definir uma propriedade de importação como no exemplo abaixo</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css?family=Baloo&#39;</span><span class="o">)</span><span class="p">;</span>
 <span class="nt">div</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Baloo&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">cursive</span><span class="p">;</span>
@@ -1214,7 +1214,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 </ul>
 <h5 id="media-queries">Media Queries</h5>
 <p>As media queries são os parâmetros usados na aplicação que usam alguma característica do dispositivo onde a página está sendo exibida. Abaixo nós podemos ver um exemplo de elemento HTML com media query.</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#39;screen and (min-width: 900px)&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tela_g.css&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#39;screen and (max-width: 600px)&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tela_p.css&quot;</span><span class="p">&gt;</span>
@@ -1222,7 +1222,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 </code></pre></div>
 <p>Nesse exemplo HTML, podemos ver como, de acordo com o tamanho da tela, o arquivo de estilo CSS carregado vai ser o "tela_g.css" ou o "tela_p.css".</p>
 <p>Do lado do CSS, a sintaxe das media queries são usadas da seguinte maneira:</p>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;}</span>
@@ -1254,7 +1254,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p>Se nossa aplicação for desenvolvida para uma tela com 1920 pixels (full HD), podemos converter cada pixel em uma nova unidade que permita a aplicação recalcular os tamanhos dos componentes em pixels de modo a se adequar melhor ao display. No exemplo a abaixo, nós estamos "mudando" o valor padrão do pixel para caber em uma tela com 1/3 de 1920 (640 pixels):</p>
 <div class="arithmatex">\[ Viewport = \dfrac{   \textrm{Resolução}}{    \textrm{Pixel-Ratio}} = \dfrac{1920}{3} = 640 \ pixels \]</div>
 <p>Para habilitar esse método de ajuste, o HTML precisa ter a seguinte linha no <code>head</code>:</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>A Vantagem dessa abordagem é que ela permite a manutenção da leitura quando nossa página é carregada por telas menores. Também podemos controlar a capacidade de rolagem e zoom do usuário por meio dessa meta tag.</p>
@@ -1262,7 +1262,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p>Já aprendemos como reduzir a escala da nossa aplicação com o viewport. Mas, em telas de smartphones ou monitores pequenos, simplesmente reduzir a aplicação para caber no dispositivo pode não ser suficiente para uma boa experiência.</p>
 <p>No Layout Flex (flexbox) nós podemos definir o comportamento dos elementos html filhos dentro de um bloco maior. Nesse modelo, nós conseguimos mudar o posicionamento relativo dos elementos filhos sempre que a tela se comportar de determinada maneira prevista (como o caso do nosso site ser aberto em uma tela de smartphone ao invés de um monitor).</p>
 <p>Para usar esse recurso, usaremos no elemento pai<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> o parâmetro <code>display:</code> <code>flex; flex-wrap: wrap;</code>. Além de definirmos o tipo de display no elemento pai, usaremos a media query para ajustar o tamanho ideal dos elementos na tela. Podemos ver melhor no exemplo de código abaixo:</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;container&#39;</span><span class="p">&gt;</span>
@@ -1273,7 +1273,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 <span class="w">    </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span>
@@ -1326,7 +1326,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <li>Track - Um conjunto linear de cells (uma linha ou uma coluna do grid)</li>
 </ul>
 <p>Abaixo temos o código de uma aplicação simples usando esse sistema de construção de front end:</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>Header <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
@@ -1336,7 +1336,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">body</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1382,7 +1382,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p><img alt="15-layout-grid.png" src="../../../../assets/imgs/15-layout-grid.png" /></p>
 <p>Com base nessa lógica, podemos posicionar elementos usando o sistemas de coordenadas do CSS Grid. Vamos refazer a interface que acabamos de ver usando apenas esse conceito de "items" dentro de um "container".</p>
 <p>Ao invés de definir a separação da tela como parâmetro da classe container no CSS, nós vamos criar o container e orientar, dentro de cada item, como ele se comportará no grid.</p>
-<div class="highlight"><pre><span></span><code>// html
+<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item-a&quot;</span><span class="p">&gt;</span>Header<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1392,7 +1392,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="nt">body</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1521,7 +1521,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p><img alt="17-boostrap-columns.png" src="../../../../assets/imgs/17-boostrap-columns.png" /></p>
 <p>O código HTML usando o Bootstrap é fortemente baseado em <code>&lt;div&gt;</code>. A novidade está no uso de classes específicas que dão a lógica contida nos arquivos usados pelo framework.</p>
 <p>A hierarquia é similar ao grid system porque a aplicação existira dentro de um container. O Container terá pelo menos uma linha (row). Cada linha terá pelo menos uma coluna. Internalize essa hierarquia de Container, Linhas e Colunas.</p>
-<p><div class="highlight"><pre><span></span><code>// html
+<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel1&quot;</span><span class="p">&gt;</span>.col-md-6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel2&quot;</span><span class="p">&gt;</span>.col-md-6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1535,7 +1535,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-3&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel2&quot;</span><span class="p">&gt;</span>.col-md-3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">css</span>
+<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
 <span class="p">#</span><span class="nn">cel1</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
