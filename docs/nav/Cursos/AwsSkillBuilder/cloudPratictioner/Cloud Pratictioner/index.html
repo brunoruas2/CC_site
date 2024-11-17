@@ -401,21 +401,25 @@
 <p>Snapshots -&gt; Incremental backupds for EBS</p>
 <p>AWS Simple Store Service (S3) -&gt; Store data as objects with versions in buckets (like a file equivalent). Can receave objects until 5TB!</p>
 <p>S3 Lifecycle Policies -&gt; Rules that can move data for s3 tiers automaticly for better storage and cost</p>
-<p>S3 Classes aka Tiers -&gt;
-      Standard (999999999% prob of aviability in a year)
-      Static Website Hosting
-      Standard-Infrequent Access Data aka Standard-IA (not so frequently until we need it, like a backup)
-      Glacier Flexible Retrieval (Retain data for audit or compliance in valts). Acept policies like Write one - read many (worm)</p>
+<p>S3 Classes aka Tiers -&gt;</p>
+<ul>
+<li>Standard (999999999% prob of aviability in a year)</li>
+<li>Static Website Hosting</li>
+<li>Standard-Infrequent Access Data aka Standard-IA (not so frequently until we need it, like a backup)</li>
+<li>Glacier Flexible Retrieval (Retain data for audit or compliance in valts). Acept policies like Write one - read many (worm)</li>
+</ul>
 <p>AWS Elastic File System (EFS) -&gt; Scales automatically. Run in a region. Can be access by on-premisses by AWS Direct Connect</p>
 <p>AWS Relational Database Service (RDS) -&gt; Suport dbms with automated patching, backups, redundance, failover and disaster recovery</p>
 <p>lift-and-shift -&gt; Migrate for an onpremisses dbms</p>
-<p>AWS RDS database engines -&gt;
-      AWS Aurora (compatible with MySQL and PostegreSQL)
-      MySQL
-      PostegreSQL
-      MariaDB
-      Oracle
-      MSSQLServer</p>
+<p>AWS RDS database engines -&gt;</p>
+<ul>
+<li>AWS Aurora (compatible with MySQL and PostegreSQL)</li>
+<li>MySQL</li>
+<li>PostegreSQL</li>
+<li>MariaDB</li>
+<li>Oracle</li>
+<li>MSSQLServer</li>
+</ul>
 <p>AWS DynamoDB -&gt; Serverless database. NoSQL with item + attribute. Purpose built.</p>
 <p>Data warehouses -&gt; Storage of data to post ante analysis with focus in the past data and not real time updates.</p>
 <p>AWS Redshift -&gt; Focus in data analysis. Data warehouse as a service. 10x faster than traditional databases for queries in multiple databases.</p>
@@ -431,22 +435,28 @@
 <p>Policies -&gt; Permition json that effect (allow or deny) + action (api call) + resource</p>
 <p>IAM Groups -&gt; a better way to manage the permitions by attach users in groups</p>
 <p>IAM Roles -&gt; temporary permitions</p>
-<p>AWS Organizations -&gt; 
-    1. Central local to manage multiple AWS accounts
-    2. Consolidade billing
-    3. Hierarchical group accounts
-    4. Control AWS Service and API Actions (Service Control Polices - SCP)</p>
+<p>AWS Organizations -&gt; </p>
+<ol>
+<li>Central local to manage multiple AWS accounts</li>
+<li>Consolidade billing</li>
+<li>Hierarchical group accounts</li>
+<li>Control AWS Service and API Actions (Service Control Polices - SCP)</li>
+</ol>
 <p>Organization Units -&gt; The name of each AWS organization</p>
 <p>AWS Compliance -&gt; A LOT of best practices that AWS already follow</p>
 <p>AWS Artifact -&gt; Service that provide on-demand access to AWS Security and compliance reports</p>
-<p>Denial-of-service Attacks -&gt; 
-    1. UDF Flood (api weather)
-    2. HTTP Level Attacks (multiple http clients)
-    3. Slowloris Attack (slow connection fake to stop de queue)</p>
-<p>Defenses of DDoS by AWS -&gt;
-    1. Security Groups (the bad api calls does not reach the server)
-    2. AWS Shield with AWS WAF (Machine learning and other stuff)
-    3. Elastic Load Balancer (each track is segregated)</p>
+<p>Denial-of-service Attacks -&gt; </p>
+<ol>
+<li>UDF Flood (api weather)</li>
+<li>HTTP Level Attacks (multiple http clients)</li>
+<li>Slowloris Attack (slow connection fake to stop de queue)</li>
+</ol>
+<p>Defenses of DDoS by AWS -&gt;</p>
+<ol>
+<li>Security Groups (the bad api calls does not reach the server)</li>
+<li>AWS Shield with AWS WAF (Machine learning and other stuff)</li>
+<li>Elastic Load Balancer (each track is segregated)</li>
+</ol>
 <p>AWS Shield -&gt; Service that protects applications against DDoS attacks (two levels: stantad -no cost- and advanced)</p>
 <p>Encryption -&gt; A way to ensure that only permitioned peaple can access to the data</p>
 <p>AWS Key Management Service (KMS) -&gt; Encryption operations by a key</p>
@@ -462,88 +472,118 @@
 <p>AWS Trusted Advisor -&gt; Avaluate by 5 pillars: Cost optmization, Performance, Security, Fault tolerance and Service limits. Some are free and others paid. 3 actions: Action recomendation, Investigation recomendation and alright.</p>
 <h2 id="module-8-billing">Module 8 - Billing</h2>
 <p>AWS Free Tier -&gt; 3 ways: aways free, 12 months free and trial</p>
-<p>How AWS price works -&gt;
-    - Pay for what you user
-    - Pay less when you reserve
-    - Pay less with volumed-based discounts when you use more</p>
+<p>How AWS price works -&gt;</p>
+<ul>
+<li>Pay for what you user</li>
+<li>Pay less when you reserve</li>
+<li>Pay less with volumed-based discounts when you use more</li>
+</ul>
 <p>AWS Princing Calculator</p>
 <p>AWS Billing Dashboard -&gt; Painel to pay the aws bill </p>
 <p>AWS Consolidate Billing -&gt; Centralize the bill process + share saving across accounts +  it's free</p>
 <p>AWS Budged -&gt; 4 types: cost, usage, reservation and saving plans. Custom alerts to keep the control on time</p>
 <p>AWS Cost explore -&gt; drill down to know where you are allocating the cost. Can be group by tag to keep track of projects or other group of services</p>
-<p>AWS Support plans -&gt;
-    - Basic support:
-        - 24/7 customer service
-        - documentation
-        - whitepapers
-        - aws trusted advisor
-        - aws personal health dashboard
-    - Developer support:
-        - Email support 24 hours to response
-    - Business support:
-        - aws trusted advisor full power
-        - direct phone to cloud support team (4 hour to response)
-    - Enterprise On-Ramp support:
-        - 30 minutes response for critical workload
-        - access to a pool of Technical Account Managers (TAMs)
-    - Enterprise support:
-        - 15 minutes response
-        - Designated Technical Account Manager (TAM)</p>
-<p>Technical Account Manager (TAM) -&gt; A consigliere to keep the aws account running in conformity of the 6 pillars of well-architectured framework (more in module 10):
-    - Operational Excellence
-    - Security
-    - Reliability
-    - Performance Efficiency
-    - Cost Optimization
-    - Sustainability</p>
+<p>AWS Support plans -&gt;</p>
+<ul>
+<li>Basic support:<ul>
+<li>24/7 customer service</li>
+<li>documentation</li>
+<li>whitepapers</li>
+<li>aws trusted advisor</li>
+<li>aws personal health dashboard</li>
+</ul>
+</li>
+<li>Developer support:<ul>
+<li>Email support 24 hours to response</li>
+</ul>
+</li>
+<li>Business support:<ul>
+<li>aws trusted advisor full power</li>
+<li>direct phone to cloud support team (4 hour to response)</li>
+</ul>
+</li>
+<li>Enterprise On-Ramp support:<ul>
+<li>30 minutes response for critical workload</li>
+<li>access to a pool of Technical Account Managers (TAMs)</li>
+</ul>
+</li>
+<li>Enterprise support:<ul>
+<li>15 minutes response</li>
+<li>Designated Technical Account Manager (TAM)</li>
+</ul>
+</li>
+</ul>
+<p>Technical Account Manager (TAM) -&gt; A consigliere to keep the aws account running in conformity of the 6 pillars of well-architectured framework (more in module 10):</p>
+<ul>
+<li>Operational Excellence</li>
+<li>Security</li>
+<li>Reliability</li>
+<li>Performance Efficiency</li>
+<li>Cost Optimization</li>
+<li>Sustainability</li>
+</ul>
 <p>AWS Marketplace -&gt; A market for enterprise services of third parties in a bunch of categories like devops, infra, Iot, machine learning and more</p>
 <h2 id="module-9-migration-and-innovation">Module 9 - Migration and Innovation</h2>
 <p>AWS Adoption Framework (CAF) -&gt; Advice to make a smooth change for cloud in 6 perspectives: Business, People, Governance, Platform, Security and Operations. The first 3 focus on business and the last 3 focus on technical capabilities</p>
 <p>AWS CAF Action Plan -&gt; Guide to make a migration</p>
-<p>Migration Strategies (6 R's) -&gt;
-    - Re-hosting (lift and shift)
-    - Re-platforming (lift, tinker and shift)
-    - Retire (die apps not needed anymore)
-    - Retain (make app life only for a short period of time on premisses until then die)
-    - Repurchasing (buy new software inted of use the old ones)
-    - Refactoring (re-code part of your software)</p>
-<p>AWS Snow Family -&gt;
-    - AWS Snowcone - A hardware that you receive from amazon, plug in your data center, copy the data and send back to amazon to send this to the cloud. Store up to 14TB
-    - AWS Snowball Edge - A device suited for large-scale data migrations. Can be Storage focused or Compute focused. 80TB
-    - AWS Snowmobile - 100PB. Like a container to plug in your on-premises data center</p>
+<p>Migration Strategies (6 R's) -&gt;</p>
+<ul>
+<li>Re-hosting (lift and shift)</li>
+<li>Re-platforming (lift, tinker and shift)</li>
+<li>Retire (die apps not needed anymore)</li>
+<li>Retain (make app life only for a short period of time on premisses until then die)</li>
+<li>Repurchasing (buy new software inted of use the old ones)</li>
+<li>Refactoring (re-code part of your software)</li>
+</ul>
+<p>AWS Snow Family -&gt;</p>
+<ul>
+<li>AWS Snowcone - A hardware that you receive from amazon, plug in your data center, copy the data and send back to amazon to send this to the cloud. Store up to 14TB</li>
+<li>AWS Snowball Edge - A device suited for large-scale data migrations. Can be Storage focused or Compute focused. 80TB</li>
+<li>AWS Snowmobile - 100PB. Like a container to plug in your on-premises data center</li>
+</ul>
 <p>Innovation in AWS -&gt; VMWare Cloud AWS, Amazon SageMakes (machine learning pre-trained models), Amazon Augmented AI (2AI), Amazon Lex (the heart of Alexa), Amazon Textract (extract text), AWS DeepRacer, Iot, AWS Groud Station (for satelities)</p>
 <p>AWS Q Developer -&gt; Like a copilot without store or be used</p>
 <h2 id="module-10-the-cloud-journey">Module 10 - The Cloud Journey</h2>
-<p>6 pillars of Well-Architectured framework -&gt;
-    - Operational Excellence (running and monitoring systems)
-    - Security (integrity of data and users)
-    - Reliability (recovery plannings and handle changes)
-    - Performance Efficiency (compute resources used in the best way)
-    - Cost Optimization (optimize full cost)
-    - Sustainability (minimize the environmental impact)</p>
+<p>6 pillars of Well-Architectured framework -&gt;</p>
+<ul>
+<li>Operational Excellence (running and monitoring systems)</li>
+<li>Security (integrity of data and users)</li>
+<li>Reliability (recovery plannings and handle changes)</li>
+<li>Performance Efficiency (compute resources used in the best way)</li>
+<li>Cost Optimization (optimize full cost)</li>
+<li>Sustainability (minimize the environmental impact)</li>
+</ul>
 <p>Well-Architectured tool -&gt; A service that evaluate your aws account by the 6 pillars above by a form of questions</p>
-<p>6 main benefits to use cloud -&gt;
-    - pay as you use (not upfront cost) and the cost is not fixed 
-    - benefit from massive scale
-    - stop guessing capacity and scale fast when needed
-    - increase speed and agility by trying and failing fast and cheap
-    - stop wasting money hosting data centers and focus on the business
-    - go global in minutes</p>
+<p>6 main benefits to use cloud -&gt;</p>
+<ul>
+<li>pay as you use (not upfront cost) and the cost is not fixed </li>
+<li>benefit from massive scale</li>
+<li>stop guessing capacity and scale fast when needed</li>
+<li>increase speed and agility by trying and failing fast and cheap</li>
+<li>stop wasting money hosting data centers and focus on the business</li>
+<li>go global in minutes</li>
+</ul>
 <h2 id="module-11-aws-certified-cloud-practitioner-basics">Module 11 - AWS Certified Cloud Practitioner Basics</h2>
-<p>4 Domains -&gt;
-    - Cloud Concepts (24%)
-    - Security and Compliance (30%)
-    - Technology (34%)
-    - Billing and Pricing (12%)</p>
-<p>Exam Details -&gt;
-    - 65 questions
-    - 90 minutes
-    - Minimum score is 700
-    - Two types of questions (multiple-choice and multiple-response)</p>
-<p>Exam Strategies -&gt;
-    - Read the full question
-    - Predict the answers before reading the options
-    - Eliminate the wrong options</p></p>
+<p>4 Domains -&gt;</p>
+<ul>
+<li>Cloud Concepts (24%)</li>
+<li>Security and Compliance (30%)</li>
+<li>Technology (34%)</li>
+<li>Billing and Pricing (12%)</li>
+</ul>
+<p>Exam Details -&gt;</p>
+<ul>
+<li>65 questions</li>
+<li>90 minutes</li>
+<li>Minimum score is 700</li>
+<li>Two types of questions (multiple-choice and multiple-response)</li>
+</ul>
+<p>Exam Strategies -&gt;</p>
+<ul>
+<li>Read the full question</li>
+<li>Predict the answers before reading the options</li>
+<li>Eliminate the wrong options</li>
+</ul></p>
     </article>
 </section>
 <!-- endblock -->
