@@ -65,7 +65,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" active 
-                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[PUC-MG]</a>
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Tecnólogo]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
@@ -269,6 +269,51 @@
 <!-- endblock -->
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Cursos]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">AWS &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Getting_Started.md" class="dropdown-item text-decoration-none ">Getting Started</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Billing_Cost.md" class="dropdown-item text-decoration-none ">Billing and Cost</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Cloud_Acquisition.md" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Cloud_Pratictioner.md" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">Desenvolvedor.io &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/Desenvolvedor.io/Arquitetura_Software/01-OOP/" class="dropdown-item text-decoration-none ">OOP</a>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a class="
                             nav-link text-gray text-decoration-none" href="../../../tech/">[Sobre]</a>
@@ -385,15 +430,13 @@
 <p>É uma variável composta, homogênea e unidimensional. Podemos pensar em um vetor como uma lista com <span class="arithmatex">\(n\)</span> elementos do mesmo tipo.</p>
 <p>Como todos os valores de um vetor possuem o mesmo nome (o nome da variável), para acessarmos algum valor específico de um elemento, precisaremos de um <strong>índice</strong> que faça referência ao local na lista onde o valor desejado se encontra.</p>
 <p>Para criarmos um vetor em c#, usamos a declaração da variável com um par de colchetes vazio e a definição da quantidade de posições (ou lugares) que o nosso vetor terá. Abaixo podemos ver um exemplo disso.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">Idades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">100</span><span class="p">];</span><span class="w"> </span><span class="c1">// Vetor de int com 100 places</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">Idades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">100</span><span class="p">];</span><span class="w"> </span><span class="c1">// Vetor de int com 100 places</span>
 <span class="kt">double</span><span class="p">[]</span><span class="w"> </span><span class="n">Alt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="m">20</span><span class="p">];</span><span class="w"> </span><span class="c1">// Vetor de double com 20</span>
 <span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">Nomes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">string</span><span class="p">[</span><span class="m">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Vetor de string com 10</span>
 </code></pre></div>
 <p>No exemplo acima, podemos ver que criamos um vetor denominado Idades que receberá apenas valores do tipo inteiro. Um vetor de doubles (que é um float com mais casas de precisão) chamado salario. E, por fim, um vetor de strings chamado Nomes.</p>
 <p><strong>Comentário:</strong> Existe uma classe que permite a criação de um tipo de vetor genérico sem tamanho definido em c# chamado Lista. O curso não entrou nesse assunto mas eu vou deixar esse exemplo de lista aqui.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
 
 <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span>
 <span class="n">List</span><span class="p">.</span><span class="k">add</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
@@ -401,14 +444,12 @@
 <span class="n">List</span><span class="p">.</span><span class="k">remove</span><span class="p">(</span><span class="m">2</span><span class="p">);</span>
 </code></pre></div>
 <p>Agora que sabemos como criar um vetor. O próximo passo é aprendermos como inserir informação nele. Para a nossa sorte, é bem simples. Basta colocarmos o nome do vetor seguido da posição a ser preenchida entre colchetes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">Idades</span><span class="p">[</span><span class="m">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor 10 na posição 19</span>
+<div class="highlight"><pre><span></span><code><span class="n">Idades</span><span class="p">[</span><span class="m">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="m">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor 10 na posição 19</span>
 <span class="n">Alt</span><span class="p">[</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.2</span><span class="p">;</span><span class="w"> </span><span class="c1">// Valor 1.2 na posição 1</span>
 </code></pre></div>
 <p>Só temos que ter cuidado com uma coisa. Existem linguagens (como C#, Java, Python e outras) que colocam o index da primeira posição de um vetor como sendo o valor 0. Outras linguagens (como R) usam o numero 1 para essa primeira posição.</p>
 <p>Com base no que aprendemos em <strong>Algoritmos e Lógica da Programação</strong>, somos capazes de entender o código abaixo a respeito do uso de um laço de repetição para preenchimento de um vetor de 5 posições.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
 
 <span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">Valores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
 
@@ -422,8 +463,7 @@
 <h5 id="desafio">Desafio</h5>
 <p>O professor propõe o seguinte desafio para fixação do conceito de vetor: "Criaremos um vetor de números inteiros com 5 posições e ler cada um de seus valores. Criaremos duas funções que, tomando esse vetor como parâmetro, irão retornar a soma dos números pares contidos no vetor e a quantidade de números ímpares que ele possui."</p>
 <p>Minha resolução desse problema segue abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">vetor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">vetor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">somaPar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">contaImpar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">input</span><span class="p">;</span>
@@ -459,20 +499,17 @@
 <p><img alt="Output do Desafio" src="../../../../assets/imgs/30-desafio-cs1.png" /></p>
 <h4 id="matrizes">Matrizes</h4>
 <p>Como dito no início dessa seção. Podemos pensar que matrizes são vetores de duas dimensões. Por causa disso, a declaração da variável é um pouco diferente.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">double</span><span class="p">[,]</span><span class="w"> </span><span class="n">Notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">];</span><span class="w"> </span><span class="c1">// 4 linhas e 5 colunas </span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="p">[,]</span><span class="w"> </span><span class="n">Notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">];</span><span class="w"> </span><span class="c1">// 4 linhas e 5 colunas </span>
 </code></pre></div>
 Por ser uma variável de duas dimensões, a maneira como atribuímos valores à cada posição é um pouco diferente do caso com vetor. Para cada atribuição de valor, temos que indicar a <strong>linha e coluna</strong> que nosso dado será salvo.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">Notas</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Linha 1 coluna 1</span>
+<div class="highlight"><pre><span></span><code><span class="n">Notas</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Linha 1 coluna 1</span>
 <span class="n">Notas</span><span class="p">[</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Linha 1 coluna 2</span>
 <span class="n">Notas</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Linha 3 coluna 4</span>
 <span class="n">Notas</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Linha 4 coluna 5</span>
 </code></pre></div>
 <p>Devemos sempre lembrar que c# usa a posição de numeral 0 para o index inicial de vetores e matrizes.</p>
 <p>Agora vamos ver um programa simples que exemplifica o que acabamos de aprender. A leitura dele não deve ser difícil. Se está tendo dificuldade, volte no microfundamento de lógica da programação.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
 
 <span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">Valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="m">10</span><span class="p">,</span><span class="m">3</span><span class="p">];</span>
 
@@ -499,16 +536,14 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Chamamos de <strong>tipo simples de dados</strong> os grupos de valores do mesmo tipo (inteiros, reais, string ou booleanos). Por outro lado, chamamos de <strong>tipo estruturado de dados</strong> os modelos que comportam valores de tipagem diferentes na mesma variável.</p>
 <p>Um <strong>registro</strong> é um tipo de dado estruturado.</p>
 <p>Nós já estamos familiarizados com as definições de variáveis em c# para os tipos nativos de dados.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 
 <span class="kt">double</span><span class="w"> </span><span class="n">Result</span><span class="p">;</span>
 
 <span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
 </code></pre></div>
 <p>A essa altura do aprendizado, as linhas acima são simples de serem compreendidas. São apenas declarações do tipos de 3 variáveis simples. Mas vejam só o que podemos fazer abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">Aluno</span><span class="w"> </span><span class="n">xAlu</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">Aluno</span><span class="w"> </span><span class="n">xAlu</span><span class="p">;</span>
 </code></pre></div>
 <p>Estranho, né?! Estamos declarando a variável xAlu como sendo do tipo..."Aluno"?</p>
 <p>Sim, é isso mesmo!</p>
@@ -517,8 +552,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>O comando <code>struct</code> é pensado para o encapsulamento de pequenos conjuntos de variáveis relacionadas. No exemplo do tipo Aluno, podemos pensar que todos os alunos devem ter um nome, um cpf e uma data de nascimento, por exemplo. Como essas características se repetem para todos, podemos definir um tipo de dado específico para lidarmos com as informações dos alunos.</p>
 <h5 id="implementacao-de-um-registro">Implementação de um Registro</h5>
 <p>A criação de um tipo de dado é simples. Basta definirmos o nome do tipo de dado e declararmos o conjunto de variáveis que farão parte dele. No exemplo abaixo, nós criamos o tipo "Funcionário" com as informações que serão usadas.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Funcionario</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Funcionario</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CPF</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
@@ -528,8 +562,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 </code></pre></div>
 <p>Podemos ver que a declaração das variáveis dentro do bloco de código estão com o token <code>public</code> antes da declaração do tipo de dado. Isso ocorre porque precisamos dizer ao compilador da linguagem que essas variáveis serão acessíveis fora do bloco de código em que elas são criadas. Isso tem relação direta com o conceito de método e procedimento que aprendemos no curso de Algoritmo e Lógica Computacional.</p>
 <p>Agora que temos o nosso novo tipo de dado criado, podemos usar esse recurso para a definição de novas variáveis.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[])</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[])</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">Funcionario</span><span class="w"> </span><span class="n">xFunc</span><span class="p">;</span>
 
@@ -543,8 +576,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Com o tipo de dado criado. Podemos criar a variável <code>xFunc</code> e acessar seus parâmetros usando um ponto após o seu nome. A atribuição é feita como antes mas agora não precisamos declarar os tipos porque eles estão definidos dentro do tipo de dado.</p>
 <p>Já aprendemos no começo desse microfundamento que a criação de vetores (que são listas de elementos do mesmo tipo) são feitas em c# pela adição de colchetes vazios na declaração das variáveis. Por exemplo, um vetor de inteiros é definido por <code>int[]</code>.</p>
 <p>Pois bem, podemos usar a mesma lógica e criar um vetor do tipo que acabamos de criar<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Analogamente, como nosso tipo de dado é <code>Funcionario</code>, seu vetor que conterá vários funcionários diferentes será criado por <code>Funcionario[]</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">Funcionario</span><span class="p">[]</span><span class="w"> </span><span class="n">xFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Funcionario</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="n">Funcionario</span><span class="p">[]</span><span class="w"> </span><span class="n">xFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Funcionario</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
@@ -566,8 +598,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Estamos começando a nos aproximar do conceito de banco de dados. Mas não veremos isso agora.</p>
 <h5 id="tipos-de-dados-aninhados">Tipos de Dados Aninhados</h5>
 <p>Não precisamos parar por aqui, é plenamente possível criarmos um tipo de dados que use outro tipo de dados criado fora dele. Por exemplo, ao invés de salvarmos a data de nascimento como uma string, podemos criar um tipo de dados chamado <code>Data</code> que recebe 3 informações: dia, mês e ano.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Funcionario</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Funcionario</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">CPF</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="p">;</span>
@@ -584,8 +615,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 </code></pre></div>
 <p>Dentro do tipo funcionário, temos a declaração de um variável do tipo data.</p>
 <p>Para aproveitarmos o código de criação de um vetor Funcionario. Podemos fazer apenas uma pequena alteração.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">Funcionario</span><span class="p">[]</span><span class="w"> </span><span class="n">xFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Funcionario</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
+<div class="highlight"><pre><span></span><code><span class="n">Funcionario</span><span class="p">[]</span><span class="w"> </span><span class="n">xFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Funcionario</span><span class="p">[</span><span class="m">5</span><span class="p">];</span>
 
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
@@ -618,8 +648,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Até agora, nós temos definido os nossos TADs através da definição de sua <strong>estrutura</strong> (pelo token <code>struct</code>), mas as linguagens que utilizam o paradigma orientado à objeto atuais usam o conceito de <strong>classes</strong> para definição dos seus TADs.</p>
 <h4 id="implementando-tads-usando-classes">Implementando TADs usando Classes</h4>
 <p>Já aprendemos a implementar um TAD por estrutura.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="c1">// Definindo o TAD</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Definindo o TAD</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">Produto</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Nome</span><span class="p">;</span>
@@ -634,8 +663,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <span class="n">xProd</span><span class="p">.</span><span class="n">PrecoUnd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8000.99</span><span class="p">;</span>
 </code></pre></div>
 <p>Podemos construir uma solução análoga a essa pelo token de criação de classes.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="c1">// Definindo o TAD</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Definindo o TAD</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Produto</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Nome</span><span class="p">;</span>
@@ -663,8 +691,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Os valores do tipo class são alocados no heap. Essa é a parte da memória usada pelas linguagens de programação para suas variáveis de escopo global. A memória é alocada de maneira aleatória e é mais abundante se comparada com a stack. Sempre que criamos uma nova instância como fizemos em <code>Produto xProd = new Produto()</code> nós estamos apontando um novo endereço de memória para ser usado.</p>
 <h5 id="desafio_2">Desafio</h5>
 <p>Cadastrar objetos em um vetor usando uma classe.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
 <span class="p">{</span>
@@ -729,8 +756,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Aqui é importante frisarmos uma coisa. Quando instanciamos um objeto (ou seja, quando usamos o token <code>new</code>) o nome que passamos a esse objeto é apenas uma <strong>referência</strong>. Isso quer dizer que, no exemplo acima, <code>cadCarro</code> não é o nosso objeto em si e sim uma referência a ele.</p>
 <p>Alguns de vocês podem estar questionando o motivo desse aviso. Sabendo que cadCarro não é o objeto em si e sim apenas uma referência que aponta para o endereço na memória em que o objeto está salvo, ao criarmos uma nova linha no nosso código do tipo <code>cadCarro2 = cadCarro</code> estamos criando uma <strong>nova referência para o mesmo objeto</strong> alocado na memória. Ou seja, qualquer manipulação feita usando a referência <code>cadCarro</code> também será refletida em <code>cadCarro2</code>.</p>
 <p>Abaixo temos um programa simples que usa essa relação de referência.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
 <span class="p">{</span>
@@ -778,8 +804,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Ao construir um tipo abstrato de dados, nos perguntamos quais informações serão necessárias e, além disso, quais operações serão usadas para resolução do nosso problema.</p>
 <h4 id="indo-um-pouco-mais-fundo">Indo um pouco mais fundo</h4>
 <p>Vejamos o seguinte TAD criado apenas com a definição da estrutura de dados:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">pessoa</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">pessoa</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">salary</span><span class="p">;</span>
@@ -787,8 +812,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 </code></pre></div>
 <p>Dizemos que as informações sobre nome e salário são <strong>atributos</strong> do nosso objeto <code>pessoa</code>. Eles definem a estrutura do tipo abstrato de dados que definimos. Também podemos chama-los de <strong>variáveis da classe pessoa</strong>.</p>
 <p>Mesmo que o exemplo acima funcione. Uma maneira mais apropriada de reconstruir essa solução pode ser vista abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">pessoa</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">pessoa</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">_name</span><span class="p">;</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span>
@@ -808,8 +832,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Os campos <code>_name</code> e <code>_salary</code> são definidos com o escopo privado e podem ser acessados somente internamente ao objeto. Para podermos acessar fora do escopo do objeto, usamos as funções nativas <code>get</code> e <code>set</code>.</p>
 <p>Os nomes das funções deixam claro o que cada uma faz. <code>set</code> é usado para atribuição de um valor passado (que chamamos de value) e <code>get</code> é usado para retorno de valor salvo no objeto.</p>
 <p>Vamos ver um programa simples que utiliza esses conceitos.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">pessoa</span>
 <span class="w">    </span><span class="p">{</span>
@@ -845,8 +868,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p>Na linha <code>xpes.name = "Clark Kent"</code> vemos como a função interna <code>set</code> funciona. Ela recebe o valor e atribui à variável provada <code>_name</code>.</p>
 <p>Quando definimos um atributo privado e funções (<code>get</code> e <code>set</code>) que manipulam esse atributo dentro da classe, podemos dizer que criamos uma <strong>propriedade</strong> do objeto.</p>
 <p>Já temos os conceitos de objeto, atributo e propriedade bem definidos. Agora vamos aprender sobre as funções dentro de um objeto. A essas funções, damos o nome de <strong>métodos ou serviços do objeto</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">_raio</span><span class="p">;</span>
 
@@ -863,8 +885,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <span class="p">}</span>
 </code></pre></div>
 <p>Aqui temos um atributo chamado <code>_raio</code>. Uma propriedade chamada <code>raio</code>. E, por fim, temos também um método chamado <code>calcArea</code>. Abaixo temos um exemplo de como usar esses conceitos na prática.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="w">    </span><span class="p">{</span>
@@ -899,8 +920,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <p><strong>Comentário:</strong> Eu não sei você, mas eu fiquei com dúvidas sobre essa parte do <code>area:F2</code>. Isso é muito simples. Como o valor <code>area</code> é do tipo double, ele possui várias casas após a vírgula. Esse parâmetro é a definição da quantidade de casas após a vírgula. Nesse caso, o resultado terá 2 casas após a vírgula.</p>
 <p>Quando encapsulamos as propriedades e os métodos dentro de um objeto, estamos omitindo os detalhes de como objeto faz as transformações e armazena os dados. A essa técnica damos o nome de <strong>ocultação da informação</strong>. Isso é útil para garantir a integridade da manipulação dos dados por parte dos usuários e aumenta a segurança quanto a lógica implementada no código.</p>
 <p>Podemos definir a lógica também dentro das funções de <code>set</code> e <code>get</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
+<div class="highlight"><pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="w">    </span><span class="p">{</span>
@@ -940,8 +960,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <h3 id="mecanismos-de-visibilidadeacessibilidade">Mecanismos de Visibilidade/Acessibilidade</h3>
 <p>Os <strong>modificadores de acesso</strong> ou <strong>mecanismos de visibilidade</strong> são os métodos de acesso às classes e seus, atributos, propriedades e métodos. Existem vários tipos de modificadores de acesso (<code>protected</code>, <code>internal</code>, <code>protected internal</code> e etc), mas por agora, vamos estudar somente o <code>public</code> e o <code>private</code>.</p>
 <p>Observemos novamente o código da última seção com algumas anotações adicionais.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="c1">// Bloco contendo todo o programa</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Bloco contendo todo o programa</span>
 <span class="k">namespace</span><span class="w"> </span><span class="nn">WorkSpace</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// Definição do TAD circulo</span>
@@ -999,8 +1018,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 </ul>
 <h4 id="definindo-construtores">Definindo Construtores</h4>
 <p>Para não usarmos as convenções padrão do CLR. Podemos, nós mesmo, atribuir os construtores dos atributos dos nossos objetos. Para isso, usamos um método (ou seja, uma função interna do objeto) com <strong>o mesmo nome do objeto</strong>. Esse método não possui retorno e são declarados como <code>public</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
+<div class="highlight"><pre><span></span><code><span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="p">{</span>
@@ -1023,13 +1041,11 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <span class="p">}</span>
 </code></pre></div>
 <p>A partir de agora, sempre que executarmos um instanciamento através do comando</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">circulo</span><span class="w"> </span><span class="n">xcir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">circulo</span><span class="p">();</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="n">circulo</span><span class="w"> </span><span class="n">xcir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">circulo</span><span class="p">();</span><span class="w"> </span>
 </code></pre></div>
 <p>O construtor será chamado e executará as instruções contidas no construtor. No caso de exemplo, o valor default para o atributo <code>_raio</code> será 0.</p>
 <p>Não é difícil pensar em situações onde precisaríamos usar diferentes métodos de construção em um objeto. Para isso, podemos ter mais de um construtor no mesmo objeto, chamamos isso de <strong>sobrecarregamento</strong>. A condição é que esses construtores sejam diferentes em termos de parâmetros ou ordem dos parâmetros.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
+<div class="highlight"><pre><span></span><code><span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="p">{</span>
@@ -1057,16 +1073,14 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
 <span class="p">}</span>
 </code></pre></div>
 <p>Para executar o segundo construtor, basta passarmos um parâmetro no momento do instanciamento do nosso novo objeto.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="n">circulo</span><span class="w"> </span><span class="n">xcirc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">circulo</span><span class="p">(</span><span class="m">2.3</span><span class="p">);</span><span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="n">circulo</span><span class="w"> </span><span class="n">xcirc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">circulo</span><span class="p">(</span><span class="m">2.3</span><span class="p">);</span><span class="w"> </span>
 </code></pre></div>
 <p>Como fizemos um instanciamento com valor, o c# saberá que queremos usar o segundo construtor ao invés do primeiro.</p>
 <h4 id="destrutores">Destrutores</h4>
 <p>Ao contrário do que podemos pensar pelo nome, os <strong>destrutores</strong> não são usados para "destruir" os objetos. Eles são usados definir um comportamento específico no momento da destruição de um objeto. Ou seja, eles são acionados na destruição e não são os destruidores.</p>
 <p>Não precisam ser chamados ou referenciados pois são invocados automaticamente. O normal é não se usar destrutores no dia a dia visto que o CLR já faz o trabalho de padronização para eliminação de um objeto.</p>
 <p>Diferente dos construtores, uma classe pode ter <strong>apenas um destrutor</strong>. E a sua criação é parecida com a do construtor, uma vez que são métodos sem retorno. A única diferença é que sua notação começa com o til.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// c#</span>
-<span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
+<div class="highlight"><pre><span></span><code><span class="na">[...]</span><span class="w"> </span><span class="c1">// Código com o namespasce</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">circulo</span>
 <span class="p">{</span>
@@ -1174,6 +1188,7 @@ Por ser uma variável de duas dimensões, a maneira como atribuímos valores à 
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
                 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
                 <script src="../../../../search/main.js" defer></script>
+
     </body>
 
 </html>

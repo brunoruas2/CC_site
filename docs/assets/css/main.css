@@ -708,24 +708,6 @@ table tr th:last-child {
     background-color: var(--primary)!important;
 }
 
-#scrollToTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#scrollToTopBtn:hover {
-    background-color: #0056b3;
-}
-
 @media only screen and (max-width:1200px) {
     .source-detail {
         border-color: var(--primary);

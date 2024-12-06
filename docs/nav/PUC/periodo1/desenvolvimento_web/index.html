@@ -65,7 +65,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class=" active 
-                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[PUC-MG]</a>
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Tecnólogo]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
     <li>
@@ -262,6 +262,51 @@
                 <!-- block dropdown-menu -->
     <li>
         <a href="../../periodo5/" class="dropdown-item text-decoration-none ">Implantação de Solução de TI</a>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Cursos]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">AWS &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Getting_Started.md" class="dropdown-item text-decoration-none ">Getting Started</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Billing_Cost.md" class="dropdown-item text-decoration-none ">Billing and Cost</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Cloud_Acquisition.md" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/AwsSkillBuilder/cloudPractioner/Cloud_Pratictioner.md" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">Desenvolvedor.io &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Cursos/Desenvolvedor.io/Arquitetura_Software/01-OOP/" class="dropdown-item text-decoration-none ">OOP</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -556,8 +601,7 @@ O W3C mantém a gestão de vários padrões usados todos os dias:</p>
 </ul>
 <h3 id="dinamica-de-aplicacoes-web">Dinâmica de Aplicações Web</h3>
 <p>Quando você acessa um site, o arquivo que coordena o modo de exposição da informação e os conteúdos da mesma é um arquivo <code>.html</code>. Observe o exemplo abaixo de uma página simples.</p>
-<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- Html --&gt;</span>
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
@@ -616,8 +660,7 @@ As tags que contém as partes <code>style.css</code>, <code>app.js</code> e <cod
 <p>Atente para o fato que alguns elementos aceitam outros elementos internamente. Por exemplo, dentro do elemento <code>&lt;body&gt;&lt;/body&gt;</code> nós colocamos todos os outros elementos que comporão a nossa página web, como por exemplo, formulários, parágrafos, vídeos e etc. Então se acostume de termos elementos dentro de outros elementos.</p>
 <p>Dentro de alguns elementos podem ser inseridas informações e configurações por meio de parâmetros que chamamos de <strong>atributos</strong> do elemento. Por exemplo, no elemento logo acima, temos os atributos <code>name</code> e <code>value</code>.</p>
 <p>Agora que sabemos o que são elementos e como eles são construídos, podemos seguir para a    <strong>organização de um documento HTML</strong>. Existe um padrão em todo arquivo HTML onde existem alguns elementos obrigatórios para o processamento da página pelo browser do client.
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="cp">&lt;!DOCTYPE html&gt;</span> -------------------------------&gt; Elemento da versão do HTML
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span> -------------------------------&gt; Elemento da versão do HTML
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span> ------------------------------&gt; Abertura do documento HTML
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span> ------------------------------------&gt; Abertura do cabeçalho
         <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span> ----------------&gt; Atributo nome = &quot;valor&quot;
@@ -722,24 +765,21 @@ As tags que contém as partes <code>style.css</code>, <code>app.js</code> e <cod
 <h5 id="listas">Listas</h5>
 <p>Existem 3 tipos de listas em HTML.</p>
 <p>Listas ordenadas:
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Primeiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; 1. Primeiro item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Segundo item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt; 2. Segundo item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Terceiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; 3. Terceiro item
 <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
 </code></pre></div>
 Lista não ordenada:
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Primeiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; o Primeiro item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Segundo item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt; o Segundo item
     <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span> Terceiro item <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> --------&gt; o Terceiro item
 <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 </code></pre></div>
 Lista de definições:
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span> Termo 01 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> -------------&gt; Termo 01
         <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> Definição 01 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> ---------&gt;      Definição 01
     <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span> Termo 02 <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span> -------------&gt; Termo 02
@@ -747,12 +787,10 @@ Lista de definições:
 <span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
 </code></pre></div></p>
 <h5 id="imagens">Imagens</h5>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;180&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Peixe&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;180&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Peixe&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <h5 id="links">Links</h5>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> ------&gt; Nova tab
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> ------&gt; Nova tab
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_self&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> -------&gt; Mesma tab
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_parent&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> -----&gt; Frame pai
 <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;link.com&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_top&quot;</span><span class="p">&gt;</span> Texto <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> --------&gt; Janela atual
@@ -760,8 +798,7 @@ Lista de definições:
 </code></pre></div>
 <h4 id="elementos-estruturais">Elementos Estruturais</h4>
 <p>A partir da versão 4.0 o principal elemento usado para segmentar as partes de uma página html passou a ser o <code>&lt;div&gt;</code> que é um um elemento de divisão genérico para agrupar qualquer conjunto de elementos necessários. Por exemplo:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Titulo <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Parágrafo pequeno <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
@@ -839,8 +876,7 @@ Lista de definições:
 <p>Não é difícil perceber que o uso de elementos semânticos é fortemente indicado para o desenvolvimento de aplicações web modernas.</p>
 <h4 id="elementos-de-tabelas">Elementos de Tabelas</h4>
 <p>Não é nada incomum ter que demonstrar dados usando uma tabela. Pensando nisso, a linguagem HTML também possui um elemento especificamente criado para criação de tabelas. Uma tabela pode ser criada com o uso das seguintes tags:
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span> --------------&gt; Cria a Tabela
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span> --------------&gt; Cria a Tabela
     <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span> Título <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span> -&gt; Coloca um Título
     <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span> ------------------------&gt; Table Row (tr)
         <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>L1C1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span> -----------&gt; Table Data Column 1
@@ -899,8 +935,7 @@ Existem vários elementos que podem ser usados dentro de uma tabela. São os pri
 <h4 id="elementos-de-formularios">Elementos de Formulários</h4>
 <p>Uma das interações mais básicas que precisamos de um usuário é a inserção de dados na aplicação. Dentre as várias maneiras de conseguirmos um dado inserido pelo usuário, o formulário é a mais simples.</p>
 <p>O HTML fornece vários atributos dentro do elemento <code>&lt;form&gt;&lt;/form&gt;</code> que nos permite a criar campos de texto, botões clicáveis, campos de senha e etc. A sintaxe mais básica de um formulário é dada por:</p>
-<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;form_name&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;login.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;form_name&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;login.html&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
     Usuário: <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;user&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
     Senha: <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
@@ -938,8 +973,7 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <p>Esse é tranquilo de entender. Sempre que precisarmos de um input de texto maior do que uma linha, podemos usar o elemento <code>&lt;textarea name="" rows="10"</code> <code>cols="50"&gt;&lt;/textarea&gt;</code> para isso. É possível alterar a quantidade de linhas e a número de colunas para apresentação da nossa caixa de texto apenas mudando os parâmetros dos atributos.</p>
 <h5 id="elemento-select">Elemento <code>&lt;select&gt;</code></h5>
 <p>Podemos permitir que o usuário selecione uma lista pré-selecionada de opções através de uma     <strong>lista em caixa</strong> (também chamada de   <strong>dropdown menu</strong>). Um exemplo de código contendo esse elemento por ser visto abaixo.</p>
-<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;lista&quot;</span><span class="p">&gt;</span> Dropdown Menu <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;lista&quot;</span><span class="p">&gt;</span> Dropdown Menu <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;lista&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Selecione uma opção<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;01&quot;</span><span class="p">&gt;</span>Opção 01<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
@@ -962,8 +996,7 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <li>Atributo inline - Pior forma. Aqui, as regras de estilo são definidas diretamente no elemento html. Qualquer mínima alteração terá de ser feita diretamente no elemento e em todas as páginas.</li>
 </ul>
 <p>Aqui podemos ver um exemplo de cada aplicação do estilo visual que elencamos acima:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemplo CSS<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -995,21 +1028,18 @@ Podemos usar o atributo     <strong>name</strong> ou     <strong>id</strong> par
 <h5 id="sintaxe-da-linguagem-css">Sintaxe da linguagem CSS</h5>
 <p>A leitura de um arquivo CSS é bem simples. A primeira coisa que precisamos saber é quais elementos estão presentes no html que será trabalhado e quais desses elementos possuem atribuição de id específico. </p>
 <p>Por exemplo, se tivermos no nosso html dois elementos <code>&lt;p&gt;</code>, só que um deles possui o atributo id <code>&lt;p id="teste"&gt;</code>. Para criarmos uma regra de estilo no nosso CSS basta escrevermos a tag do elemento (sem os símbolos <code>&lt;&gt;</code>) do seguinte modo.</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Essa regra diz que todos os textos contidos nos elementos <code>&lt;p&gt;</code> terão a cor vermelha. Contudo, se quisermos adotar uma regra específica para apenas um elemento em questão, podemos definir a regra no css diretamente para o elemento com o seu id.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="p">#</span><span class="nn">teste</span><span class="w"> </span><span class="p">{</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">teste</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">black</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 Isso nos dará uma página onde todos os textos dos parágrafos serão vermelhos à exceção do parágrafo identificado pelo <code>id="teste"</code>.</p>
 <p>Podemos resumir a sintaxe do CSS como sendo:</p>
-<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">seletor</span><span class="w"> </span><span class="p">{</span>
+<p><div class="highlight"><pre><span></span><code><span class="nt">seletor</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">propriedade_1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">valor_da_propriedade_1</span><span class="p">;</span>
 <span class="w">    </span><span class="n">propriedade_2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">valor_da_propriedade_2</span><span class="p">;</span>
 <span class="w">    </span><span class="err">...</span>
@@ -1148,8 +1178,7 @@ Ou seja, para aprender bem CSS, vamos precisar aprender as várias maneiras de s
 <p>Mais ou menos como nessa imagem abaixo</p>
 <p><img alt="12-display.png" src="../../../../assets/imgs/12-display.png" /></p>
 <p>Podemos modificar o comportamento padrão de um elemento através do parâmetro <code>display:</code> no CSS. Por exemplo, para transformar os <code>&lt;input&gt;</code> em um elemento sozinho na página, podemos colocar no CSS a seguinte linha</p>
-<p><div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">input</span><span class="w"> </span><span class="p">{</span>
+<p><div class="highlight"><pre><span></span><code><span class="nt">input</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">block</span><span class="p">;</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1188,15 +1217,13 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p>Aqui tem um material bem completo fornecido pelo <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration">Mozilla</a></p>
 <h5 id="fontes-de-texto-na-web">Fontes de Texto na Web</h5>
 <p>O CSS nos dá as seguintes opções de letras: serif, sans-serif,monospace, cursive e fantasy. Contudo, nós nunca teremos certeza se o navegados do user terá a capacidade de carregar a fonte que desejamos. Para evitar esse problema, podemos definir opções de fontes do seguinte modo:</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">p</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Trebuchet MS&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Verdana</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>O navegador do user vai tenter renderizar a página usando a primeira opção, caso ele não consiga, ele vai para as outras opções.</p>
 <p>Além das opções padrão CSS, podemos usar fontes proprietárias de outras fontes (Google Fonts, DaFont, Adobe e etc). A maneira de fazer isso é definir uma propriedade de importação como no exemplo abaixo</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css?family=Baloo&#39;</span><span class="o">)</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="p">@</span><span class="k">import</span><span class="w"> </span><span class="nt">url</span><span class="o">(</span><span class="s1">&#39;https://fonts.googleapis.com/css?family=Baloo&#39;</span><span class="o">)</span><span class="p">;</span>
 <span class="nt">div</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Baloo&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">cursive</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1214,16 +1241,14 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 </ul>
 <h5 id="media-queries">Media Queries</h5>
 <p>As media queries são os parâmetros usados na aplicação que usam alguma característica do dispositivo onde a página está sendo exibida. Abaixo nós podemos ver um exemplo de elemento HTML com media query.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#39;screen and (min-width: 900px)&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tela_g.css&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">media</span><span class="o">=</span><span class="s">&#39;screen and (max-width: 600px)&#39;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;tela_p.css&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>Nesse exemplo HTML, podemos ver como, de acordo com o tamanho da tela, o arquivo de estilo CSS carregado vai ser o "tela_g.css" ou o "tela_p.css".</p>
 <p>Do lado do CSS, a sintaxe das media queries são usadas da seguinte maneira:</p>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">min-width</span><span class="o">:</span><span class="w"> </span><span class="nt">600px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">orange</span><span class="p">;}</span>
 <span class="p">}</span>
@@ -1254,16 +1279,14 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p>Se nossa aplicação for desenvolvida para uma tela com 1920 pixels (full HD), podemos converter cada pixel em uma nova unidade que permita a aplicação recalcular os tamanhos dos componentes em pixels de modo a se adequar melhor ao display. No exemplo a abaixo, nós estamos "mudando" o valor padrão do pixel para caber em uma tela com 1/3 de 1920 (640 pixels):</p>
 <div class="arithmatex">\[ Viewport = \dfrac{   \textrm{Resolução}}{    \textrm{Pixel-Ratio}} = \dfrac{1920}{3} = 640 \ pixels \]</div>
 <p>Para habilitar esse método de ajuste, o HTML precisa ter a seguinte linha no <code>head</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
 </code></pre></div>
 <p>A Vantagem dessa abordagem é que ela permite a manutenção da leitura quando nossa página é carregada por telas menores. Também podemos controlar a capacidade de rolagem e zoom do usuário por meio dessa meta tag.</p>
 <h5 id="layout-flex">Layout Flex</h5>
 <p>Já aprendemos como reduzir a escala da nossa aplicação com o viewport. Mas, em telas de smartphones ou monitores pequenos, simplesmente reduzir a aplicação para caber no dispositivo pode não ser suficiente para uma boa experiência.</p>
 <p>No Layout Flex (flexbox) nós podemos definir o comportamento dos elementos html filhos dentro de um bloco maior. Nesse modelo, nós conseguimos mudar o posicionamento relativo dos elementos filhos sempre que a tela se comportar de determinada maneira prevista (como o caso do nosso site ser aberto em uma tela de smartphone ao invés de um monitor).</p>
 <p>Para usar esse recurso, usaremos no elemento pai<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> o parâmetro <code>display:</code> <code>flex; flex-wrap: wrap;</code>. Além de definirmos o tipo de display no elemento pai, usaremos a media query para ajustar o tamanho ideal dos elementos na tela. Podemos ver melhor no exemplo de código abaixo:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;container&#39;</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1273,8 +1296,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">container</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">flex</span><span class="p">;</span>
 <span class="w">    </span><span class="k">flex-wrap</span><span class="p">:</span><span class="w"> </span><span class="kc">wrap</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1326,8 +1348,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <li>Track - Um conjunto linear de cells (uma linha ou uma coluna do grid)</li>
 </ul>
 <p>Abaixo temos o código de uma aplicação simples usando esse sistema de construção de front end:</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>Header <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>Main<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
@@ -1336,8 +1357,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -1382,8 +1402,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p><img alt="15-layout-grid.png" src="../../../../assets/imgs/15-layout-grid.png" /></p>
 <p>Com base nessa lógica, podemos posicionar elementos usando o sistemas de coordenadas do CSS Grid. Vamos refazer a interface que acabamos de ver usando apenas esse conceito de "items" dentro de um "container".</p>
 <p>Ao invés de definir a separação da tela como parâmetro da classe container no CSS, nós vamos criar o container e orientar, dentro de cada item, como ele se comportará no grid.</p>
-<div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item-a&quot;</span><span class="p">&gt;</span>Header<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;item-b&quot;</span><span class="p">&gt;</span>Main<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1392,8 +1411,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -1521,8 +1539,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <p><img alt="17-boostrap-columns.png" src="../../../../assets/imgs/17-boostrap-columns.png" /></p>
 <p>O código HTML usando o Bootstrap é fortemente baseado em <code>&lt;div&gt;</code>. A novidade está no uso de classes específicas que dão a lógica contida nos arquivos usados pelo framework.</p>
 <p>A hierarquia é similar ao grid system porque a aplicação existira dentro de um container. O Container terá pelo menos uma linha (row). Cada linha terá pelo menos uma coluna. Internalize essa hierarquia de Container, Linhas e Colunas.</p>
-<p><div class="highlight"><pre><span></span><code><span class="cm">&lt;!-- html --&gt;</span>
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel1&quot;</span><span class="p">&gt;</span>.col-md-6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-6&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel2&quot;</span><span class="p">&gt;</span>.col-md-6<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1535,8 +1552,7 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-3&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cel2&quot;</span><span class="p">&gt;</span>.col-md-3<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c">/* css */</span>
-<span class="p">#</span><span class="nn">cel1</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">cel1</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">white</span><span class="p">;</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span>
 <span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
@@ -1604,19 +1620,16 @@ No caso de elementos inside<sup id="fnref:4"><a class="footnote-ref" href="#fn:4
 <h5 id="aplicacao-da-linguagem-javascript">Aplicação da Linguagem JavaScript</h5>
 <p>Da mesma maneira que vimos com o CSS, podemos trazer o JS para nossa aplicação web de diferentes maneiras:</p>
 <p>Por arquivo externo - Código é mantido em um arquivo separado
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;script.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;script.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div>
 Em Bloco interno - Código fica em um bloco dentro do HTML
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="cm">/* Código JS */</span>
 <span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Olá mundo!&quot;</span><span class="p">);</span>
 <span class="o">&lt;</span><span class="err">/script&gt;</span>
 </code></pre></div>
 Inline - Código fica dentro de um atributo do elemento HTML
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="s2">&quot;alert(&#39;Click feito!&#39;);&quot;</span><span class="o">&gt;&lt;</span><span class="err">/p&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">p</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="s2">&quot;alert(&#39;Click feito!&#39;);&quot;</span><span class="o">&gt;&lt;</span><span class="err">/p&gt;</span>
 </code></pre></div></p>
 <p>Agora que sabemos que podemos "turbinar" nossas páginas web com o uso de JS, podemos nos perguntar o que pode ser feito com essa ferramenta. A resposta é praticamente qualquer coisa! Podemos elencar como principais aplicações:</p>
 <ul>
@@ -1631,8 +1644,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Esse aqui é apenas o começo da nossa caminhada!</p>
 <h4 id="variaveis-e-tipos-de-dados">Variáveis e Tipos de Dados</h4>
 <p>A linguagem JS é de tipagem dinâmica. Então o tipo de variável é definido pela própria linguagem na hora da atribuição do valor. Temos dois tokens de atribuição em JS  <strong>var</strong> ou  <strong>let</strong>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">variavel01</span><span class="p">;</span><span class="w">     </span><span class="c1">// Aqui eu declarei sem atribuir nada</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">variavel01</span><span class="p">;</span><span class="w">     </span><span class="c1">// Aqui eu declarei sem atribuir nada</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">         </span><span class="c1">// x agora é um numérico de valor 10</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Olá mundo&quot;</span><span class="w"> </span><span class="c1">// y é uma string</span>
 </code></pre></div>
@@ -1643,8 +1655,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </ul>
 <p>As variáveis declaradas com <code>var</code> são de    <strong>escopo global</strong> se forem declaradas fora de funções (Nesse caso são de escopo local). Já a atribuição feita com <code>let</code> é de    <strong>escopo local</strong>.</p>
 <p>Abaixo temos um exemplo bem bacana mostrando essas diferenças.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span><span class="p">;</span>
@@ -1736,8 +1747,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <h5 id="tipo-string">Tipo String</h5>
 <p>Qualquer aplicação precisa ser capaz de lidar com textos. Uma string é exatamente uma cadeia de caracteres não numéricos (mas caracteres numéricos também podem compor uma string) que pode ser declarada por meio de aspas simples "abc" ou compostas 'abc'.</p>
 <p>Também é comum precisarmos juntar diferentes strings. No javascript, podemos fazer isso simplesmente usando o operador de soma:
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;def&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nx">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;abc&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;def&#39;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
 
 <span class="o">&gt;</span><span class="w"> </span><span class="nx">abcdef</span>
@@ -1802,8 +1812,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </tbody>
 </table>
 <p>A partir do ECMAScript6 existe outra maneira de compor strings: por meio do uso da crase <code>isso é uma string</code>. A vantagem desse método, chamado de     <strong>TemplateString</strong> é que esse tipo de string é especial que pode receber expressões interpretáveis como no exemplo abaixo:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bruno&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nx">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bruno&quot;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span>
 
 <span class="o">&gt;</span><span class="w"> </span><span class="nx">bruno</span>
@@ -1816,8 +1825,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Podemos ver que na última linha o resultado faz uso do valor da variável <code>nome</code>. Provavelmente, sempre que a gente entra em um site que possui aquela mensagem amigável de "Seja bem vindo, Fulano", o programador usou essa função para produzir aquele texto.</p>
 <h5 id="tipo-objeto">Tipo Objeto</h5>
 <p>Objetos são uma boa parte do que faz o JS ser tão poderoso. Cada objeto é simplesmente uma coleção de pares nome-valor. Os nomes são as     <strong>propriedades</strong> do objeto e os valores podem ser qualquer tipo de variável que vimos logo antes (incluindo outros objetos e funções). Quando a propriedade for uma função, dizemos que essa função é um    <strong>método</strong> do objeto.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">objeto1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Object</span><span class="p">();</span><span class="w"> </span><span class="c1">// Criando o objeto &quot;objeto1&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">objeto1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Object</span><span class="p">();</span><span class="w"> </span><span class="c1">// Criando o objeto &quot;objeto1&quot;</span>
 <span class="nx">objeto1</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bruno&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// modo 1 de criar uma propriedade</span>
 <span class="nx">objeto1</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">28</span><span class="p">;</span><span class="w">    </span><span class="c1">// modo 2 de criar uma propriedade</span>
 
@@ -1836,16 +1844,14 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Para acessar o valor de uma propriedade em um objeto basta escrever algo como: <code>objeto.propriedade</code> (Python é assim também).</p>
 <h5 id="datas-e-horas">Datas e Horas</h5>
 <p>Na elaboração de uma aplicação é comum ter que lidar com varáveis do relacionadas ao tempo. Para isso o JS possui um tipo de objeto especialmente projetado para facilitar essa tratativa. O objeto <code>Date()</code>. Podemos usa-lo como:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span><span class="w"> </span><span class="c1">// Atribui a data atual ao objeto</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span><span class="w"> </span><span class="c1">// Atribui a data atual ao objeto</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="w"> </span><span class="c1">// Atribui a data por uma string</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="nx">Ano</span><span class="p">,</span><span class="nx">Mes</span><span class="p">,</span><span class="nx">Dia</span><span class="p">,</span><span class="nx">Hora</span><span class="p">,</span><span class="nx">Segundo</span><span class="p">,</span><span class="nx">Milisegundos</span><span class="p">)</span>
 </code></pre></div>
 <p>Geralmente estamos preocupados apenas com o dia, mês e ano. Para criar um objeto com esses valores basta ir colocando na mesma ordem do último elemento do exemplo acima.</p>
 <p><strong>Aviso:</strong> Quando você for indicar o mês, saiba que para o JS, janeiro é 0 e dezembro é 11. Então quando quisermos salvar a data 01/01/2022 usaremos <code>Date(2022,0,1)</code>.</p>
 <p>Como todo objeto, a variável criada com o Date() possui várias propriedades e métodos. Uma boa referência é o material do MDN que pode ser visto <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">aqui</a>. Mas podemos elencar alguns métodos importantes como:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span>
 
 <span class="nx">z</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
 <span class="nx">z</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span>
@@ -1860,8 +1866,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Acho que não é necessário explicar cada método desse porque o nome é bem alto explicativo.</p>
 <h5 id="arrays-vetores-ou-matrizes">Arrays, Vetores ou Matrizes</h5>
 <p>Um array é uma estrutura de dados semelhante a uma lista. Em JS temos algumas maneiras de criar arrays:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="cm">/* Modo 01 */</span>
+<div class="highlight"><pre><span></span><code><span class="cm">/* Modo 01 */</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="p">()</span>
 <span class="nx">a</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;valor01&#39;</span>
 <span class="nx">a</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;valor02&#39;</span>
@@ -1874,8 +1879,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Todos os 3 modos produzem o mesmo resultado e podem ser usados alternadamente.</p>
 <p>Como qualquer objeto, existem vários métodos muito úteis dentro de um Array().</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="nx">concat</span><span class="p">()</span><span class="w"> </span><span class="c1">// Junta dois ou mais vetores</span>
+<div class="highlight"><pre><span></span><code><span class="nx">concat</span><span class="p">()</span><span class="w"> </span><span class="c1">// Junta dois ou mais vetores</span>
 <span class="nx">fill</span><span class="p">()</span><span class="w"> </span><span class="c1">// Preencher os elementos em um vetor com um valor estático</span>
 <span class="nx">find</span><span class="p">()</span><span class="w"> </span><span class="c1">// Retorna o valor do primeiro elemento em um vetor que atender ao filtro</span>
 <span class="nx">findIndex</span><span class="p">()</span><span class="w"> </span><span class="c1">// Retorna o índice do primeiro elemento em um vetor</span>
@@ -1898,8 +1902,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Em qualquer linguagem de programação<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> existem maneiras de organizar blocos de código para o compilador/interpretador saber o que priorizar na hora do processamento do código. Em JS isso é feito com o uso das chaves { }.</p>
 <h5 id="declaracoes-de-selecao">Declarações de Seleção</h5>
 <p>Quando estamos fazendo um script de código, é muito comum termos que nos adaptar as situações onde determinados eventos podem ou não acontecer. Para isso, usamos algumas estruturas lógicas que permitem o processamento de blocos de texto apenas se alguma condição predeterminada seja satisfeita. Ou seja, usamos um condicionante do tipo "Se-Então".</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">expressao</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">expressao</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">bloco</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">codigo</span><span class="w"> </span><span class="nx">caso</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 <span class="k">else</span><span class="w"> </span><span class="p">{</span>
@@ -1924,8 +1927,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Veja que usamos o token <code>break</code> para indicar que vamos para outra condicional. Não podemos esquecer disso.</p>
 <p>Abaixo temos um exemplo de uma aplicação simples usando esse método de gestão de fluxo. Não se preocupe em entender o código inteiro, foque apenas no que estamos estudando.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// Função que recebe um input no terminal</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Função que recebe um input no terminal</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">readLine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;readline&#39;</span><span class="p">).</span><span class="nx">createInterface</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">input</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">stdin</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">output</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span>
@@ -1957,8 +1959,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <h5 id="declaracoes-de-repeticao">Declarações de Repetição</h5>
 <p>Além de termos tokens que nos permitem executar apenas alguns blocos de código. Existem outros que nos permitem usarmos um mesmo bloco de código repetidamente. Chamamos essas estruturas lógicas de laços de repetição.</p>
 <p>A primeira maneira de criarmos um laço de repetição em JS é por meio do token <code>while</code> do seguinte modo:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// Exemplo de loop com while</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Exemplo de loop com while</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 <span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Contagem: </span><span class="si">${</span><span class="nx">i</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
@@ -1974,8 +1975,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Primeiro criamos a variável <code>i</code> e usamos a estrutura de loop <code>while</code> para a seguinte regra "Se i for menor igual a 5 então mostre a mensagem 'Contagem: Número i'". Quando o valor da variável <code>i</code> é 6, a expressão do loop retorna um false e saímos do loop.</p>
 <p>O operador que aprendemos anteriormente faz um loop enquanto a condição expressa entre os parênteses não for false. Mas existem situações onde queremos executar o bloco de código um número definido de vezes. Para isso o JS possui o token <code>for</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// Exemplo de loop com for</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Exemplo de loop com for</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">frutas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;pera&#39;</span><span class="p">,</span><span class="s1">&#39;uva&#39;</span><span class="p">,</span><span class="s1">&#39;maca&#39;</span><span class="p">,</span><span class="s1">&#39;banana&#39;</span><span class="p">]</span>
 <span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">index</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">frutas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">index</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">frutas</span><span class="p">[</span><span class="nx">index</span><span class="p">])</span>
@@ -1990,8 +1990,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <h4 id="funcoes">Funções</h4>
 <p>Nós aprendemos anteriormente que funções são umas das varáveis do tipo objeto no JS. Sempre que pudermos generalizar um tratamento de dados por meio da criação de uma função, devemos optar por esse caminho porque assim tornamos a manutenção dos nossos programas melhor e evitamos ter que repetir linhas de código muito parecidas.</p>
 <p>Mesmo sendo um objeto, o JS possui um token específico para a criação de funções. Abaixo temos dois exemplos adaptados do material do curso.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// Criacao de uma funcao de soma</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Criacao de uma funcao de soma</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">soma</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span>
@@ -2001,8 +2000,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span>
 </code></pre></div>
 <p>Para o segundo exemplo, nós queremos construir uma função que retorna a média dos valores apresentados entre os parênteses. Para isso, precisaremos de um dos tokens que vimos na seção passada. Sabemos muito bem que a média é calculada pela soma dos <span class="arithmatex">\(n\)</span> valores dividida pela quantidade <span class="arithmatex">\(n\)</span>. Para isso, teremos que usar o token de laço de repetição.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">media</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">media</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 <span class="w">    </span><span class="nx">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">n</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2015,8 +2013,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Calma, eu sei que em uma primeira vista é estranho esse objeto <code>arguments</code> ter sido chamado do nada. Acontece que no JS (e em muitas linguagens) alguns objetos, a exemplo das funções, possuem métodos que podem ser usados mesmo no momento da sua criação. Nesse caso, é o exemplo desse objeto que nos diz a quantidade de argumentos que foram inseridos na nossa função media().</p>
 <p>Também podemos usar as funções para criação de  <strong>estruturas padronizadas de objetos</strong> que são conhecidas como  <strong>classes</strong>. Abaixo vamos criar uma estrutura para objetos do tipo <code>Pessoa</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">Pessoa</span><span class="w"> </span><span class="p">(</span><span class="nx">primeiro</span><span class="p">,</span><span class="nx">ultimo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">Pessoa</span><span class="w"> </span><span class="p">(</span><span class="nx">primeiro</span><span class="p">,</span><span class="nx">ultimo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">primeiro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">primeiro</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">ultimo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ultimo</span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">nomeCompleto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -2040,8 +2037,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Outra novidade é que criamos uma <code>`cópia'' do objeto</code>Pessoa<code>só que com um outro nome:</code>chefe`.</p>
 <h5 id="arrow-functions">Arrow Functions</h5>
 <p>Agora vamos entrar num ponto que, para mim, foi bem difícil de entender no começo. O JS permite que a construção de     <strong>funções anônimas</strong>, ou seja, funções que não precisam de nomes definidos. Mas antes de aprendermos mais sobre isso, precisamos saber que existem diferentes modos de se criar uma função em JS. Abaixo temos 3 maneiras de se criar a função <code>soma</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// forma tradicional</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// forma tradicional</span>
 <span class="nx">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="p">}</span>
 <span class="c1">//forma com arrow function</span>
 <span class="nx">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">}</span>
@@ -2050,8 +2046,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Agora que entendemos um pouco melhor a construção de funções em JS, podemos ir mais fundo nas   <strong>arrow functions</strong>. Esse método de definição de funções foi criado para facilitar a criação de funções dentro de contextos, ou seja, se você está criando uma função em uma linha de código normal (sem estrar em um bloco de código) é melhor usar a forma tradicional. Agora, se você estiver em um contexto diferente (como em um parâmetro de um objeto ou mesmo uma função) é melhor usar a arrow function.</p>
 <p>Assim como os outros objetos, existem propriedades e métodos das arrow functions que podemos usar. Um exemplo disso é o operador <code>this</code> que faz referência ao bloco em que nossa arrow functions está contida. Em uma função normal, nós aprendemos que esse operador faz referência à própria função. Abaixo temos um exemplo adaptado do material.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// usando &#39;this&#39; em uma arrow function</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// usando &#39;this&#39; em uma arrow function</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">Pessoa2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">nome</span><span class="o">:</span><span class="s1">&#39;Bruno&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">amigos</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span><span class="s1">&#39;Clarck&#39;</span><span class="p">,</span><span class="s1">&#39;Bruce&#39;</span><span class="p">],</span>
@@ -2099,8 +2094,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <h5 id="objeto-window">Objeto Window</h5>
 <p>O objeto window é o representante da da janela do browser. Ele contém toda a hierarquia que mostramos nessa lista de elementos acima. Além de conter todos esses elementos dentro dele, esse objeto (Como o próprio nome diz, tudo no DOM são, em algum grau, objetos. Mantenha isso em mente!) possui métodos e propriedades que são úteis para o gerenciamento das nossas aplicações.</p>
 <p>Na parte de     <strong>armazenamento de dados</strong> o window nos dá duas maneiras:   <strong>localStorage</strong> e  <strong>sessionStorage</strong>. No primeiro os dados são mantidos mesmo se o navegador seja fechado. Já o sessionStorage mantém os arquivos apenas enquanto o navegador é mantido aberto. Abaixo temos um exemplo de como usar esses repositórios.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// guardando dados no repositório de sessão</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// guardando dados no repositório de sessão</span>
 <span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span><span class="s1">&#39;Bruno Ruas&#39;</span><span class="p">)</span>
 <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;O usuário logado é: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">))</span>
 <span class="o">&gt;</span><span class="w"> </span><span class="nx">Aparece</span><span class="w"> </span><span class="nx">um</span><span class="w"> </span><span class="nx">popup</span><span class="w"> </span><span class="nx">com</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="nx">mensagem</span><span class="w"> </span><span class="s2">&quot;O Usuário logado é: Bruno Ruas&quot;</span>
@@ -2211,8 +2205,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </table>
 <p>Não tem muito pra onde correr. Só vamos aprender bem usando, mas por agora, basta termos em mente que essas funcinalidades existem e poderão ser úteis em algum momento.</p>
 <p>Abaixo tempos um exemplo usando uma função JS para alterar um elemento do body através do DOM.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">PUC</span><span class="o">-</span><span class="nx">MG</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
@@ -2287,8 +2280,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </tbody>
 </table>
 <p>Abaixo temos um exemplo de página web adaptado do material do curso que faz uso o objeto navegador e retorna a geolocalização do navegador.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">PUC</span><span class="o">-</span><span class="nx">MG</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
@@ -2325,8 +2317,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <h5 id="eventos">Eventos</h5>
 <p>Outra funcionalidade interessante do DOM é a capacidade de usarmos não apenas os elementos da página mas também o contexto (ou eventos) em que esses elementos se encontram. Por exemplo, é comum vermos uma imagem aumentar de tamanho quando colocamos o mouse sobre ela. Com essa funcionalidade, conseguimos explorar vários cenários de interação do usuário com a página.</p>
 <p>No exemplo abaixo,  temos o uso de dois contextos do mouse sobre um elemento de texto. Quando o mouse está sobre o elemento, nós mudamos a cor dele para vermelho. Quando o mouse não está sobre o elemento, a cor dele se torna preto.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">PUC</span><span class="o">-</span><span class="nx">MG</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
@@ -2341,8 +2332,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 </code></pre></div>
 <p>Podemos ver mais um exemplo do uso do token <code>this</code> mas dessa vez fora de um bloco de código de uma função. Nesse contexto, esse operador faz referência ao elemento HTML e altera o seu valor do parâmetro de estilo que indicamos (a cor do texto).</p>
 <p>Mesmo sendo possível fazer uso do atributo de evento direto no HTML, como fizemos no exemplo anterior, a boa prática é manter essas features em um arquivo JS à parte (igual nós fizemos com o CSS) pois isso torna o arquivo de estrutura mais fácil de ler. Abaixo temos exatamente a mesma funcionalidade mas usando o campo de script do meta mas que poderia ser hospedado em um arquivo .js em separado.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span><span class="w"> </span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span><span class="w"> </span><span class="nx">lang</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">PUC</span><span class="o">-</span><span class="nx">MG</span><span class="o">&lt;</span><span class="err">/title&gt;</span>
@@ -2434,71 +2424,69 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Como dito anteriormente, o JSON não é o único formato existente no mercado. Para destacar alguns outros, temos o XML, RDF, Planilhas, CSV, Documentos TXT, JPEG-2000, TIFF e vários outros formatos proprietários. Mas, sem dúvida, a competição mais árdua é entre JSON e XML.</p>
 <h4 id="sintaxe-do-json">Sintaxe do JSON</h4>
 <p>Um arquivo JSON é muito parecido com um bloco de código JS. Começa e termina com chaves <code>{}</code> e cada elemento é formado por um par de nome-valor e são separados por vírgula. O JSON permite diferentes tipos de valores que podem ser dos mesmo tipos de dados que estudamos anteriormente para o JS. Abaixo temos um exemplo de um arquivo JS.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// json</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;idade&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bruno Ruas&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;materias&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;materia&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Econometria&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;professor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bill Gates&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;materia&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microeconomia&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;professor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Steve Jobs&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;nerd&quot;</span><span class="p">:</span><span class="kc">true</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>{
+    &quot;idade&quot;: 28,
+    &quot;nome&quot;: &quot;Bruno Ruas&quot;,
+    &quot;materias&quot;: [
+        {
+            &quot;materia&quot;: &quot;Econometria&quot;,
+            &quot;professor&quot;: &quot;Bill Gates&quot;
+        },
+        {
+            &quot;materia&quot;: &quot;Microeconomia&quot;,
+            &quot;professor&quot;: &quot;Steve Jobs&quot;
+        }
+    ],
+    &quot;nerd&quot;:true
+}
 </code></pre></div>
 <p>Nesse exemplo, podemos ver que o valor para Idade é do tipo number. Nome é uma string. Matérias é um array, veja que ele está entre colchetes <code>[]</code>, exatamente como aprendemos antes. Cada elemento do nosso array de matérias é um objeto, que começam e terminam com chaves, com duas propriedades: matéria e professor. Por fim, temos um booliano para a pegunta "É nerd?".</p>
 <p>Os outros tipos de dados como datas, geolocalização e outros, são passados em JSON como uma string. Temos que lembrar disso se um dia precisamos lidar com esse tipo de informação.</p>
 <p><strong>Comentário:</strong> Quando estamos criando um JSON dentro de um código JS nós não precisamos colocar as aspas no nome dos elementos. Mas é padrão que essas aspas sejam usadas em objetos JSON. Então temos que ficar atentos a isso também.</p>
 <h5 id="objeto-json-no-javascript">Objeto JSON no JavaScript</h5>
 <p>Agora que sabemos um pouco sobre esse tipo de estrutura de dados, vamos aprender como manipular esse objeto dentro de um script JS. A maneira que o JS tem que trabalhar com JSON é por meio de um objeto nativo da linguagem chamado, nem um pouco sem querer, de JSON. Esse objeto possui dois métodos úteis: Um <code>parse()</code> que recebe uma string e retorna um objeto na notação JSON e um <code>stringfy()</code> que pega um objeto análogo JSON e transforma em string.</p>
-<p><div class="highlight"><pre><span></span><code><span class="c1">// JSON para string</span>
-<span class="err">var</span><span class="w"> </span><span class="err">Tex</span><span class="kc">t</span><span class="err">oJSON</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Revistas&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="s2">&quot;V de Vingança&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="s2">&quot;Frank Miller&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="s2">&quot;Batman - The Dark Knight&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="s2">&quot;Frank Miller&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="s2">&quot;One Piece Nº 29&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="s2">&quot;Eichiro Oda&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="p">}</span><span class="err">&#39;</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Usando o método de parse do JSON</span>
+<p>``` jsonON para string
+var TextoJSON = '{
+    "Revistas": [
+        {
+            "titulo":"V de Vingança",
+            "autor":"Frank Miller"
+        },
+        {
+            "titulo":"Batman - The Dark Knight",
+            "autor":"Frank Miller"
+        },
+        {
+            "titulo":"One Piece Nº 29",
+            "autor":"Eichiro Oda"
+        }
+    ]
+}'
+<div class="highlight"><pre><span></span><code>``` js
+// Usando o método de parse do JSON
 
-<span class="kd">var</span><span class="w"> </span><span class="nx">banca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">TextoJSON</span><span class="p">)</span>
+var banca = JSON.parse(TextoJSON)
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">listaTitulos</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">lista</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+function listaTitulos() {
+    lista = &#39;&#39;
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">banca</span><span class="p">.</span><span class="nx">Revistas</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">lista</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">banca</span><span class="p">.</span><span class="nx">Revistas</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">titulo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; - &#39;</span><span class="w"> </span><span class="o">+</span>
-<span class="w">        </span><span class="nx">banca</span><span class="p">.</span><span class="nx">Revistas</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">autor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;</span>
-<span class="s1">        &#39;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lista</span><span class="p">)</span>
-<span class="p">}</span>
+    for (let i = 0; i &lt; banca.Revistas.length; i++) {
+        lista += banca.Revistas[i].titulo + &#39; - &#39; +
+        banca.Revistas[i].autor + &#39;
+        &#39;
+    }
+    console.log(lista)
+}
 
-<span class="nx">listaTitulos</span><span class="p">()</span>
+listaTitulos()
 
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">V</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">Vingança</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Frank</span><span class="w"> </span><span class="nx">Miller</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">Batman</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">The</span><span class="w"> </span><span class="nx">Dark</span><span class="w"> </span><span class="nx">Knight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Frank</span><span class="w"> </span><span class="nx">Miller</span>
-<span class="o">&gt;</span><span class="w"> </span><span class="nx">One</span><span class="w"> </span><span class="nx">Piece</span><span class="w"> </span><span class="nx">Nº</span><span class="w"> </span><span class="mf">29</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">Eichiro</span><span class="w"> </span><span class="nx">Oda</span>
+&gt; V de Vingança - Frank Miller
+&gt; Batman - The Dark Knight - Frank Miller
+&gt; One Piece Nº 29 - Eichiro Oda
 </code></pre></div></p>
 <p>Primeiro nós criamos uma string no formato de um JSON. Depois passamos essa string pelo objeto JSON com o método <code>parse</code>. Após isso, nós temos um objeto chamado banca com a mesma estrutura do nosso JSON desejado. Depois nós criamos uma função de loop que retorna uma string com o título, o autor e o carácter especial de quebra de linha.</p>
 <p>Para converter nosso objeto novamente para string basta usarmos o seguinte comando:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">banca</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">banca</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="mf">2</span><span class="p">)</span>
 </code></pre></div>
 <p>O primeiro parâmetro é o objeto a ser convertido. O segundo nós podemos colocar como null (Existe uma explicação para isso mas não precisamos dela agora). Por fim, o terceiro diz o tamanho do espaço para melhorar a identação.</p>
 <p>Saber como lidar com objetos JSON dentro de um script JS nos permite construir aplicações inteiras apenas com JS. Um framework muito famoso hoje em dia chamado MEAN (MongoDb, Express, Angular e NodeJS) utiliza o JS como principal linguagem para construção de toda a aplicação web.</p>
@@ -2537,8 +2525,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Agora que entendemos melhor o que é o AJAX e como podemos construir aplicações com ele, precisamos entender bem uma das suas principais ferramentas: o objeto XMLHTTPRequest. Inicialmente criado pelo Microsoft e adaptado pelo Mozilla, o XMLHTTPRequest é um objeto (mas também pode ser interpretado como uma API) que é fornecido pelo próprio navegador e que permite que nosso código JS troque dados com um servidor web.</p>
 <p>O objeto XMLHTTPRequest é a base do AJAX. Mas cuidado. Apesar do nome, ele aceita a troca de informações em diferentes formatos além do XML: JSON, HTML, TXT, XML. Além disso por ele podemos nos conectar à serviços por outros métodos além do HTTP.</p>
 <p>Para aprender como usar essa ferramenta, vamos por partes. Podemos começar o nosso script com a criação de um objeto que será do tipo XMLHTTPRequest.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="c1">// função caso a conexão funcione</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// função caso a conexão funcione</span>
 <span class="kd">function</span><span class="w"> </span><span class="nx">success</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;texto&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span>
 <span class="p">}</span>
@@ -2617,8 +2604,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <li><code>Completed (4)</code> - Todos os dados foram recebidos e podem ser lidos</li>
 </ul>
 <p>Abaixo temos um exemplo de uso do <code>readyState</code> para verificação do status da chamada.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">requisicaoAJAX</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">requisicaoAJAX</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">xmlhttp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">HMLHttpResquest</span><span class="p">()</span>
 <span class="p">}</span>
 <span class="nx">xmlhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -2634,8 +2620,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
 <p>Podemos ver que nós criamos uma função disparada apenas quando o status muda e, como colocamos uma condição dentro, só teremos a realm modificação caso o status da comunicação seja 200 (que é o padrão para sucesso) e o status da comunicação seja o de completo.</p>
 <h5 id="api-fetch">API Fetch</h5>
 <p>Os navegadores atuais nos permitem uma alternativa ao XMLHttpRequest chamada API Fetch. A vantagem é que essa nova tecnologia nos permite fazer uso das <em>promises</em> que simplifica a escrita da programação assíncrona. Podemos ver um exemplo abaixo.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// js</span>
-<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 <span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https:api.github.com/users/brunoruas2&#39;</span><span class="p">)</span>
 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span>
@@ -2733,6 +2718,7 @@ Inline - Código fica dentro de um atributo do elemento HTML
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
                 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
                 <script src="../../../../search/main.js" defer></script>
+
     </body>
 
 </html>

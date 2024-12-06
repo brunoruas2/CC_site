@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
     <head>
-                <title>OOP - Ciência da Computação</title>
+                <title>Notas Rápidas de Estudo AWS - Ciência da Computação</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             
-            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/Desenvolvedor.io/Arquitetura_Software/01-OOP/">
+            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/AwsSkillBuilder/cloudPratictioner/Cloud_Pratictioner/">
             
 
             
@@ -270,7 +270,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class=" active 
+                            <a class="
                             nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Cursos]</a>
                             <ul class="dropdown-menu">
                                     <!-- block dropdown-menu -->
@@ -279,22 +279,22 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../AwsSkillBuilder/cloudPractioner/Getting_Started.md" class="dropdown-item text-decoration-none ">Getting Started</a>
+        <a href="../../cloudPractioner/Getting_Started.md" class="dropdown-item text-decoration-none ">Getting Started</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../AwsSkillBuilder/cloudPractioner/Billing_Cost.md" class="dropdown-item text-decoration-none ">Billing and Cost</a>
+        <a href="../../cloudPractioner/Billing_Cost.md" class="dropdown-item text-decoration-none ">Billing and Cost</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../AwsSkillBuilder/cloudPractioner/Cloud_Acquisition.md" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
+        <a href="../../cloudPractioner/Cloud_Acquisition.md" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../AwsSkillBuilder/cloudPractioner/Cloud_Pratictioner.md" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
+        <a href="../../cloudPractioner/Cloud_Pratictioner.md" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -306,7 +306,7 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">OOP</a>
+        <a href="../../../Desenvolvedor.io/Arquitetura_Software/01-OOP/" class="dropdown-item text-decoration-none ">OOP</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -398,88 +398,237 @@
     <article>
         <header>
             
-                <h1 class="bold title" id="component-title">OOP</h1>
+                <h1 class="bold title" id="component-title">Notas Rápidas de Estudo AWS</h1>
             
         </header>
-        <p><h1 id="programacao-orientada-a-objetos">Programação Orientada à Objetos</h1>
-<h2 id="principais-conceitos">Principais Conceitos</h2>
+        <p><h1 id="notas-rapidas-de-estudo-aws">Notas Rápidas de Estudo AWS</h1>
+<h2 id="module-1-intro-and-module-2-the-cloud">Module 1 - Intro and Module 2 - The Cloud</h2>
+<p>Cloud computing -&gt; pay as you go withou pay beforehand.</p>
+<p>Ec2 (elastic cloud computing).</p>
+<p>Ec2 types -&gt; general, compute, memory, accelerated and storage.</p>
+<p>Ec2 pricing -&gt; on-demand, reserved (type, plataform or tenancy), saving plans (1 or 3 years), spot 
+(90% off, runs in not used machines at time) and dedicated hosts.</p>
+<p>Load balance</p>
+<p>Lambda</p>
+<p>SNS</p>
+<p>SQS</p>
+<p>ECS -&gt; eks da amazon.</p>
+<p>EKS -&gt; orquestrador de containers docker.</p>
+<p>AWS Fargate (serveless para containers)</p>
+<h2 id="module-3-global-infra-and-reliability">Module 3 - Global Infra and Reliability</h2>
+<p>4 factors to chose region (compliance, proximity, features and price).</p>
+<p>Availability Zone (AZ) -&gt; group of data centers indicates in final of a region ex es-east-1a, b or c.</p>
+<p>AWS Regions -&gt; group of az isolated geographically</p>
+<p>Edge Location -&gt; cache coping to places there are not close to a region to reduce the latency that use AWS Cloudfront to deliver.</p>
+<p>AWS Cloudfront -&gt; CDN da amazon.</p>
+<p>AWS Route 53 -&gt; DNS da amazon.</p>
+<p>AWS Outpost -&gt; an kind of mini region run by amazon inside our building.</p>
+<p>how to create/update aws resources -&gt; AWS Management Console (Browser), AWS CLI, AWS SDKs, AWS Elastic Beastalk and AWS Cloudformation.</p>
+<p>AWS Elastic Beanstalk -&gt; Ferramenta que faz deploy de app php, .net, java, python e etc. Baseados em alguns presets.</p>
+<p>AWS Cloudformation -&gt; Infra as code tool (yaml or json).</p>
+<p>Advice: run across 2 AZ in each region</p>
+<h2 id="module-4-networking">Module 4 - Networking</h2>
+<p>AWS VPC -&gt; Provison of isolated aws cloud separed by subnets that contains resources.</p>
+<p>Subnet -&gt; A group of resources based on security or operacional needs. Can be public (through a internet gateway) or private (through a vpc).</p>
+<p>Internet Gateway (IGW) -&gt; Used to allow internet access to a VPC.</p>
+<p>AWS Virtual Private Gateway -&gt; A virtual VPN to my vpc and a private network (aka intranet).</p>
+<p>AWS Direct Connect -&gt; Dedicated private connection fiber with a AWS Direct Connect endpoint.</p>
+<p>Packet -&gt; A unit of data sent over the internet or network</p>
+<p>Acces Control List (ACL) -&gt; The component that checks packets permitions for subnets. Default is to allow in and out traffic.</p>
+<p>Security Group -&gt; The component that check packets permission for aws components (like ec2). Is Stateful and returns always allowed. Default is block in and allow out traffic.</p>
+<p>Edge Location</p>
+<p>AWS Cloudfront</p>
+<p>AWS Route 53</p>
+<h2 id="module-5-databases-and-storage">Module 5 - Databases and Storage</h2>
+<p>Block Level Storage -&gt; Place to store file in a way that can be updated block by block and not by the hole file</p>
+<p>EC2 Storage -&gt; Instance Store Volumens that dies within the ec2 machine</p>
+<p>AWS Elastic Block Store (EBS) -&gt; A persistent database to ec2 instances. Block storage that can be updated partially. Run in a AZ (not region)</p>
+<p>Snapshots -&gt; Incremental backupds for EBS</p>
+<p>AWS Simple Store Service (S3) -&gt; Store data as objects with versions in buckets (like a file equivalent). Can receave objects until 5TB!</p>
+<p>S3 Lifecycle Policies -&gt; Rules that can move data for s3 tiers automaticly for better storage and cost</p>
+<p>S3 Classes aka Tiers -&gt;</p>
+<ul>
+<li>Standard (999999999% prob of aviability in a year)</li>
+<li>Static Website Hosting</li>
+<li>Standard-Infrequent Access Data aka Standard-IA (not so frequently until we need it, like a backup)</li>
+<li>Glacier Flexible Retrieval (Retain data for audit or compliance in valts). Acept policies like Write one - read many (worm)</li>
+</ul>
+<p>AWS Elastic File System (EFS) -&gt; Scales automatically. Run in a region. Can be access by on-premisses by AWS Direct Connect</p>
+<p>AWS Relational Database Service (RDS) -&gt; Suport dbms with automated patching, backups, redundance, failover and disaster recovery</p>
+<p>lift-and-shift -&gt; Migrate for an onpremisses dbms</p>
+<p>AWS RDS database engines -&gt;</p>
+<ul>
+<li>AWS Aurora (compatible with MySQL and PostegreSQL)</li>
+<li>MySQL</li>
+<li>PostegreSQL</li>
+<li>MariaDB</li>
+<li>Oracle</li>
+<li>MSSQLServer</li>
+</ul>
+<p>AWS DynamoDB -&gt; Serverless database. NoSQL with item + attribute. Purpose built.</p>
+<p>Data warehouses -&gt; Storage of data to post ante analysis with focus in the past data and not real time updates.</p>
+<p>AWS Redshift -&gt; Focus in data analysis. Data warehouse as a service. 10x faster than traditional databases for queries in multiple databases.</p>
+<p>AWS Database Migration Service (DMS) -&gt; A way to migrate onpremisses databases to aws cloud solutions (with source db still in use!). Can be homogeneous or heterogeneous (with need a aditional convert step). Can be used to bring to dev env the prod data, consolidate multiple db into one and continous replication of on db into many targets.</p>
+<p>Other Database Services -&gt; AWS DocumentDB (with mongoDB compatibility), AWS Neptune (graph database), AWS Managed Blockchain, AWS QLDB (Quantum Ledger DB), Database Acelerators (with AWS Elasticache) or DAX (DynamoDB Acelerator)</p>
+<h2 id="module-6-security">Module 6 - Security</h2>
+<p>Share Responsability Model -&gt; aws resp "of the cloud" + user resp "in the cloud"</p>
+<p>AWS part -&gt; physical + network + hypervisor</p>
+<p>user part -&gt; Operation System + Application + Data</p>
+<p>AWS Root User -&gt; Owner of the aws account</p>
+<p>Multifactor Authoriation (MFA)</p>
+<p>AWS Identity and Access Management (IAM) -&gt; Least privileged principle (user start of zero allowed powers)</p>
+<p>Policies -&gt; Permition json that effect (allow or deny) + action (api call) + resource</p>
+<p>IAM Groups -&gt; a better way to manage the permitions by attach users in groups</p>
+<p>IAM Roles -&gt; temporary permitions</p>
+<p>AWS Organizations -&gt; </p>
 <ol>
-<li>Estado e Comportamento</li>
-<li>Herança</li>
-<li>Abstração</li>
-<li>Polimorfismo</li>
-<li>Encapsulamento</li>
-<li>Interface x Implementação</li>
-<li>Herança x Composição</li>
+<li>Central local to manage multiple AWS accounts</li>
+<li>Consolidade billing</li>
+<li>Hierarchical group accounts</li>
+<li>Control AWS Service and API Actions (Service Control Polices - SCP)</li>
 </ol>
-<h2 id="estado-e-comportamento">Estado e Comportamento</h2>
-<p>Estado é basicamente o nome de propriedades das classes. Comportamento é basicamente os métodos de uma classe (função e void).</p>
-<h2 id="interface-x-implementacao">Interface x Implementação</h2>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IInterface</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ImplementaInterface</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IInterface</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// logica do metodo</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoImplementacao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ImplementaInterface</span><span class="p">();</span>
-<span class="w">        </span><span class="n">foo</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoAbstracao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IInterface</span><span class="w"> </span><span class="n">_interface</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">UsoAbstracao</span><span class="p">(</span><span class="n">IInterface</span><span class="w"> </span><span class="n">iinterface</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_interface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iinterface</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_iinterface</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="heranca-x-composicao">Herança x Composição</h2>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SuperClasse</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroExpor</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// void</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroEsconder</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// void</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">SubClasseHeranca</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SuperClasse</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">MetodoQueQueroExport</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar</span>
-<span class="w">        </span><span class="n">MetodoQueQueroEsconder</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar tambem</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">SubclasseComposicao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span><span class="w"> </span><span class="c1">// continuar estudando esse ponto</span>
-<span class="p">}</span>
-</code></pre></div></p>
+<p>Organization Units -&gt; The name of each AWS organization</p>
+<p>AWS Compliance -&gt; A LOT of best practices that AWS already follow</p>
+<p>AWS Artifact -&gt; Service that provide on-demand access to AWS Security and compliance reports</p>
+<p>Denial-of-service Attacks -&gt; </p>
+<ol>
+<li>UDF Flood (api weather)</li>
+<li>HTTP Level Attacks (multiple http clients)</li>
+<li>Slowloris Attack (slow connection fake to stop de queue)</li>
+</ol>
+<p>Defenses of DDoS by AWS -&gt;</p>
+<ol>
+<li>Security Groups (the bad api calls does not reach the server)</li>
+<li>AWS Shield with AWS WAF (Machine learning and other stuff)</li>
+<li>Elastic Load Balancer (each track is segregated)</li>
+</ol>
+<p>AWS Shield -&gt; Service that protects applications against DDoS attacks (two levels: stantad -no cost- and advanced)</p>
+<p>Encryption -&gt; A way to ensure that only permitioned peaple can access to the data</p>
+<p>AWS Key Management Service (KMS) -&gt; Encryption operations by a key</p>
+<p>AWS WAF -&gt; web applicatoin firewall that checks that the request is not from a bloqued IP addr</p>
+<p>AWS Inspector -&gt; Automated security assessments to avaluate your app and give some advices to improve the security</p>
+<p>AWS GuardDuty -&gt; Inteligent threat detection by monitoring the network activity and account behavior</p>
+<h2 id="module-7-monitoring">Module 7 - Monitoring</h2>
+<p>AWS CloudWatch -&gt; Monitoring your aws infra by metrics. Reduce Mean Time To Resolution (MTTR) and improve Total Costume Ownership (TCO)</p>
+<p>Cloudwatch Alarm -&gt; An alert that can be integrated with sns</p>
+<p>Cloudwatch Dashboard -&gt; a dashboard, simple as it</p>
+<p>AWS CloudTrail -&gt; A compreensive api for audition. Every call in aws saves a log in cloudtrail that can be save in s3 buckets</p>
+<p>CloudTrail Insigns -&gt; Automatic detect unusual API activities in my aws account</p>
+<p>AWS Trusted Advisor -&gt; Avaluate by 5 pillars: Cost optmization, Performance, Security, Fault tolerance and Service limits. Some are free and others paid. 3 actions: Action recomendation, Investigation recomendation and alright.</p>
+<h2 id="module-8-billing">Module 8 - Billing</h2>
+<p>AWS Free Tier -&gt; 3 ways: aways free, 12 months free and trial</p>
+<p>How AWS price works -&gt;</p>
+<ul>
+<li>Pay for what you user</li>
+<li>Pay less when you reserve</li>
+<li>Pay less with volumed-based discounts when you use more</li>
+</ul>
+<p>AWS Princing Calculator</p>
+<p>AWS Billing Dashboard -&gt; Painel to pay the aws bill </p>
+<p>AWS Consolidate Billing -&gt; Centralize the bill process + share saving across accounts +  it's free</p>
+<p>AWS Budged -&gt; 4 types: cost, usage, reservation and saving plans. Custom alerts to keep the control on time</p>
+<p>AWS Cost explore -&gt; drill down to know where you are allocating the cost. Can be group by tag to keep track of projects or other group of services</p>
+<p>AWS Support plans -&gt;</p>
+<ul>
+<li>Basic support:<ul>
+<li>24/7 customer service</li>
+<li>documentation</li>
+<li>whitepapers</li>
+<li>aws trusted advisor</li>
+<li>aws personal health dashboard</li>
+</ul>
+</li>
+<li>Developer support:<ul>
+<li>Email support 24 hours to response</li>
+</ul>
+</li>
+<li>Business support:<ul>
+<li>aws trusted advisor full power</li>
+<li>direct phone to cloud support team (4 hour to response)</li>
+</ul>
+</li>
+<li>Enterprise On-Ramp support:<ul>
+<li>30 minutes response for critical workload</li>
+<li>access to a pool of Technical Account Managers (TAMs)</li>
+</ul>
+</li>
+<li>Enterprise support:<ul>
+<li>15 minutes response</li>
+<li>Designated Technical Account Manager (TAM)</li>
+</ul>
+</li>
+</ul>
+<p>Technical Account Manager (TAM) -&gt; A consigliere to keep the aws account running in conformity of the 6 pillars of well-architectured framework (more in module 10):</p>
+<ul>
+<li>Operational Excellence</li>
+<li>Security</li>
+<li>Reliability</li>
+<li>Performance Efficiency</li>
+<li>Cost Optimization</li>
+<li>Sustainability</li>
+</ul>
+<p>AWS Marketplace -&gt; A market for enterprise services of third parties in a bunch of categories like devops, infra, Iot, machine learning and more</p>
+<h2 id="module-9-migration-and-innovation">Module 9 - Migration and Innovation</h2>
+<p>AWS Adoption Framework (CAF) -&gt; Advice to make a smooth change for cloud in 6 perspectives: Business, People, Governance, Platform, Security and Operations. The first 3 focus on business and the last 3 focus on technical capabilities</p>
+<p>AWS CAF Action Plan -&gt; Guide to make a migration</p>
+<p>Migration Strategies (6 R's) -&gt;</p>
+<ul>
+<li>Re-hosting (lift and shift)</li>
+<li>Re-platforming (lift, tinker and shift)</li>
+<li>Retire (die apps not needed anymore)</li>
+<li>Retain (make app life only for a short period of time on premisses until then die)</li>
+<li>Repurchasing (buy new software inted of use the old ones)</li>
+<li>Refactoring (re-code part of your software)</li>
+</ul>
+<p>AWS Snow Family -&gt;</p>
+<ul>
+<li>AWS Snowcone - A hardware that you receive from amazon, plug in your data center, copy the data and send back to amazon to send this to the cloud. Store up to 14TB</li>
+<li>AWS Snowball Edge - A device suited for large-scale data migrations. Can be Storage focused or Compute focused. 80TB</li>
+<li>AWS Snowmobile - 100PB. Like a container to plug in your on-premises data center</li>
+</ul>
+<p>Innovation in AWS -&gt; VMWare Cloud AWS, Amazon SageMakes (machine learning pre-trained models), Amazon Augmented AI (2AI), Amazon Lex (the heart of Alexa), Amazon Textract (extract text), AWS DeepRacer, Iot, AWS Groud Station (for satelities)</p>
+<p>AWS Q Developer -&gt; Like a copilot without store or be used</p>
+<h2 id="module-10-the-cloud-journey">Module 10 - The Cloud Journey</h2>
+<p>6 pillars of Well-Architectured framework -&gt;</p>
+<ul>
+<li>Operational Excellence (running and monitoring systems)</li>
+<li>Security (integrity of data and users)</li>
+<li>Reliability (recovery plannings and handle changes)</li>
+<li>Performance Efficiency (compute resources used in the best way)</li>
+<li>Cost Optimization (optimize full cost)</li>
+<li>Sustainability (minimize the environmental impact)</li>
+</ul>
+<p>Well-Architectured tool -&gt; A service that evaluate your aws account by the 6 pillars above by a form of questions</p>
+<p>6 main benefits to use cloud -&gt;</p>
+<ul>
+<li>pay as you use (not upfront cost) and the cost is not fixed </li>
+<li>benefit from massive scale</li>
+<li>stop guessing capacity and scale fast when needed</li>
+<li>increase speed and agility by trying and failing fast and cheap</li>
+<li>stop wasting money hosting data centers and focus on the business</li>
+<li>go global in minutes</li>
+</ul>
+<h2 id="module-11-aws-certified-cloud-practitioner-basics">Module 11 - AWS Certified Cloud Practitioner Basics</h2>
+<p>4 Domains -&gt;</p>
+<ul>
+<li>Cloud Concepts (24%)</li>
+<li>Security and Compliance (30%)</li>
+<li>Technology (34%)</li>
+<li>Billing and Pricing (12%)</li>
+</ul>
+<p>Exam Details -&gt;</p>
+<ul>
+<li>65 questions</li>
+<li>90 minutes</li>
+<li>Minimum score is 700</li>
+<li>Two types of questions (multiple-choice and multiple-response)</li>
+</ul>
+<p>Exam Strategies -&gt;</p>
+<ul>
+<li>Read the full question</li>
+<li>Predict the answers before reading the options</li>
+<li>Eliminate the wrong options</li>
+</ul></p>
     </article>
 </section>
 <!-- endblock -->
@@ -487,19 +636,6 @@
 
             
                     <!-- block preview -->
-        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
-            <div class="col themed-grid-col">
-                <a rel="prev" href="../../../../PUC/periodo5/seguranca/" class="nav-link">
-                    <i class="fa fa-arrow-left"></i> Previous
-                </a>
-            </div>
-            <div class="col themed-grid-col"></div>
-            <div class="col themed-grid-col">
-                <a rel="next" href="../../../../tech/" class="nav-link">
-                    Next <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
 <!-- endblock -->
             
 
