@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
     <head>
-                <title>Getting Started - Ciência da Computação</title>
+                <title>OOP - Ciência da Computação</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             
-            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/AwsSkillBuilder/cloudPratictioner/Getting_Started/">
+            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/">
             
 
             
@@ -279,22 +279,22 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Getting Started</a>
+        <a href="../../../AwsSkillBuilder/cloudPratictioner/Getting_Started/" class="dropdown-item text-decoration-none ">Getting Started</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../Billing_Cost/" class="dropdown-item text-decoration-none ">Billing and Cost</a>
+        <a href="../../../AwsSkillBuilder/cloudPratictioner/Billing_Cost/" class="dropdown-item text-decoration-none ">Billing and Cost</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../Cloud_Acquisition/" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
+        <a href="../../../AwsSkillBuilder/cloudPratictioner/Cloud_Acquisition/" class="dropdown-item text-decoration-none ">Cloud Aquisition</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../Cloud_Pratictioner/" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
+        <a href="../../../AwsSkillBuilder/cloudPratictioner/Cloud_Pratictioner/" class="dropdown-item text-decoration-none ">Cloud Practictioner</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -306,7 +306,7 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/" class="dropdown-item text-decoration-none ">OOP</a>
+        <a href="./" class="dropdown-item text-decoration-none  active ">OOP</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -398,99 +398,88 @@
     <article>
         <header>
             
-                <h1 class="bold title" id="component-title">Getting Started</h1>
+                <h1 class="bold title" id="component-title">OOP</h1>
             
         </header>
-        <p><h1 id="overview">Overview</h1>
-<p>CLOUD = Programmable Resources + Dynamic Abilities + Pay as you go</p>
-<p>Ways to interact with AWS:
-- AWS Management Console (site)
-- AWS Command Line Interface (AWS CLI)
-- AWS System Development Kits (AWS SDKs)</p>
-<p>AWS Core Areas
-- Compute
-- Storage
-- Databases
-- Networking
-- Security</p>
-<h1 id="understanding-the-aws-global-infra">Understanding the AWS Global Infra</h1>
-<p>Data Center -&gt; Availability Zone -&gt; AWS Region</p>
-<h1 id="core-services-overview">Core Services Overview</h1>
-<h2 id="compute">Compute</h2>
-<p>There are some options of cloud compute, to list a fell:</p>
+        <p><h1 id="programacao-orientada-a-objetos">Programação Orientada à Objetos</h1>
+<h2 id="principais-conceitos">Principais Conceitos</h2>
 <ol>
-<li>Virtual Machines</li>
-<li>Containers</li>
-<li>Batch Processing Compute Resources</li>
-<li>Serverless Compute</li>
+<li>Estado e Comportamento</li>
+<li>Herança</li>
+<li>Abstração</li>
+<li>Polimorfismo</li>
+<li>Encapsulamento</li>
+<li>Interface x Implementação</li>
+<li>Herança x Composição</li>
 </ol>
-<p>Amazon Elastic Compute Cloud (EC2) -&gt; The principal option of <strong>virtual machine</strong> in aws ecosystem.</p>
-<h3 id="ec2-types">EC2 types</h3>
-<p><a href="https://aws.amazon.com/pt/ec2/instance-types/">Link da documentação oficial</a></p>
-<ol>
-<li>Memory Optimized (focus on RAM)<ol>
-<li>Types: r4, r5, x1, z1</li>
-<li>Use Case: Open-source databases, in-memory caches, and real-time big data analytics</li>
-</ol>
-</li>
-<li>Accelerated Computing (focus on GPU)<ol>
-<li>Types: f1, g3, g4, p2, p3</li>
-<li>Use Case: ML models, computational fluid dynamics, graphical workloads</li>
-</ol>
-</li>
-<li>Storage<ol>
-<li>Types: d2, h1, i3</li>
-<li>Use Case: I/O intensive and business-critical workloads</li>
-</ol>
-</li>
-<li>General<ol>
-<li>Types: a1, m4, m5, t2, t3</li>
-<li>Use Case: Web servers and code repositores</li>
-</ol>
-</li>
-<li>Compute (focus on CPU)<ol>
-<li>Types: c4, c5</li>
-<li>Use Case: High performance web servers, high performance computing (HPC), scientific modeling, dedicated gaming servers and ad server engines, machine learning inference</li>
-</ol>
-</li>
-<li>High Performance Computing (HPC)<ol>
-<li>Types: Hpc6a, Hpc6id</li>
-<li>Use Case: Large, complex simulations and deep learning overloads</li>
-</ol>
-</li>
-</ol>
-<h4 id="amazon-ec2-auto-scaling">Amazon EC2 Auto Scaling</h4>
-<p>The same content we learned before.</p>
-<h3 id="severless">Severless</h3>
-<p>Building and running applications without managing servers at al!</p>
-<p>Keep in mind that <strong>serverless doesn't run idle resources</strong>, so you pay what you need.</p>
-<h4 id="aws-lambda">AWS Lambda</h4>
-<p>Some benefits:</p>
-<ol>
-<li>Multiple languages</li>
-<li>Stateless code</li>
-<li>Code can run on schedule or by trigger</li>
-<li>Pricing by milisec of usage</li>
-<li>Event-driven architectures</li>
-<li>Totally scalable</li>
-<li>High availability</li>
-</ol>
-<p>Some exemples of usage:</p>
-<ol>
-<li>Web apps</li>
-<li>Backend</li>
-<li>Data processing</li>
-<li>Chatbots</li>
-<li>Alexa</li>
-<li>IT automation</li>
-</ol>
-<h3 id="containers">Containers</h3>
-<p>Amazon Elastic Container Service (AWS ECS) and Amazon Elastic Kubernetes Service (AWS EKS) are <strong>containger orchestration services</strong>. </p>
-<h2 id="storage">Storage</h2>
-<h2 id="databases">Databases</h2>
-<h2 id="networking">Networking</h2>
-<h2 id="security">Security</h2>
-<h2 id="pricing">Pricing</h2></p>
+<h2 id="estado-e-comportamento">Estado e Comportamento</h2>
+<p>Estado é basicamente o nome de propriedades das classes. Comportamento é basicamente os métodos de uma classe (função e void).</p>
+<h2 id="interface-x-implementacao">Interface x Implementação</h2>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IInterface</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ImplementaInterface</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IInterface</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// logica do metodo</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoImplementacao</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ImplementaInterface</span><span class="p">();</span>
+<span class="w">        </span><span class="n">foo</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoAbstracao</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IInterface</span><span class="w"> </span><span class="n">_interface</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">UsoAbstracao</span><span class="p">(</span><span class="n">IInterface</span><span class="w"> </span><span class="n">iinterface</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_interface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iinterface</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_iinterface</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="heranca-x-composicao">Herança x Composição</h2>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SuperClasse</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroExpor</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// void</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroEsconder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// void</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SubClasseHeranca</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SuperClasse</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">MetodoQueQueroExport</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar</span>
+<span class="w">        </span><span class="n">MetodoQueQueroEsconder</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar tambem</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SubclasseComposicao</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span><span class="w"> </span><span class="c1">// continuar estudando esse ponto</span>
+<span class="p">}</span>
+</code></pre></div></p>
     </article>
 </section>
 <!-- endblock -->
@@ -500,13 +489,13 @@
                     <!-- block preview -->
         <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
             <div class="col themed-grid-col">
-                <a rel="prev" href="../../../../PUC/periodo5/seguranca/" class="nav-link">
+                <a rel="prev" href="../../../AwsSkillBuilder/cloudPratictioner/Cloud_Pratictioner/" class="nav-link">
                     <i class="fa fa-arrow-left"></i> Previous
                 </a>
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../Billing_Cost/" class="nav-link">
+                <a rel="next" href="../../../../tech/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
