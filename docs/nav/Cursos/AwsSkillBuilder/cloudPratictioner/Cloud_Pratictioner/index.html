@@ -306,7 +306,7 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/" class="dropdown-item text-decoration-none ">OOP</a>
+        <a href="../../../Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/" class="dropdown-item text-decoration-none ">Orientação à Objetos</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -402,7 +402,7 @@
             
         </header>
         <p><h1 id="notas-rapidas-de-estudo-aws">Notas Rápidas de Estudo AWS</h1>
-<h2 id="module-1-intro-and-module-2-the-cloud">Module 1 - Intro and Module 2 - The Cloud</h2>
+<h2 id="module-1-intro-module-2-the-cloud">Module 1 - Intro + Module 2 - The Cloud</h2>
 <p>Cloud computing -&gt; pay as you go withou pay beforehand.</p>
 <p>Ec2 (elastic cloud computing).</p>
 <p>Ec2 types -&gt; general, compute, memory, accelerated and storage.</p>
@@ -410,10 +410,10 @@
 (90% off, runs in not used machines at time) and dedicated hosts.</p>
 <p>Load balance</p>
 <p>Lambda</p>
-<p>SNS</p>
-<p>SQS</p>
-<p>ECS -&gt; eks da amazon.</p>
-<p>EKS -&gt; orquestrador de containers docker.</p>
+<p>SNS -&gt; Topic post</p>
+<p>SQS -&gt; Message broker</p>
+<p>ECS -&gt; EKS da amazon</p>
+<p>EKS -&gt; orquestrador de containers docker</p>
 <p>AWS Fargate (serveless para containers)</p>
 <h2 id="module-3-global-infra-and-reliability">Module 3 - Global Infra and Reliability</h2>
 <p>4 factors to chose region (compliance, proximity, features and price).</p>
@@ -426,9 +426,9 @@
 <p>how to create/update aws resources -&gt; AWS Management Console (Browser), AWS CLI, AWS SDKs, AWS Elastic Beastalk and AWS Cloudformation.</p>
 <p>AWS Elastic Beanstalk -&gt; Ferramenta que faz deploy de app php, .net, java, python e etc. Baseados em alguns presets.</p>
 <p>AWS Cloudformation -&gt; Infra as code tool (yaml or json).</p>
-<p>Advice: run across 2 AZ in each region</p>
+<p>Advice: run at least across 2 AZ in each region.</p>
 <h2 id="module-4-networking">Module 4 - Networking</h2>
-<p>AWS VPC -&gt; Provison of isolated aws cloud separed by subnets that contains resources.</p>
+<p>AWS VPC -&gt; Provision of isolated aws cloud separated by subnets that contains resources.</p>
 <p>Subnet -&gt; A group of resources based on security or operacional needs. Can be public (through a internet gateway) or private (through a vpc).</p>
 <p>Internet Gateway (IGW) -&gt; Used to allow internet access to a VPC.</p>
 <p>AWS Virtual Private Gateway -&gt; A virtual VPN to my vpc and a private network (aka intranet).</p>
@@ -442,20 +442,20 @@
 <h2 id="module-5-databases-and-storage">Module 5 - Databases and Storage</h2>
 <p>Block Level Storage -&gt; Place to store file in a way that can be updated block by block and not by the hole file</p>
 <p>EC2 Storage -&gt; Instance Store Volumens that dies within the ec2 machine</p>
-<p>AWS Elastic Block Store (EBS) -&gt; A persistent database to ec2 instances. Block storage that can be updated partially. Run in a AZ (not region)</p>
-<p>Snapshots -&gt; Incremental backupds for EBS</p>
-<p>AWS Simple Store Service (S3) -&gt; Store data as objects with versions in buckets (like a file equivalent). Can receave objects until 5TB!</p>
-<p>S3 Lifecycle Policies -&gt; Rules that can move data for s3 tiers automaticly for better storage and cost</p>
+<p>AWS Elastic Block Store (EBS) -&gt; A way to save persistence data for ec2 instances. Block storage that can be updated partially. Run in a AZ (not region). Kind of SSD/HDD for EC2.</p>
+<p>Snapshots -&gt; Incremental backups for EBS</p>
+<p>AWS Simple Store Service (S3) -&gt; Store data as objects with versions in buckets (like a file equivalent). Can receive objects until 5TB!</p>
+<p>S3 Lifecycle Policies -&gt; Rules that can move data for s3 tiers automatically for better storage and cost</p>
 <p>S3 Classes aka Tiers -&gt;</p>
 <ul>
-<li>Standard (999999999% prob of aviability in a year)</li>
+<li>Standard (99.9999999% prob of availability in a year)</li>
 <li>Static Website Hosting</li>
 <li>Standard-Infrequent Access Data aka Standard-IA (not so frequently until we need it, like a backup)</li>
-<li>Glacier Flexible Retrieval (Retain data for audit or compliance in valts). Acept policies like Write one - read many (worm)</li>
+<li>Glacier Flexible Retrieval (Retain data for audit or compliance in valts). Accept policies like Write one - read many (worm)</li>
 </ul>
-<p>AWS Elastic File System (EFS) -&gt; Scales automatically. Run in a region. Can be access by on-premisses by AWS Direct Connect</p>
-<p>AWS Relational Database Service (RDS) -&gt; Suport dbms with automated patching, backups, redundance, failover and disaster recovery</p>
-<p>lift-and-shift -&gt; Migrate for an onpremisses dbms</p>
+<p>AWS Elastic File System (EFS) -&gt; Is a serverless shared file system. Scales automatically. Run in a region. Can be access by premises by AWS Direct Connect.</p>
+<p>AWS Relational Database Service (RDS) -&gt; Support dbms with automated patching, backups, redundancy, fail over and disaster recovery</p>
+<p>lift-and-shift -&gt; Migrate from an on-premisses dbms</p>
 <p>AWS RDS database engines -&gt;</p>
 <ul>
 <li>AWS Aurora (compatible with MySQL and PostegreSQL)</li>
@@ -609,6 +609,7 @@
 <li>go global in minutes</li>
 </ul>
 <h2 id="module-11-aws-certified-cloud-practitioner-basics">Module 11 - AWS Certified Cloud Practitioner Basics</h2>
+<p>There are 12 AWS Certifications.</p>
 <p>4 Domains -&gt;</p>
 <ul>
 <li>Cloud Concepts (24%)</li>
