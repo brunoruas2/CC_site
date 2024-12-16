@@ -312,6 +312,35 @@
         </ul>
     </li>
 <!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">AI Roadmap.sh &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Roadmap/" class="dropdown-item text-decoration-none ">Roadmap</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a class="dropdown-item text-decoration-none" href="#">Introdução &raquo;</a>
+        <ul class="submenu dropdown-menu">
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Roadmap/01_Introduction/ai_ml/" class="dropdown-item text-decoration-none ">AI ou ML Engineer?</a>
+    </li>
+<!-- endblock -->
+                <!-- block dropdown-menu -->
+    <li>
+        <a href="../../../Roadmap/01_Introduction/common_terminology/" class="dropdown-item text-decoration-none ">Terminologia</a>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
+        </ul>
+    </li>
+<!-- endblock -->
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -439,6 +468,13 @@
 <p>Edge Location</p>
 <p>AWS Cloudfront</p>
 <p>AWS Route 53</p>
+<p>Types of Load Balances:</p>
+<ul>
+<li>Application -&gt; Flexible feature set with HTTP and HTTPS traffic.</li>
+<li>Network -&gt; Ultra-high performance. TLS. UDP. Static IP and so on. Capable to handle millions of requests per second.</li>
+<li>Gateway -&gt; Deploy and manage third-party virtual apps that suports GENEVE.</li>
+<li>Classic</li>
+</ul>
 <h2 id="module-5-databases-and-storage">Module 5 - Databases and Storage</h2>
 <p>Block Level Storage -&gt; Place to store file in a way that can be updated block by block and not by the hole file</p>
 <p>EC2 Storage -&gt; Instance Store Volumens that dies within the ec2 machine</p>
@@ -508,6 +544,32 @@
 <p>AWS WAF -&gt; web applicatoin firewall that checks that the request is not from a bloqued IP addr</p>
 <p>AWS Inspector -&gt; Automated security assessments to avaluate your app and give some advices to improve the security</p>
 <p>AWS GuardDuty -&gt; Inteligent threat detection by monitoring the network activity and account behavior</p>
+<p>There are services that permits security assessments or penetration tests without a prior approval of AWS:</p>
+<ul>
+<li>EC2</li>
+<li>RDS</li>
+<li>Cloudfront</li>
+<li>Aurora</li>
+<li>API Gateway</li>
+<li>Lambda</li>
+<li>Lightsail</li>
+<li>Elastic Beanstalk</li>
+</ul>
+<p>But there some services which a prior approval is required:</p>
+<ul>
+<li>DNS via Route 53</li>
+<li>DDoS attacks</li>
+<li>Port flooding</li>
+<li>Protocol flooding</li>
+<li>Request flooding</li>
+</ul>
+<p>AWS Security Tools with IA:</p>
+<ul>
+<li>Macie -&gt; Machine Learning to discover, classify and protect sensive data.</li>
+<li>Rekognition -&gt; Same as Macie but used to image and videos analysis.</li>
+<li>GuardDuty -&gt; Threat detection service.</li>
+<li>Cognito -&gt; Sign-in tool for web and mobile apps.</li>
+</ul>
 <h2 id="module-7-monitoring">Module 7 - Monitoring</h2>
 <p>AWS CloudWatch -&gt; Monitoring your aws infra by metrics. Reduce Mean Time To Resolution (MTTR) and improve Total Costume Ownership (TCO)</p>
 <p>Cloudwatch Alarm -&gt; An alert that can be integrated with sns</p>
@@ -515,6 +577,8 @@
 <p>AWS CloudTrail -&gt; A compreensive api for audition. Every call in aws saves a log in cloudtrail that can be save in s3 buckets</p>
 <p>CloudTrail Insigns -&gt; Automatic detect unusual API activities in my aws account</p>
 <p>AWS Trusted Advisor -&gt; Avaluate by 5 pillars: Cost optmization, Performance, Security, Fault tolerance and Service limits. Some are free and others paid. 3 actions: Action recomendation, Investigation recomendation and alright.</p>
+<p>AWS Health page -&gt; A page that alerts when AWS is having some difficult that may impact your applications.</p>
+<p>AWS Database Migration Service (AWS DMS) -&gt; Tool for migrate the on-premisses database to AWS RDS.</p>
 <h2 id="module-8-billing">Module 8 - Billing</h2>
 <p>AWS Free Tier -&gt; 3 ways: aways free, 12 months free and trial</p>
 <p>How AWS price works -&gt;</p>
@@ -569,7 +633,16 @@
 </ul>
 <p>AWS Marketplace -&gt; A market for enterprise services of third parties in a bunch of categories like devops, infra, Iot, machine learning and more</p>
 <h2 id="module-9-migration-and-innovation">Module 9 - Migration and Innovation</h2>
-<p>AWS Adoption Framework (CAF) -&gt; Advice to make a smooth change for cloud in 6 perspectives: Business, People, Governance, Platform, Security and Operations. The first 3 focus on business and the last 3 focus on technical capabilities</p>
+<p>AWS Adoption Framework (CAF) -&gt; Advice to make a smooth change for cloud in 6 perspectives: </p>
+<ul>
+<li>Business</li>
+<li>People -&gt; Bridge between tech and business.</li>
+<li>Governance -&gt; Orchestration cloud initiatives, max benefits and low the risks.</li>
+<li>Platform</li>
+<li>Security -&gt; Data and workload sec.</li>
+<li>Operations -&gt; Cloud services that meet business need with involving of stakeholders like infra and operations leaders.</li>
+</ul>
+<p>The first 3 focus on business and the last 3 focus on technical capabilities</p>
 <p>AWS CAF Action Plan -&gt; Guide to make a migration</p>
 <p>Migration Strategies (6 R's) -&gt;</p>
 <ul>
@@ -587,7 +660,14 @@
 <li>AWS Snowmobile - 100PB. Like a container to plug in your on-premises data center</li>
 </ul>
 <p>Innovation in AWS -&gt; VMWare Cloud AWS, Amazon SageMakes (machine learning pre-trained models), Amazon Augmented AI (2AI), Amazon Lex (the heart of Alexa), Amazon Textract (extract text), AWS DeepRacer, Iot, AWS Groud Station (for satelities)</p>
-<p>AWS Q Developer -&gt; Like a copilot without store or be used</p>
+<p>AWS Q Developer -&gt; TODO: Search this topic</p>
+<p>AWS Code Control:</p>
+<ul>
+<li>AWS CodeCommit</li>
+<li>AWS CodeBuild</li>
+<li>AWS CodePipeline</li>
+<li>AWS CodeDeploy</li>
+</ul>
 <h2 id="module-10-the-cloud-journey">Module 10 - The Cloud Journey</h2>
 <p>6 pillars of Well-Architectured framework -&gt;</p>
 <ul>

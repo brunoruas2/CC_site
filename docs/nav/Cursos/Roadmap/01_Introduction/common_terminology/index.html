@@ -1,14 +1,14 @@
 <!doctype html>
 <html>
     <head>
-                <title>Orientação à Objetos - Ciência da Computação</title>
+                <title>Terminologia - Ciência da Computação</title>
 
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             
-            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/">
+            <link rel="canonical" href="https://brunoruas2.github.io/CC_site/nav/Cursos/Roadmap/01_Introduction/common_terminology/">
             
 
             
@@ -306,7 +306,7 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="./" class="dropdown-item text-decoration-none  active ">Orientação à Objetos</a>
+        <a href="../../../Desenvolvedor.io/Arquitetura_Software/Aula01-OOP/" class="dropdown-item text-decoration-none ">Orientação à Objetos</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -318,7 +318,7 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../Roadmap/" class="dropdown-item text-decoration-none ">Roadmap</a>
+        <a href="../../" class="dropdown-item text-decoration-none ">Roadmap</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
@@ -327,12 +327,12 @@
         <ul class="submenu dropdown-menu">
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../Roadmap/01_Introduction/ai_ml/" class="dropdown-item text-decoration-none ">AI ou ML Engineer?</a>
+        <a href="../ai_ml/" class="dropdown-item text-decoration-none ">AI ou ML Engineer?</a>
     </li>
 <!-- endblock -->
                 <!-- block dropdown-menu -->
     <li>
-        <a href="../../../Roadmap/01_Introduction/common_terminology/" class="dropdown-item text-decoration-none ">Terminologia</a>
+        <a href="./" class="dropdown-item text-decoration-none  active ">Terminologia</a>
     </li>
 <!-- endblock -->
         </ul>
@@ -427,88 +427,15 @@
     <article>
         <header>
             
-                <h1 class="bold title" id="component-title">Orientação à Objetos</h1>
+                <h1 class="bold title" id="component-title">Terminologia</h1>
             
         </header>
-        <p><h1 id="programacao-orientada-a-objetos">Programação Orientada à Objetos</h1>
-<h2 id="principais-conceitos">Principais Conceitos</h2>
-<ol>
-<li>Estado e Comportamento</li>
-<li>Herança</li>
-<li>Abstração</li>
-<li>Polimorfismo</li>
-<li>Encapsulamento</li>
-<li>Interface x Implementação</li>
-<li>Herança x Composição</li>
-</ol>
-<h2 id="estado-e-comportamento">Estado e Comportamento</h2>
-<p>Estado é basicamente o nome de propriedades das classes. Comportamento é basicamente os métodos de uma classe (função e void).</p>
-<h2 id="interface-x-implementacao">Interface x Implementação</h2>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IInterface</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ImplementaInterface</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IInterface</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// logica do metodo</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoImplementacao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ImplementaInterface</span><span class="p">();</span>
-<span class="w">        </span><span class="n">foo</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsoAbstracao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">IInterface</span><span class="w"> </span><span class="n">_interface</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">UsoAbstracao</span><span class="p">(</span><span class="n">IInterface</span><span class="w"> </span><span class="n">iinterface</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_interface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iinterface</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoNovo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">_iinterface</span><span class="p">.</span><span class="n">Metodo</span><span class="p">();</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="heranca-x-composicao">Herança x Composição</h2>
-<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">SuperClasse</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroExpor</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// void</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MetodoQueQueroEsconder</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">// void</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">SubClasseHeranca</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">SuperClasse</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">MetodoQueQueroExport</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar</span>
-<span class="w">        </span><span class="n">MetodoQueQueroEsconder</span><span class="p">();</span><span class="w"> </span><span class="c1">// vai funcionar tambem</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">SubclasseComposicao</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Metodo</span><span class="p">()</span><span class="w"> </span><span class="c1">// continuar estudando esse ponto</span>
-<span class="p">}</span>
-</code></pre></div></p>
+        <p><h1 id="conceitos">Conceitos</h1>
+<p><strong>Prompt Engineering</strong>: É a arte de criar inputs para os modelos que produzam resultados acurados, constantes e úteis. Normalmente, usando contexto, instrução e exemplo para direcionar o resultado corretamente.</p>
+<p>Fontes: <a href="https://www.youtube.com/watch?v=nf1e-55KKbg">youtube</a>, <a href="https://roadmap.sh/prompt-engineering">roadmap</a></p>
+<p><strong>Retrieval-Augmented Generation - RAG</strong>: Abordagem que combina a recuperação de informação com um modelo para criar retornos contextualizados. Primeiro, coletamos informação relevante em uma knowledge base para, depois, consultar o LLM para gerar respostas baseadas nessa informação.</p>
+<p>Fontes: <a href="https://www.datacamp.com/blog/what-is-retrieval-augmented-generation-rag">datacamp</a>, <a href="https://cloud.google.com/use-cases/retrieval-augmented-generation">google</a>, <a href="https://www.youtube.com/watch?v=T-D1OfcDW1M">youtube</a></p>
+<p><strong>AI Agents</strong>: </p></p>
     </article>
 </section>
 <!-- endblock -->
@@ -518,13 +445,13 @@
                     <!-- block preview -->
         <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
             <div class="col themed-grid-col">
-                <a rel="prev" href="../../../AwsSkillBuilder/cloudPratictioner/Cloud_Pratictioner/" class="nav-link">
+                <a rel="prev" href="../ai_ml/" class="nav-link">
                     <i class="fa fa-arrow-left"></i> Previous
                 </a>
             </div>
             <div class="col themed-grid-col"></div>
             <div class="col themed-grid-col">
-                <a rel="next" href="../../../Roadmap/" class="nav-link">
+                <a rel="next" href="../../../../tech/" class="nav-link">
                     Next <i class="fa fa-arrow-right"></i>
                 </a>
             </div>
