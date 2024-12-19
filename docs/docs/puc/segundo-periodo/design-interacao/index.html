@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-puc/segundo-periodo/design-interacao" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.6.3">
+<title data-rh="true">Design de Interação | Ciência da Computação</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://brunoruas2.github.io/CC_site/img/siteIcon.png"><meta data-rh="true" name="twitter:image" content="https://brunoruas2.github.io/CC_site/img/siteIcon.png"><meta data-rh="true" property="og:url" content="https://brunoruas2.github.io/CC_site/docs/puc/segundo-periodo/design-interacao"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Design de Interação | Ciência da Computação"><meta data-rh="true" name="description" content="Elementos do Design de Interação"><meta data-rh="true" property="og:description" content="Elementos do Design de Interação"><link data-rh="true" rel="icon" href="/CC_site/img/siteIcon.png"><link data-rh="true" rel="canonical" href="https://brunoruas2.github.io/CC_site/docs/puc/segundo-periodo/design-interacao"><link data-rh="true" rel="alternate" href="https://brunoruas2.github.io/CC_site/docs/puc/segundo-periodo/design-interacao" hreflang="pt"><link data-rh="true" rel="alternate" href="https://brunoruas2.github.io/CC_site/docs/puc/segundo-periodo/design-interacao" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/CC_site/blog/rss.xml" title="Ciência da Computação RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/CC_site/blog/atom.xml" title="Ciência da Computação Atom Feed">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/CC_site/assets/css/styles.94616287.css">
+<script src="/CC_site/assets/js/runtime~main.6ba53ba0.js" defer="defer"></script>
+<script src="/CC_site/assets/js/main.5f09aa2f.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Pular para o conteúdo principal"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Pular para o conteúdo principal</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Alternar a barra de navegação" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/CC_site/"><div class="navbar__logo"><img src="/CC_site/img/siteIcon.png" alt="Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/CC_site/img/siteIcon.png" alt="Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Ciência da Computação</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/CC_site/docs/intro">Matérias</a><a class="navbar__item navbar__link" href="/CC_site/blog">Notas Rápidas</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/brunoruas2/ciencia_computacao" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Alterar entre os modos claro e escuro (modo modo claro ativado)" aria-label="Alterar entre os modos claro e escuro (modo modo claro ativado)" aria-live="polite" aria-pressed="false"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Volte para o topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/CC_site/docs/intro">Home</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" href="/CC_site/docs/category/tecnólogo-puc-mg">Tecnólogo PUC-MG</a><button aria-label="Fechar a categoria lateral &#x27;Tecnólogo PUC-MG&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/CC_site/docs/puc/intro">Sobre a formação</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/CC_site/docs/category/primeiro-período">Primeiro Período</a><button aria-label="Expandir a categoria lateral &#x27;Primeiro Período&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" tabindex="0" href="/CC_site/docs/category/segundo-período">Segundo Período</a><button aria-label="Fechar a categoria lateral &#x27;Segundo Período&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/CC_site/docs/puc/segundo-periodo/algoritmo-estrutura-dados">Algoritmo e Estrutura de Dados</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/CC_site/docs/puc/segundo-periodo/engenharia-requisitos">Engenharia de Requisitos</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/CC_site/docs/puc/segundo-periodo/design-interacao">Design de Interação</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/CC_site/docs/puc/segundo-periodo/programacao-modular">Programação Modular</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/CC_site/docs/puc/segundo-periodo/desenvolvimento-web-backend">Desenvolvimento Web Backend</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/CC_site/docs/category/terceiro-período">Terceiro Período</a><button aria-label="Expandir a categoria lateral &#x27;Terceiro Período&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/CC_site/docs/category/quarto-período">Quarto Período</a><button aria-label="Expandir a categoria lateral &#x27;Quarto Período&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" tabindex="0" href="/CC_site/docs/category/quinto-período">Quinto Período</a><button aria-label="Expandir a categoria lateral &#x27;Quinto Período&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/CC_site/docs/category/cursos">Cursos</a><button aria-label="Expandir a categoria lateral &#x27;Cursos&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/CC_site/docs/category/tutorial-docusaurus">Tutorial Docusaurus</a><button aria-label="Expandir a categoria lateral &#x27;Tutorial Docusaurus&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Página Inicial" class="breadcrumbs__link" href="/CC_site/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/CC_site/docs/category/tecnólogo-puc-mg"><span itemprop="name">Tecnólogo PUC-MG</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/CC_site/docs/category/segundo-período"><span itemprop="name">Segundo Período</span></a><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Design de Interação</span><meta itemprop="position" content="3"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">Nessa página</button></div><div class="theme-doc-markdown markdown"><header><h1>Design de Interação</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="elementos-do-design-de-interação">Elementos do Design de Interação<a href="#elementos-do-design-de-interação" class="hash-link" aria-label="Link direto para Elementos do Design de Interação" title="Link direto para Elementos do Design de Interação">​</a></h2>
+<p>Ao longo desse microfundamento, teremos o objetivo de responder a seguinte pergunta: &quot;O que leva um usuário a gostar de usar um sistema?&quot;. Assumiremos um papel chamado de <strong>projetista de sistemas interativos</strong>.</p>
+<p>A base desse trabalho é compreender o usuário, os sistemas interativos e a relação entre usuário e sistemas. Vamos aprender a projetar essas interações bem como avaliar se os objetivos determinados foram alcançados.</p>
+<p><strong>Comentário:</strong> Essa matéria tem abordagem bem teórica. Então esse material vai ser o mais resumido possível sobre os temas abordados. Quem tiver interesse em se aprofundar, pode buscar esse diferencial na bibliografia.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="sistemas-interativos-em-contexto">Sistemas Interativos em Contexto<a href="#sistemas-interativos-em-contexto" class="hash-link" aria-label="Link direto para Sistemas Interativos em Contexto" title="Link direto para Sistemas Interativos em Contexto">​</a></h3>
+<p>Em qualquer planejamento de interações existem dois atores: o usuário humano e o computador. Ambos são peças fundamentais para o desenho das interações, entretanto, a maneira como modelamos o comportamento desses agentes pode variar de acordo com o contexto e o objetivo de design.</p>
+<p>Podemos dizer que existem quarto perpectivas básicas para modelagem das interações user-computador:</p>
+<ul>
+<li><strong>Perspectiva Sistema</strong> - Abora a interação user-pc como a interação entre dois sistemas. Uma característica marcante dessa abordagem é o uso de formas codificadas como atalhos de teclas ou linguagem formal. A ênfase é dada ao computador e na transmissão de dados. Dados como tempo de interação e número de erros são importantes para avaliação.</li>
+<li><strong>Perspectiva Parceiro do Discurso</strong> - O ponto focal de avaliação está mais próximo do usuário. Existem interação por linguagem natural e inferência. Um exemplo dessa abordagem são as pesquisas relacionadas em sites de buscas. Dados como a qualidade da resposta provida pelo sistemas são importantes para essa abordagem.</li>
+<li><strong>Perspectiva Ferramenta</strong> - O sistema é modelado como ferramenta para alcance de algum resultado. Existe claramente a presença de um resultado da interação (um artefato) que define o sucesso ou fracasso da interação. Dados sobre uso das funções disponíveis e facilidade de uso são importantes.</li>
+<li><strong>Perspectiva Mídia</strong> - O foco aqui é na comunicação entre pessoas. Nesse caso o sistema atua como meio de comunicação entre usuários. A qualidade da comunicação é um dos dados mais importantes nessa abordagem.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="atributos-de-qualidade-da-interação-cognição-e-semiótica">Atributos de Qualidade da Interação (Cognição e Semiótica)<a href="#atributos-de-qualidade-da-interação-cognição-e-semiótica" class="hash-link" aria-label="Link direto para Atributos de Qualidade da Interação (Cognição e Semiótica)" title="Link direto para Atributos de Qualidade da Interação (Cognição e Semiótica)">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="perspectiva-teórica-do-humano-na-interação-humano-computador">Perspectiva teórica do Humano na Interação Humano-Computador<a href="#perspectiva-teórica-do-humano-na-interação-humano-computador" class="hash-link" aria-label="Link direto para Perspectiva teórica do Humano na Interação Humano-Computador" title="Link direto para Perspectiva teórica do Humano na Interação Humano-Computador">​</a></h4>
+<p>A interação Humano-Computador (IHC) é o estudo dos sistemas computacionais que são projetados para receberem interações de usuários humanos. O foco principal é a implementação, avaliação e investigação dos sistemas e fenômenos relacionados ao seus usos.</p>
+<p>Os usuários dos sistemas são humanos. Isso implica que a IHC leva em consideração aspectos do sistema cognitivo com suas preferências e comportamentos. Também entendem que existem diferenças entre usuários e, até mesmo, variações entre o mesmo usuários ao longo do tempo.</p>
+<p>O método de investigação da IHC é teórico por meio do uso de abordagens distintas. No ramo das abordagens da psicologia experimental são usados dados mensuráveis e modelagem de comportamento humano. No ramo da psicologia cognitiva, temos a aplicação de conceitos teóricos para a interpretação de algumas interações e comportamentos observados.</p>
+<p>Além dos caminhos de pesquisa baseados na psicologia, temos também a adoção de métodos oriundos do estudo da linguística que investigam os signos usados na comunicação e metacomunicação por meio de artefatos. Para citar algumas dessas abordagens temos: Leis de Hick-Hyman, Leis de Fitts, Processador Humano de Informação, Princípios da Gestalt, Teoria da Atividade, Cognição Distribuída, Engenharia Cognitiva, Teoria da Ação, Engenharia Semiótica e etc.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="o-contexto-da-experiência-do-usuários">O Contexto da Experiência do Usuários<a href="#o-contexto-da-experiência-do-usuários" class="hash-link" aria-label="Link direto para O Contexto da Experiência do Usuários" title="Link direto para O Contexto da Experiência do Usuários">​</a></h4>
+<p>Chamamos de <strong>contexto de uso</strong> todos os fatos que interferem e interagem com o uso de um sistema. Para citar alguns temos: tempo, ambiente físico, social e cultural, disponibilidade e outros fatores.</p>
+<p>A interação do usuário sempre tem algum objetivo em mente que pode ser simples ou complexo. Qualquer interação, como cadastro de um funcionário, é analisada como uma interação.</p>
+<p>As interações humano-computador acontecem por meio de uma <strong>interface</strong>. Ela atua como único meio entre os modos de processamento de informações orgânicos e biológicos do ser humano e os recursos de máquina do computador. A interface também atua como agende limitador das interações, visto que, ela é quem define as funções acessíveis ao usuário em dado tempo.</p>
+<p>Outra limitação que a interface impõe a a respeito da acessibilidade. Se o sistema apenas possui uma interface de intração por CLI (Command Line Interface), o uso dessa aplicação será totalmente diferente de um outro sistema com GUI (Graphic User Interface), por exemplo.</p>
+<p>Também podemos definir <strong>interação</strong> como a troca de informações e influência entre o usuário e o sistema através da interface. Interagir sempre implica em provar dados e receber novas informações como retorno.</p>
+<p>É no contexto de uso que temos a <strong>Experiência do Usuário (User eXperience ou UX)</strong>. Esse conceito tão famoso envolve a interface, a interação e o ambiente de interação. O processo de projetar a UX (UX Design) é levar em conta todos esses vários pontos para proporcionar sempre a melhor experiência possível.</p>
+<p>A <strong>interface de usuário (UI)</strong> é a construção do modo em que a informação será disposta ao usuário por meio da <strong>arquitetura da informação (IA)</strong>. Ela é quem define quais serão as partes em destaque e o que pode ser ``escondido&#x27;&#x27; por trás de um menu, por exemplo.</p>
+<p>Para concluir esses conceitos, vamos coloca-los todos juntos: Por meio da <strong>interface</strong> e dentro de um <strong>contexto de uso</strong> é que ocorrem as <strong>interações</strong> de modo que a <strong>UX</strong> desse usuário é definida, além desses dois primeiros fatores, pela <strong>IA</strong><sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="true" aria-describedby="footnote-label">1</a></sup>.</p>
+<p>O estudo de todas as variáveis que amarramos acima é chamado de <strong>Design de Interação (IxD)</strong>. Não é nenhum espanto constatar que em várias equipes de IxD tenhamos a presença de profissionais de vários campos de estudos que variam da linguística até a antropologia.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="atributos-de-usabilidade-comunicabilidade-e-acessibilidade">Atributos de Usabilidade, Comunicabilidade e Acessibilidade<a href="#atributos-de-usabilidade-comunicabilidade-e-acessibilidade" class="hash-link" aria-label="Link direto para Atributos de Usabilidade, Comunicabilidade e Acessibilidade" title="Link direto para Atributos de Usabilidade, Comunicabilidade e Acessibilidade">​</a></h4>
+<p>Quais seriam os atributos necessários para que possamos avaliar uma interação como adequada? Podemos definir quatro características que podem nos ajudar a julgar essa matéria:</p>
+<ul>
+<li><strong>Usabilidade</strong> - Grau em que um produto é usado por usuários específicos para se atingir um objetivo específico em um dado contexto de uso.</li>
+<li><strong>Acessibilidade</strong> - Uso do sistema sem que a interface imponha obstáculos ao usuário.</li>
+<li><strong>Experiência de</strong> Uso - Como o usuário se sente ao interagir com o sistema. Pode ser grandemente impactada por todos os elementos do contexto de uso.</li>
+<li><strong>Comunicabilidade</strong> - Capacidade da interface comunicar ao usuário a lógica que rege o seu funcionamento.</li>
+</ul>
+<p>Existem alguns normativos que regem os consensos da comunidade ao longo dessas questões. Podemos destacar a <a href="https://www.iso.org/standard/35733.html" target="_blank" rel="noopener noreferrer">ISO/IEC 25010:2011</a> e a <a href="https://www.iso.org/standard/63500.html" target="_blank" rel="noopener noreferrer">ISO 9241-11:2018(en)</a>.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-interação-pela-lente-cognitiva">A interação pela Lente Cognitiva<a href="#a-interação-pela-lente-cognitiva" class="hash-link" aria-label="Link direto para A interação pela Lente Cognitiva" title="Link direto para A interação pela Lente Cognitiva">​</a></h4>
+<p>Em 1986, um pesquisador chamado Donal Norman lançou os fundamentos do que hoje é conhecida como <a href="https://www.sciencedirect.com/topics/engineering/cognitive-engineering" target="_blank" rel="noopener noreferrer"><strong>Engenharia Cognitiva (EC)</strong></a>. Esse ramo de estudos busca compreender os fundamentos da ação e desempenho humano que sejam relevantes para a construção de design de modo a possibilitar a criação de sistemas agradáveis e engajantes.</p>
+<p>Em sua base a EC considera que existem dois grupos de variáveis: 1) Variáveis Psicológicas e 2) Variáveis Físicas (estados do sistema) e Controles Físicos (mecanismos de interação). como são conjuntos de variáveis muito diferentes entre si. Podem existir discrepâncias causadas nas tentativas de construir modos de interação entre esses dois &quot;mundos&quot; distintos. Podemos destacar três tipos de problemas:</p>
+<ul>
+<li><strong>Problemas de Mapeamento</strong> - As variáveis psicológicas precisar ser conectadas às variáveis físicas por meio da interface. Qualquer imprecisão no meio de comunicação entre user e computador gera problemas de mapeamento.</li>
+<li><strong>Dificuldade de Controle</strong> - O quão fácil é controlar as variáveis físicas para se alcançar o objetivo proposto pela solução.</li>
+<li><strong>Dificuldade de Avalização</strong> - O quão fácil é avaliar se o resultado da interação do user está de acordo com o objetivo da interação.</li>
+</ul>
+<p>Os problemas descritos acima são originários da diferença entre como o designer entende o sistema e como o usuário entende o sistema. Podemos criar alguns conceitos para organizar melhor essa problemática de meios de interpretação diversos do mesmo sistema. É possível separar essas interpretações em três componentes:</p>
+<ul>
+<li>Modelo de Design - Modelo conceitual que o sistema é compreendido pelo design.</li>
+<li>Imagem do Sistema Físico - É o sistema físico construído a partir do modelo de design.</li>
+<li>Modelo do Usuário - É o modelo construído internamente pelo usuário ao longo das interações com o sistema.</li>
+</ul>
+<p><strong>Comentário:</strong> Cada conceito que vimos até agora levam anos de pesquisa até se ter algum domínio. Nosso foco por agora é apenas conhecer a existência desses conceitos bem como uma versão resumida do que são.</p>
+<p><strong>Fontes Complementares:</strong></p>
+<ul>
+<li>NORMAN, Donald A. Steps toward a cognitive engineering: Design rules based on analyses of human error (Links para um site externo.). In: Proceedings of the 1982 conference on Human factors in computing systems. 1982. p. 378-382. Acesso em 15 de Mai. de 2021.</li>
+<li>NORMAN, Donald A. Cognitive engineering. User centered system design, v. 31, p. 61, 1986.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-interação-pela-lente-semiótica">A interação pela Lente Semiótica<a href="#a-interação-pela-lente-semiótica" class="hash-link" aria-label="Link direto para A interação pela Lente Semiótica" title="Link direto para A interação pela Lente Semiótica">​</a></h4>
+<p><strong>Comentário:</strong> Eu não sei vocês, mas, pra mim, a palavra semiótica é o tipo de palavra que apenas eruditos e intelectuais costumam usar. Então, finalmente, chegou a nossa hora de aprender o que significa isso.</p>
+<p>Podemos definir a <strong>Semiótica</strong> como o ramo da linguística que estuda como e porque as pessoas atribuem significado às coisas e, além disso, como usam esses objetos dotados de significado para se comunicar.</p>
+<p>Por sua vez, a <strong>Engenharia Semiótica</strong> busca compreender a interação humano-computador como um caso particular de comunicação humana mediada por sistemas computacionais. Esse processo de comunicação ocorre em dois níveis:</p>
+<ul>
+<li>Comunicação direta user-sistema</li>
+<li>Metacomunicação designer-user mediada pela interface do sistema.</li>
+</ul>
+<p>A interface pode ser entendida como um meio da mensagem passada pelo designer. Essa comunicação se dá por meio de <strong>signos</strong> (coisas com significado), <strong>significados</strong> (tarefas que desejamos executar) e <strong>representações</strong> (janelas, botões, menus e etc).</p>
+<p>Existem três tipos de signos:</p>
+<ul>
+<li>Estáticos - Comunicam seu significado integral por meio de telas fixas do sistema</li>
+<li>Dinâmicos - Comunicam seu significado integral em sequência de telas e não e apenas uma visão.</li>
+<li>Metalinguísticos - São signos que explicam outros signos (estáticos ou dinâmicos).</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="processo-de-design-de-interação">Processo de Design de Interação<a href="#processo-de-design-de-interação" class="hash-link" aria-label="Link direto para Processo de Design de Interação" title="Link direto para Processo de Design de Interação">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="perspectivas-de-design">Perspectivas de Design<a href="#perspectivas-de-design" class="hash-link" aria-label="Link direto para Perspectivas de Design" title="Link direto para Perspectivas de Design">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="métodos-de-se-projetar-um-sistema">Métodos de se Projetar um Sistema<a href="#métodos-de-se-projetar-um-sistema" class="hash-link" aria-label="Link direto para Métodos de se Projetar um Sistema" title="Link direto para Métodos de se Projetar um Sistema">​</a></h4>
+<p>No esforço de construir boas interfaces de sistemas, podemos partir de abordagens diferentes que focam em pressupostos de interpretação da interação user-computador. Grosso modo, podemos agrupar essas abordagens em dois grupos:</p>
+<ul>
+<li>De Dentro para Fora - Foco no software. Primeiro se projeta a estrutura de dados, lógica do sistema e, por fim, a interface. As métricas são focadas na eficiência de funcionamento do sistema.</li>
+<li>De Fora para Dentro - Foco no usuário. Começa-se com o projeto da interface para, depois, seguir o planejamento da lógica e a organização dos dados. Essa abordagem demanda um amplo conhecimento da pessoas que farão uso do sistema.</li>
+</ul>
+<p><strong>Graus de Importância do Usuário</strong></p>
+<p>Existem algumas maneiras de se considerar o usuário na hora de construirmos a interface das aplicações. Podemos definir três graus de relevância do usuário na construção das aplicações:</p>
+<ul>
+<li>
+<p><strong>Projeto Independente</strong> - Esse modelo não conhece nem consulta o usuário no processo de construção do software. O usuário terá de se adaptar à lógica do sistemas. Deve aceitar o que o sistema permite e não permite. Essa abordagem não é a ideal para sistemas interativos.</p>
+</li>
+<li>
+<p><strong>Design Centrado no Usuário</strong> - Há a preocupação em entender quem são os usuários e quais são os seus objetivos. São coletados dados empíricos de uso, simulações e protótipos. Costumam ter quatro atividades para a construção:</p>
+<ul>
+<li>Identificação das necessidades</li>
+<li>Construção do design do sistemas</li>
+<li>Construção da versão Interativa</li>
+<li>Avaliação do artefato</li>
+</ul>
+</li>
+<li>
+<p><strong>Design Participativo</strong> - O usuário tem voz ativa no processo. Amplo foco na usabilidade.</p>
+</li>
+</ul>
+<p><strong>Fontes Complementares:</strong></p>
+<ul>
+<li>KUHN, Sara; WINOGRAD, Terry. Participatory Design (Links para um site externo.). In: Bringing Design to Software. New York: Addison-Wesley, 1996. Acesso em: 01 Jul. 2021.</li>
+<li>PONCIANO, Lesandro. HCI Support Card: Creating and Using a Support Card for Education in Human-Computer Interaction (Links para um site externo.). In: Workshop sobre Educação em IHC. Simpósio Brasileiro de Fatores Humanos em Sistemas Computacionais. 2019, Vitória. Porto Alegre: Sociedade Brasileira de Computação, 2019. p. 106-111. Acesso em: 01 Jul. 2021.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="desing-é-técnica-ou-arte">Desing é Técnica ou Arte?<a href="#desing-é-técnica-ou-arte" class="hash-link" aria-label="Link direto para Desing é Técnica ou Arte?" title="Link direto para Desing é Técnica ou Arte?">​</a></h4>
+<p><strong>Comentário:</strong> Eu, particularmente, acho esse tipo de discussão pouco relevante. Então vou apenas resumir e indicar as bibliografias.</p>
+<p>Basicamente, temos duas maneiras de enxergar o conhecimento de construção de design de interações:</p>
+<ul>
+<li><strong>Racionalismo Técnico</strong> - Existem problemas conhecidos com soluções pre-determinadas. O papel do designer seria &quot;enxergar&quot; as equivalências do caso prático dele com a teoria. Além disso, teria a responsabilidade de aumentar o seu repertório de soluções para sempre ter uma saída a um problema de design encontrado.</li>
+<li><strong>Reflexão em Ação</strong> - Existem problemas e soluções únicas onde os métodos e ferramentas atuam apenas como auxiliadores do processo de construção do design. Nessa abordagem a criatividade do designer possui amplo espaço para construção.</li>
+</ul>
+<p><strong>Fontes Complementares:</strong></p>
+<ul>
+<li>PONCIANO, Lesandro. Debate Estruturado: Uma Estratégia Pedagógica para Ensino e Aprendizagem de Valores Humanos em Interação Humano-ComputadorLinks para um site externo.. In: Workshop sobre Educação em IHC - Simpósio Brasiliero de Fatores humanos em Sistemas Computacionais, 17., 2018, Belém. Porto Alegre: Sociedade Brasileira de Computação, 2018. Acessso em: 01 de Jul. de 2021.</li>
+<li>PONCIANO, Lesandro; ANDRADE, Nazareno. Perspectivas em Computação SocialLinks para um site externo.. Computação Brasil, Raquel Prates and Thais Castro (Eds.), v. 36, p. 30-33, 2018. Acesso em 01 de Jul. de 2021.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-prática-de-design">A Prática de Design<a href="#a-prática-de-design" class="hash-link" aria-label="Link direto para A Prática de Design" title="Link direto para A Prática de Design">​</a></h3>
+<p>Até agora tivemos guiado nossa caminhada no mundo dos conceitos. É importante saber os termos usados no mercado bem como suas referências bibliográficas, entretanto, o viés da nossa formação nos direciona para uma abordagem mais prática também.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="modelagem-de-usuários-e-necessidades">Modelagem de Usuários e Necessidades<a href="#modelagem-de-usuários-e-necessidades" class="hash-link" aria-label="Link direto para Modelagem de Usuários e Necessidades" title="Link direto para Modelagem de Usuários e Necessidades">​</a></h4>
+<p>Como designers de uma aplicação um dos nossos objetivos é alcançar a <strong>usabilidade</strong> que, pela ISO 9241-11 (2018), pode ser entendida como o grau de utilização do produto para o alcance dos objetivos de modo eficiente, eficaz e satisfatório.</p>
+<p>Pois bem, sabemos que quem usará os nossos sistemas são os <strong>usuários</strong>, diante disso, só podemos construir aplicações com usabilidade se pensarmos no nossos usuários. Para pensarmos melhor a respeito deles, precisamos de informações que podem vir das mais diversas fontes: pesquisar, entrevistas, vivência e etc. A partir dessas informações, podemos realizar um processo chamado de <strong>Modelagem de Usuários</strong>.</p>
+<p>A modelagem de usuários pode ser feita por meio de três técnicas:</p>
+<ul>
+<li><strong>Perfil de Usuário</strong> - Descrição detalhada das características. É u agrupamento de conjuntos característicos para um grupo de usuários reais (jovens, idosos, professores, alunos e etc) focam em algumas características e ignorando outras.</li>
+<li><strong>Persona de Usuário</strong> - É o uso de uma fabulação a respeito do uso. Criamos uma história fictícia que elucida as funcionalidades que nosso sistema deve ter para que o objetivo do nosso personagem seja alcançado.</li>
+<li><strong>Mapa de Empatia</strong> - Descrição do usuário por meio dos meios de fala, pensamento, sentimento, ação e contexto. Usa-se um mapa como esse <a href="https://analistamodelosdenegocios.com.br/wp-content/uploads/2017/08/Mapa-de-Empatia-do-Analista-de-Modelos-de-Negocios-1024x709.png" target="_blank" rel="noopener noreferrer">aqui</a>.</li>
+</ul>
+<p><strong>Fontes Complementares:</strong></p>
+<ul>
+<li>Artigo científico com exemplos de perfis: PONCIANO, Lesandro; BRASILEIRO, Francisco. Finding Volunteers&#x27; Engagement Profiles in Human Computation for Citizen Science Projects (Links para um site externo.). Human Computation, v. 1, n. 2, 2014. Acesso em: 01 de Jul. de 2021.</li>
+<li>Artigo científico com exemplos de perfis: LOUZADA, Henrique; CHAVES, Gabriel; PONCIANO, Lesandro. Exploring user profiles based on their explainability requirements in interactive systems (Links para um site externo.). In: Proceedings of the 19th Brazilian Symposium on Human Factors in Computing Systems. 2020. p. 1-6. Acesso em: 01 de Jul. de 2021.</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="abordagens-de-prototipagem">Abordagens de Prototipagem<a href="#abordagens-de-prototipagem" class="hash-link" aria-label="Link direto para Abordagens de Prototipagem" title="Link direto para Abordagens de Prototipagem">​</a></h4>
+<p>Agora que temos nossos modelos de usuários, o próximo passo é construir o <strong>protótipo</strong> da nossa solução.</p>
+<p>O objetivo dessa técnica é obter feedback dos interessados antes da construção final do projeto. Desse modo, uma boa fase de prototipagem pode economizar verdadeiras fortunas para as empresas e clientes.</p>
+<p>Usualmente, o processo de prototipagem consiste em quatro etapas:</p>
+<ul>
+<li>Definição do feedback a ser coletado</li>
+<li>Construção dos protótipos</li>
+<li>Avaliação dos interessados</li>
+<li>Descarte do protótipo</li>
+</ul>
+<p>Agora que sabemos as etapas gerais do processo, nos resta saber quem seriam esses <strong>interessados</strong>. A resposta para essa pergunta depende muito de quem se propor a respondê-la mas, no geral, clientes, outros designers e usuários são boas fontes de feedback.</p>
+<p><strong>Métodos de construção de Protótipos</strong></p>
+<p>Para a construção de protótipos temos uma infinidade de técnicas possíveis. Vamos destacar algumas:</p>
+<ul>
+<li><strong>Wireframe</strong> - Telas de baixa fidelidade com foco na arquitetura da informação e o layout.</li>
+<li><strong>Mock-Up</strong> - Telas de alta fidelidade com inclusão de detalhes e funcionalidades mas com escopo de atuação reduzido<sup><a href="#user-content-fn-2" id="user-content-fnref-2" data-footnote-ref="true" aria-describedby="footnote-label">2</a></sup>.</li>
+<li><strong>Storyboards</strong> - Prototipagem por figuras similares a um diagrama de fluxo que ilustram detalhes na sequência de interação.</li>
+<li><strong>Prototipação em Vídeo</strong> - Criação de uma narrativa visual de utilização da solução com exemplo do que será feito na experiência real.</li>
+<li><strong>Protótipo em Papel</strong> - Desenho livre das funcionalidades. Permite uma alta ajustabilidade mas é desaconselhado para projetos de alta complexidade.</li>
+</ul>
+<p><strong>Graus de Fidelidade em Prototipagem</strong></p>
+<p>Agora que aprendemos alguns dos métodos usados na construção dos protótipos, podemos ver que existem diferentes níveis de abstração a depender de qual método optarmos. Chamamos de <strong>prototipação horizontal</strong> os métodos que temos menor profundidade nos detalhes, entretanto, uma maior amplitude na quantidade de características do sistema. Do outro lado, temos a <strong>prototipação vertical</strong> que foca em poucas características mas com uma abordagem muito mais profunda.</p>
+<p>Além do escopo da quantidade de características, podemos avaliar os protótipos relativamente ao grau de fidelidade. Os métodos de <strong>baixa fidelidade</strong> são mais rápidos e baratos por focarem em abstrair a maioria dos detalhes em detrimento das ideias simples e iniciais. No outro espectro, métodos de <strong>alta fidelidade</strong> tentam se aproximar grandemente do que será o resultado final com o máximo de detalhes possíveis.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="cores-fontes-e-harmonização">Cores, Fontes e Harmonização<a href="#cores-fontes-e-harmonização" class="hash-link" aria-label="Link direto para Cores, Fontes e Harmonização" title="Link direto para Cores, Fontes e Harmonização">​</a></h4>
+<p>A <strong>tipografia</strong> é o ramo que estuda as diferentes características entre os ``tipos&#x27;&#x27;. Geralmente, agrupados por meio de famílias, época e estilo.</p>
+<p>Além das fontes de texto, as <strong>cores</strong> também são importantes no quesito da estética da aplicação. Cores podem ser entendidas em termo de ``temperatura&#x27;&#x27; como cores quentes para objetos em destaque e cores frias para objetos de background. Para auxiliar a escolha da identidade visual, podemos usar ferramentas como o <strong>círculo cromático</strong> para escolher cores de diferentes padrões como, por exemplo:</p>
+<ul>
+<li><strong>Complementares</strong> - Opostas no círculo cromático</li>
+<li><strong>Análogas</strong> - Três cores vizinhas no círculo cromático</li>
+<li><strong>Tríades</strong> - Três cores equidistantes no círculo cromático</li>
+<li><strong>Divisão Complementar</strong> - Três cores. Uma principal e uma cor de cada lado (sendo ambas complementares entre si)</li>
+<li><strong>Esquema Quadrado</strong> - Dois pares de cores complementares</li>
+<li><strong>Esquema Retângulo</strong> - Quatro cores sendo um par complementar e um par análogo</li>
+</ul>
+<p>Outra maneira de escolhermos cores é por meio de escalas padrão. Uma <strong>escala divergente</strong> é a que vai de um polo de cor até o outro. Uma <strong>escala sequencial</strong> é a que vai degradando uma mesma cor para a composição da escala. Uma <strong>escala qualitativa</strong> é a que reúne cores diferentes em uma mesma paleta. E, por fim, uma <strong>escala de cores com semânticas convencionais</strong> são escalas de cores que já possuem certo consenso na comunidade (por exemplo a escala Manchester usada em hospitais).</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="componentes-e-recomendações-ergonômicas">Componentes e Recomendações Ergonômicas<a href="#componentes-e-recomendações-ergonômicas" class="hash-link" aria-label="Link direto para Componentes e Recomendações Ergonômicas" title="Link direto para Componentes e Recomendações Ergonômicas">​</a></h4>
+<p>Toda aplicação de ter o que chamamos de <strong>comportamentos elementares</strong> que podem ser entendidos como o básico para qualquer boa interação usuário-computador. Esses comportamentos ergonômicos elementares são:</p>
+<ul>
+<li>Provisão de convite à interação por meio da indicação das ações possíveis</li>
+<li>Provisão do apoio às ações via redução da carga de trabalho</li>
+<li>Provisão de feedback ao usuário em cada entrada de dados</li>
+</ul>
+<p>A grande maioria das interações hoje em dia se dão por intermédio de uma <strong>Graphical User Interface (GUI)</strong> que, normalmente, utiliza padrões de janelas, ícones, menus e apontadores (WINP<sup><a href="#user-content-fn-3" id="user-content-fnref-3" data-footnote-ref="true" aria-describedby="footnote-label">3</a></sup>). A abordagem usada para essas aplicações usa o padrão &quot;reconhecer, em vez de recordar&quot; que, como o nome diz, foca no uso guiado pelo reconhecimento de padrões em tela e não via memorização de padrões de uso.</p>
+<p><strong>Ícones</strong></p>
+<p>Durante a elaboração de qualquer aplicação, o <strong>projeto de ícones</strong> é relevante porque são eles que o usuário usa para o reconhecimento dos padrões de referência para o uso.</p>
+<p>Para o alcance desse objetivo, temos alguns princípios norteadores para o uso dos ícones:</p>
+<ul>
+<li><strong>Met áfora</strong> - O uso de um conhecimento em um contexto para facilitar o entendimento. O exemplo clássico é o uso do ícone de um disquete como elemento de salvamento.</li>
+<li><strong>Mapeamento Direto</strong> - Imagem parecida com o ícone a ser representado.</li>
+<li><strong>Convenção</strong> - O significado de um ícone de se manter consistente ao longo de todo o sistema.</li>
+</ul>
+<p><strong>Erros e Alertas</strong></p>
+<p>Durante a comunicação entre computador e usuário, é muito comum o uso de mensagens de alerta e erro. Podemos elencar algumas boas práticas para o uso dessas ferramentas:</p>
+<ul>
+<li>Uso de linguagem branda</li>
+<li>Não usar dupla negativas</li>
+<li>O sentido dos verbos sempre deve apontar para o sistema. Por exemplo, &quot;Comando não reconhecimento&quot; ao invés de &quot;Comando incorreto&quot;</li>
+<li>Evitar o uso de caixa alta</li>
+</ul>
+<p><strong>Objetos de Interação</strong></p>
+<p>Aqui vamos ter uma série de recomendações sobre as melhores práticas a respeito dos objetos usados na elaboração de uma interface.</p>
+<p>Em se tratando de <strong>objetos de seleção</strong> também temos algumas boas práticas a serem seguidas:</p>
+<ul>
+<li><strong>Listbox</strong> - Ordenar os elementos para facilitar a pesquisa</li>
+<li><strong>Radio Button</strong> - Itens mutualmente excludentes</li>
+<li><strong>Check Box</strong> - Sempre permitir a seleção de múltiplas alternativas</li>
+</ul>
+<p>Nos <strong>objetos de apresentação</strong>, temos de ficar atentos em:</p>
+<ul>
+<li>Não usar hífen no final das linhas</li>
+<li>Máximo 60 caracteres por linha</li>
+<li>Usar espaçamento entre parágrafos</li>
+<li>Usar bordas implícitas ou explícitas</li>
+<li>Evitar caixa alta</li>
+<li>Fontes serifadas para textos longos</li>
+<li>Fontes sem serifa para títulos e rótulos</li>
+</ul>
+<p>No quesito <strong>preenchimento de formulários</strong> temos:</p>
+<ul>
+<li>Usar diferenciação entre rótulo e dados</li>
+<li>Usar diferenciação entre campos obrigatórios e opcionais</li>
+<li>Indicar o que for text default</li>
+<li>Usar feedback sempre que houver envio dos dados ou salvamento</li>
+<li>Sempre ordenar de maneira satisfatória a navegação entre campos com uso da tecla tab</li>
+</ul>
+<p>No fronte de <strong>interface</strong> podemos destacar:</p>
+<ul>
+<li>
+<p><strong>Interfaces Web</strong></p>
+<ul>
+<li>Maior atenção à arquitetura da informação</li>
+<li>Indicação de como se mover no site</li>
+</ul>
+</li>
+<li>
+<p><strong>Dispositivos Móveis</strong></p>
+<ul>
+<li>Minimizar os níveis de navegação</li>
+<li>Minimizar a quantidade de conteúdo exibido</li>
+<li>Reduzir a quantidade de entradas necessárias pelo usuário</li>
+<li>Aplicação tolerante com perda de sinal e desligamento do aparelho</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="princípios-e-regras-de-design">Princípios e Regras de Design<a href="#princípios-e-regras-de-design" class="hash-link" aria-label="Link direto para Princípios e Regras de Design" title="Link direto para Princípios e Regras de Design">​</a></h4>
+<p>Agora vamos aprender alguns princípios gerais por dois grupos. Os princípios <strong>gestálticos</strong> são oriundos da escolha de pensamento Gestalt muito usada no estudo da psicologia. Complementarmente, vamos ver uma lista de princípios chamados de <strong>regras de ouro</strong>.</p>
+<p>O princípios gestálticos são:</p>
+<ul>
+<li><strong>Proximidade</strong> - Entidades visuais próximas são entendidas como grupo.</li>
+<li><strong>Alinhamento</strong> - Alinhamento são melhor percebidos que contornos irregulares.</li>
+<li><strong>Simetria</strong> - Objetos simétricos são percebidos melhor que objetos assimétricos.</li>
+<li><strong>Similaridade</strong> - Semelhança de objetos implica em unidade.</li>
+<li><strong>Destino Comum</strong> - Objetos com um mesmo sentido são percebidos como grupo.</li>
+<li><strong>Fecho</strong> - A mente costuma completar figuras incompleta para gerar regularidade.</li>
+<li><strong>Região Comum</strong> - Objetos dentro de um contorno são percebidos como unidade.</li>
+<li><strong>Conectividade</strong> - Objetos conectados são entendidos como unidade.</li>
+</ul>
+<p>As regras de ouro são:</p>
+<ul>
+<li>Consistência</li>
+<li>Fornecer Atalhos</li>
+<li>Fornecer Feedbacks Informativos</li>
+<li>Marcar o Final dos Diálogos</li>
+<li>Permitir Reversão de Ações</li>
+<li>Fornecer Controle de Iniciativa do User</li>
+<li>Reduzir a Carga de Memória de Trabalho</li>
+</ul>
+<p><strong>Fontes Complementares:</strong> Aqui tem um <a href="https://www.cs.umd.edu/users/ben/goldenrules.html" target="_blank" rel="noopener noreferrer">artigo</a> sobre as regras de ouro que explica melhor cada um desses pontos. Em tempo oportuno essa seção será atualizada com um resumo deles.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="avaliação-da-qualidade-de-sistemas-interativos">Avaliação da Qualidade de Sistemas Interativos<a href="#avaliação-da-qualidade-de-sistemas-interativos" class="hash-link" aria-label="Link direto para Avaliação da Qualidade de Sistemas Interativos" title="Link direto para Avaliação da Qualidade de Sistemas Interativos">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="abordagens-de-avaliação">Abordagens de Avaliação<a href="#abordagens-de-avaliação" class="hash-link" aria-label="Link direto para Abordagens de Avaliação" title="Link direto para Abordagens de Avaliação">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="o-processo-de-avaliação-de-sistemas-interativos">O Processo de Avaliação de Sistemas Interativos<a href="#o-processo-de-avaliação-de-sistemas-interativos" class="hash-link" aria-label="Link direto para O Processo de Avaliação de Sistemas Interativos" title="Link direto para O Processo de Avaliação de Sistemas Interativos">​</a></h4>
+<p>Podemos definir as abordagens de avaliação de sistemas em diferentes modos.</p>
+<p>No primeiro modo de separação, podemos nos ater ao momento da avaliação. Nesse caso podemos ter uma avaliação no começo ou no final do Desenvolvimento do sistema. Quando realizamos a avaliação no início do processo de projeto para nos asseguramos que estamos no caminho certo, estamos realizando a <strong>Avaliação Formativa</strong>. Na outra ponta, quando avaliamos no final do processo se todos os objetivos foram atingidos, é dito que fizemos a <strong>Avaliação Somativa</strong>.</p>
+<p>A outra maneira de separar as abordagens de avaliação é quanto ao método de avaliação. Nesse caso, podemos destacar três abordagens:</p>
+<ul>
+<li><strong>Avaliação por Inspeção</strong> - Nessa abordagem o usuário não é envolvido. Ao invés disso, simulamos um usuário por meio de um inspetor que tenta se colocar na posição de user.</li>
+<li><strong>Avaliação por Observação</strong> - Nessa abordagem os usuários participam e a avaliação é feita através do uso direto do sistema ou de alguma representação do mesmo.</li>
+<li><strong>Avaliação por Investigação</strong> - Nessa abordagem os usuários participam, entretanto, a avaliação é feita mediante a aplicação de técnicas de investigação (questionário, focus group e etc).</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="métodos-de-avaliação">Métodos de Avaliação<a href="#métodos-de-avaliação" class="hash-link" aria-label="Link direto para Métodos de Avaliação" title="Link direto para Métodos de Avaliação">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inspeção-do-percurso-cognitivo">Inspeção do Percurso Cognitivo<a href="#inspeção-do-percurso-cognitivo" class="hash-link" aria-label="Link direto para Inspeção do Percurso Cognitivo" title="Link direto para Inspeção do Percurso Cognitivo">​</a></h4>
+<p>Agora que aprendemos sobre algumas das abordagens de avaliação, podemos nos aprofundar um pouco mais em como colocar alguma dessas abordagens em prática por meio de métodos. Nesse tópico, focaremos nos métodos de avaliação por inspeção.</p>
+<p>No método de <strong>Avaliaç ão Heurística</strong>, nos baseamos em um conjunto de dez heurísticas (que são métodos de investigação) para avaliarmos se o sistema possui as características desejadas. As dez heurísticas de Nielses são:</p>
+<ul>
+<li>Visibilidade do Estado do Sistema</li>
+<li>Correspondência Sistema - Mundo Real</li>
+<li>Controle e Liberdade do User</li>
+<li>Consistência e Padronização</li>
+<li>Reconhecimento ao invés de Memorização</li>
+<li>Prevenção de Erros</li>
+<li>Flexibilidade e Eficiência de Uso</li>
+<li>Projeto Estético e Minimalista</li>
+<li>Ajuda ao User com Erros</li>
+<li>Ajuda e Documentação</li>
+</ul>
+<p>Outra metodologia possível é a chamada <strong>Avaliação do Percurso Cognitivo</strong>. Nesse método, nós nos baseamos em quatro questões:</p>
+<ul>
+<li>O user tenta alcançar o resultado desejado?</li>
+<li>O user nota que existe uma ação correta disponível?</li>
+<li>O user consegue associar a ação correta ao efeito que se quer atingir?</li>
+<li>O user percebe que está progredindo em direção à conclusão da tarefa?</li>
+</ul>
+<p>Em ambos os métodos temos a coleta de dados, avaliação e preparação de avaliação baseadas nos fluxos e princípios que levantamos antes.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="inspeção-semiótica">Inspeção Semiótica<a href="#inspeção-semiótica" class="hash-link" aria-label="Link direto para Inspeção Semiótica" title="Link direto para Inspeção Semiótica">​</a></h4>
+<p>Nessa seção vamos aprender duas abordagens de avaliação da comunicabilidade de sistemas também baseados no processo de inspeção.</p>
+<p>O <strong>Método de Inspeção Semiótica (MIS)</strong> é um tipo de avaliação que busca analisar a comunicabilidade do sistema por meio da emissão da metacomunicação. Metacomunicação é o estudo da capacidade de comunicar a própria dinâmica da comunicação entre interlocutores, ou seja, é o estudo da informação sobre a informação.</p>
+<p><strong>Comentário:</strong> Bem filosófico né?! Eu, sinceramente, acho que não vale a pena entrar muito profundamente em cada tópico desse por agora. Vamos ficar apenas na superfície por enquanto.</p>
+<p>O protocolo MIS é baseado em:</p>
+<ul>
+<li>Inspeção da metacomunicação de recursos de ajuda e documentação</li>
+<li>Inspeção da metacomunicação em signos estáticos</li>
+<li>inspeção da metacomunicação em signos dinâmicos</li>
+<li>Confronto dos resultados anteriores</li>
+<li>Análise da qualidade da metacomunicação</li>
+</ul>
+<p>Cada item do protocolo leva em consideração os seguintes elementos:</p>
+<ul>
+<li>Quem é o user</li>
+<li>O que se quer fazer</li>
+<li>Qual a maneira preferida de se executar essa tarefa</li>
+<li>Qual é o sistema projetado</li>
+<li>Qual a maneira que o sistema está projetado para realizar essa tarefa</li>
+</ul>
+<p>Além dessa metodologia, temos o <strong>Método de Avaliação da Comunicabilidade (MAC)</strong> que é baseado em observação. O foco é avaliar a comunicação entre o designer e o user por meio da interface. Sempre que o user não compreender o que foi proposto pelo designer ou não souber expressar sua vontade por meio do sistema, dizemos que houve uma ruptura de comunicabilidade.</p>
+<p>A maneira de investigação é baseada em 13 etiquetas com frases que simulam o que um user diria diante das situações experimentadas:</p>
+<ul>
+<li>Cade?</li>
+<li>E agora?</li>
+<li>O que é isso?</li>
+<li>Epa!</li>
+<li>Onde estou?</li>
+<li>O que houve?</li>
+<li>Por que não funciona?</li>
+<li>Assim não dá</li>
+<li>Vai de outro jeito</li>
+<li>Não, obrigado</li>
+<li>Pra mim está bom</li>
+<li>Socorro!</li>
+<li>Desisto</li>
+</ul>
+<p><strong>Comentário:</strong> De todos os assuntos, esse ai foi o que eu achei mais estranho. Talvez precisaremos expandir mais essa seção mas por hora, é o que temos.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="avaliação-da-acessibilidade">Avaliação da Acessibilidade<a href="#avaliação-da-acessibilidade" class="hash-link" aria-label="Link direto para Avaliação da Acessibilidade" title="Link direto para Avaliação da Acessibilidade">​</a></h4>
+<p>No quesito acessibilidade, queremos que a interface tenha os  requisitos necessários dispositivos na análise Web Content Accessibility Guidelines (WCAG). Esse método de avaliação possui quatro princípios que devem ser observados nas interfaces:</p>
+<ul>
+<li>
+<p><strong>Percepção</strong>:</p>
+<ul>
+<li>Alternativas em texto para todo conteúdo não textual</li>
+<li>Alternativas multimídia dinâmica e temporal</li>
+<li>Conteúdo apresentável em diferentes formas sem perda da informação ou estrutura</li>
+<li>Facilitação a percepção visual e auditiva por meio da separação entre planos de fundo e primeiro plano</li>
+</ul>
+</li>
+<li>
+<p><strong>Operação</strong>:</p>
+<ul>
+<li>Garantir que toda funcionalidade esteja disponível a partir do teclado</li>
+<li>Tempo de leitura de conteúdo suficiente</li>
+<li>Evitar formas de exibição que podem provocar convulsões</li>
+<li>Facilitar a navegação, localização de conteúdos e localização das informações</li>
+</ul>
+</li>
+<li>
+<p><strong>Compreensão</strong>:</p>
+<ul>
+<li>Conteúdo textual legível e compreensível</li>
+<li>Páginas web funcionais</li>
+<li>Auxíliar à correção de erros</li>
+</ul>
+</li>
+<li>
+<p><strong>Robustez</strong>:</p>
+<ul>
+<li>Maximizar a compatibilidade com utilizadores atuais e futuros</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="teste-de-usabilidade">Teste de Usabilidade<a href="#teste-de-usabilidade" class="hash-link" aria-label="Link direto para Teste de Usabilidade" title="Link direto para Teste de Usabilidade">​</a></h4>
+<p>O <strong>teste de usabilidade</strong> é um tipo de avaliação por observação e costumam responder perguntas sobre o funcionamento do sistema.</p>
+<p>Durante o teste de usabilidade, cada tarefa realizada é medida para se obter dados como:</p>
+<ul>
+<li>Grau de sucesso da execução</li>
+<li>Total de erros cometidos</li>
+<li>Quantos erros por tipo ocorreram</li>
+<li>Tempo necessário para a conclusão</li>
+</ul>
+<p>A coleta das informações pode variar de acordo com a vontade do designer. Pode variar desde observação visual simples até instrumentalização por meio de instrumentos.</p>
+<p>Antes de se realizar o teste, é necessário definir as tarefas a serem executadas, qual o perfil de usuário, recrutamento dos usuários, material para observação, execução do teste-piloto a ser feito na seção de uso. Essa é a <strong>etapa de preparação do teste</strong>.</p>
+<p>Após isso, passamos para a <strong>etapa de coleta dos dados</strong> por meio da aplicação dos testes e coleta das performances de uso.</p>
+<p>Por fim, temos a <strong>interpretação e consolidação dos resultados</strong> que nos permite sumarizar os dados afim de tirarmos conclusões úteis sobre eles.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="investigação-da-usabilidade">Investigação da Usabilidade<a href="#investigação-da-usabilidade" class="hash-link" aria-label="Link direto para Investigação da Usabilidade" title="Link direto para Investigação da Usabilidade">​</a></h4>
+<p>Por fim, vamos aprender um pouco sobre a avaliação da usabilidade<sup><a href="#user-content-fn-4" id="user-content-fnref-4" data-footnote-ref="true" aria-describedby="footnote-label">4</a></sup> por meio da análise System Usability Scale (SUS) que usa o modelo de avaliação por investigação. Como já aprendemos, esse tipo de avaliação permite a interação do user com o sistema ou algum representante dele.</p>
+<p>O SUS foi criado em 1986 e utiliza um questinário de 10 questões aplicadas após o uso do sistema ou do conhecimento sobre como ele funciona.</p>
+<p>As questões aplicadas são:</p>
+<ul>
+<li>Eu acho que gostaria de usar esse sistema com frequência</li>
+<li>Eu acho o sistema desnecessariamente complexo</li>
+<li>Eu achei o sistema fácil de usar</li>
+<li>Eu acho que o precisaria de ajuda com conhecimentos técnicos para usar o sistema</li>
+<li>Eu acho que as funções do sistema são bem integradas</li>
+<li>Eu acho que o sistema apresenta muita inconsistência</li>
+<li>Eu imagino que as pessoas aprenderão como usar o sistema rapidamente</li>
+<li>Eu achei o sistema atrapalhado de usar</li>
+<li>Eu me senti confiante ao usar o sistema</li>
+<li>Eu precisei aprender várias coisas novas antes de conseguir usar o sistema</li>
+</ul>
+<p>Onde para cada item, temos as seguintes opções baseadas na escala Likert de resposta:</p>
+<ul>
+<li>Discordo completamente</li>
+<li>Discordo parcialmente</li>
+<li>Não concordo nem discordo</li>
+<li>Concordo parcialmente</li>
+<li>Concordo completamente</li>
+</ul>
+<p>Para a compilação usamos o seguinte cálculo de pontuação: 1) para as questões ímpares, subtraia 1 ponto da pontuação respondida; 2) para os itens pares subtraia 5; 3) Some  todos os pontos; 4) multiplique por 2,5. A pontuação variará entre 0 a 100.</p>
+<p>Um resultado esperado médio gira em torno de 68 pontos. Abaixo de 50 é sinal de problemas que podem indicar insucesso na solução.</p>
+<p><strong>Fontes Complementares:</strong>:</p>
+<ul>
+<li>Trabalho de conclusão de curso que avalia um aplicativo empregando o método SUS: SAPFI: um sistema de alerta para evitar aglomerações em filas de espera de praças de alimentaçãoLinks para um site externo. <a href="http://bib.pucminas.br:8080/pergamumweb/vinculos/000096/000096a6.pdf" target="_blank" rel="noopener noreferrer">link</a>.</li>
+<li>Trabalho de conclusão de curso que avalia um sistema empregando o método SUS: Proposta, Prototipação e Avaliação de Aplicação para Colaboração e Compartilhamento entre TorcedoresLinks para um site externo. <a href="http://bib.pucminas.br:8080/pergamumweb/vinculos/000043/0000430f.pdf" target="_blank" rel="noopener noreferrer">link</a>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="bibliografia">Bibliografia<a href="#bibliografia" class="hash-link" aria-label="Link direto para Bibliografia" title="Link direto para Bibliografia">​</a></h2>
+<ul>
+<li>BENYON, David. <strong>Interaç ão Humano-Computador - 2ª edição</strong>. Pearson 466 ISBN 9788579361098.</li>
+<li>PADUA FILHO, Wilson de Paula. <strong>Multimídia conceitos e aplicações</strong>. 2. Rio de Janeiro LTC 2010 ISBN 978-85-216-1993-2.</li>
+<li>ROGERS, Yvonne; PREECE, Jennifer; SHARP, Helen. <strong>Interaction Design: beyond human-computer interaction</strong>, 5rd Edition. Wiley (O’Reilly). May 2019. ISBN: 9780470665763.</li>
+<li>COLBORNE, Giles. <strong>Simple and Usable Web, Mobile, and Interaction Design, Second Edition</strong>. New Riders (O’Reilly). ISBN: 9780134778181.</li>
+<li>PEREZ, Clotilde; BARBOSA, Ivan Santo. <strong>Hiperpublicidade, v. 1. Fundamentos e interfaces</strong>. São Paulo Cengage Learning 2018. ISBN 9788522116294 (Recurso online).</li>
+</ul>
+<!-- -->
+<section data-footnotes="true" class="footnotes"><h2 class="anchor anchorWithStickyNavbar_LWe7 sr-only" id="footnote-label">Footnotes<a href="#footnote-label" class="hash-link" aria-label="Link direto para Footnotes" title="Link direto para Footnotes">​</a></h2>
+<ol>
+<li id="user-content-fn-1">
+<p>Information Arquiteture, não confundir com AI (Artificial Inteligence). <a href="#user-content-fnref-1" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p>Por exemplo, usando uma base de dados de teste. <a href="#user-content-fnref-2" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-3">
+<p>Do inglês Windows, Icons, Menus and Pointing Devices. <a href="#user-content-fnref-3" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-4">
+<p>Eu não faço ideia do motivo de termos a seção anterior chamada &quot;Teste de usabilidade&quot; a agora termos a seção &quot;Investigação da usabilidade&quot; mas vamos lá. <a href="#user-content-fnref-4" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Páginas de documentação"><a class="pagination-nav__link pagination-nav__link--prev" href="/CC_site/docs/puc/segundo-periodo/engenharia-requisitos"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Engenharia de Requisitos</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/CC_site/docs/puc/segundo-periodo/programacao-modular"><div class="pagination-nav__sublabel">Próxima</div><div class="pagination-nav__label">Programação Modular</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#elementos-do-design-de-interação" class="table-of-contents__link toc-highlight">Elementos do Design de Interação</a><ul><li><a href="#sistemas-interativos-em-contexto" class="table-of-contents__link toc-highlight">Sistemas Interativos em Contexto</a></li><li><a href="#atributos-de-qualidade-da-interação-cognição-e-semiótica" class="table-of-contents__link toc-highlight">Atributos de Qualidade da Interação (Cognição e Semiótica)</a></li></ul></li><li><a href="#processo-de-design-de-interação" class="table-of-contents__link toc-highlight">Processo de Design de Interação</a><ul><li><a href="#perspectivas-de-design" class="table-of-contents__link toc-highlight">Perspectivas de Design</a></li><li><a href="#a-prática-de-design" class="table-of-contents__link toc-highlight">A Prática de Design</a></li></ul></li><li><a href="#avaliação-da-qualidade-de-sistemas-interativos" class="table-of-contents__link toc-highlight">Avaliação da Qualidade de Sistemas Interativos</a><ul><li><a href="#abordagens-de-avaliação" class="table-of-contents__link toc-highlight">Abordagens de Avaliação</a></li><li><a href="#métodos-de-avaliação" class="table-of-contents__link toc-highlight">Métodos de Avaliação</a></li></ul></li><li><a href="#bibliografia" class="table-of-contents__link toc-highlight">Bibliografia</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/CC_site/docs/intro">Matérias</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://x.com/bruno_ruas2" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/CC_site/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/brunoruas2" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">2024 MIT License Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
