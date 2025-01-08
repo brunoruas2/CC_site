@@ -19,8 +19,7 @@
             <name>Bruno de Melo Ruas</name>
             <uri>https://github.com/brunoruas2</uri>
         </author>
-        <category label="Hola" term="Hola"/>
-        <category label="Docusaurus" term="Docusaurus"/>
+        <category label="Tip" term="Tip"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Small Blog Post Model]]></title>
