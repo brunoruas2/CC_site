@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkfinancas=self.webpackChunkfinancas||[]).push([[7211],{8082:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/CC_site/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkciencia_computacao=self.webpackChunkciencia_computacao||[]).push([[7211],{8082:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/CC_site/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
