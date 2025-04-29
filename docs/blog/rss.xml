@@ -4,10 +4,22 @@
         <title>Ciência da Computação Blog</title>
         <link>https://brunoruas2.github.io/CC_site/blog</link>
         <description>Ciência da Computação Blog</description>
-        <lastBuildDate>Tue, 25 Feb 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Apr 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>pt</language>
+        <item>
+            <title><![CDATA[Alguns Repos para ficar de olho]]></title>
+            <link>https://brunoruas2.github.io/CC_site/blog/lembrete-coisas-legais</link>
+            <guid>https://brunoruas2.github.io/CC_site/blog/lembrete-coisas-legais</guid>
+            <pubDate>Mon, 28 Apr 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Lista de Repos que eu quero olhar com calma depois.]]></description>
+            <content:encoded><![CDATA[<p>Lista de Repos que eu quero olhar com calma depois.</p>
+<p><a href="https://github.com/glzr-io/glazewm?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">https://github.com/glzr-io/glazewm?tab=readme-ov-file</a></p>
+<p><a href="https://github.com/glzr-io/zebar" target="_blank" rel="noopener noreferrer">https://github.com/glzr-io/zebar</a></p>
+<p><a href="https://github.com/ariafatah0711/win_aria/" target="_blank" rel="noopener noreferrer">https://github.com/ariafatah0711/win_aria/</a></p>]]></content:encoded>
+            <category>Tip</category>
+        </item>
         <item>
             <title><![CDATA[Template para State Diagram no Mermaid]]></title>
             <link>https://brunoruas2.github.io/CC_site/blog/mermaid-state-diagram-template</link>
