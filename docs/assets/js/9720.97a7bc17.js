@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkciencia_computacao=self.webpackChunkciencia_computacao||[]).push([[9720],{39720:(c,e,a)=>{a.d(e,{createArchitectureServices:()=>i.S});var i=a(49936);a(19369)}}]);

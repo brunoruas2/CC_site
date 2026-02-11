@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkciencia_computacao=self.webpackChunkciencia_computacao||[]).push([[6452],{6452:(c,e,a)=>{a.d(e,{createPacketServices:()=>i.$});var i=a(71609);a(19369)}}]);

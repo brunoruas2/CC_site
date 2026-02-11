@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkciencia_computacao=self.webpackChunkciencia_computacao||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/CC_site/blog","blogTitle":"Blog","authorsListPath":"/CC_site/blog/authors"}')}}]);
