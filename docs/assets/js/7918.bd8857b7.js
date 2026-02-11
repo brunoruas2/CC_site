@@ -1,0 +1,1 @@
+(self.webpackChunkciencia_computacao=self.webpackChunkciencia_computacao||[]).push([[7918],{68974:(c,a,e)=>{"use strict";e.d(a,{A:()=>u});var s=e(58291);const u=s},45741:()=>{}}]);
